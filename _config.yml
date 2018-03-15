@@ -1,5 +1,5 @@
 # Site settings
-title: Blockstream
+title: Blockstream - Crypto Feed
 description: "Cryptocurrency data feed"
 # edit this to fix the deployment issue (relative path)
 baseurl: /market-data-project
