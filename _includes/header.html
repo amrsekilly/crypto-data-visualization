@@ -1,7 +1,12 @@
 <div class="ui vertical masthead aligned segment" id="home-banner">
-  <div class="ui wide text container">
-    <h1 class="ui inverted header" style="margin-top: 1.5em;">
-      The Map will be here!
-    </h1>
+  <div class="ui wide container">
+    <div id='map' style='width: 400px; height: 300px;'></div>
+    <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoiYW1yc2VraWxseSIsImEiOiJjamVzbWwxeTc3MWV6MzNvMTA4NnE1cGRqIn0.gduDJTnrg9nbXGLe0GSiIw';
+      var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/dark-v9'
+      });
+    </script>
   </div>
 </div>
