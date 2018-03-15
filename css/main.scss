@@ -223,6 +223,13 @@ html {
  Mapbox styles
 */
 
+#map {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  top:30px;
+}
+
 // remove the mapbox attribution 
 .mapboxgl-ctrl-bottom-left,
 .mapboxgl-ctrl-bottom-right {
