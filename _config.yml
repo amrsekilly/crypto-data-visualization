@@ -1,8 +1,8 @@
 # Site settings
-title: Blocksteam
+title: Blockstream
 description: "Cryptocurrency data feed"
 # edit this to fix the deployment issue (relative path)
-baseurl: 
+baseurl: /blockStream
 
 # Build settings
 # Sass
