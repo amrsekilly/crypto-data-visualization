@@ -136,7 +136,10 @@
         new mapboxgl.Marker(el)
           .setLngLat(marker.geometry.coordinates)
           .addTo(map);
-      });
+        });
+
+        // disable map zoom when using scroll
+        map.scrollZoom.disable();
     </script>
   </div>
 </div>
