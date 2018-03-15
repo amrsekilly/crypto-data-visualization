@@ -1,0 +1,11 @@
+# Site settings
+title: Website Title
+description: "Website description"
+
+
+# Build settings
+# Sass
+sass:
+    style: compressed
+markdown: kramdown
+permalink: pretty
