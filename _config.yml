@@ -2,7 +2,7 @@
 title: Blocksteam
 description: "Cryptocurrency data feed"
 # edit this to fix the deployment issue (relative path)
-baseurl: blockStream/
+baseurl: 
 
 # Build settings
 # Sass
