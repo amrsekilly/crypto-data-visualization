@@ -1,7 +1,49 @@
- <!-- Navigation -->
-<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-    <div class="container">
-        <p>Navbar</p>
+<div class="ui vertical inverted sidebar menu">
+    <a class="active item" href="/">Home</a>
+    <a class="item menu-details " href="/about" data-content="Blockstream: About">
+        <i class="left quote icon"></i>About</a>
+    <a class="item menu-details " href="/technology" data-content="Blockstream: Technologies">
+        <i class="cubes icon"></i>Technologies</a>
+    <a class="item menu-details " href="/blog" data-content="Blockstream: Blog">
+        <i class="newspaper icon"></i>Blog</a>
+
+</div>
+
+<header class="ui grid" id="main-site-header">
+    <div class="tablet computer only row">
+        <div class="ui fixed inverted huge menu">
+            <div class="ui container">
+                <div class="left header item" style="padding-left: 0;">
+                    <a id="menu-logo" href="/">
+                        <img class="brand-logo" src="/images/blockstream-emblem.png" />
+                        <img class="brand-name" src="/images/blockstream.png" />
+                    </a>
+                </div>
+                <div class="ui right menu">
+                    <a class="item menu-details " href="/about" data-content="Blockstream: About">
+                        <i class="left quote icon"></i>About</a>
+                    <a class="item menu-details " href="/technology" data-content="Blockstream: Technologies">
+                        <i class="cubes icon"></i>Technologies</a>
+                    <a class="item menu-details " href="/blog" data-content="Blockstream: Blog">
+                        <i class="newspaper icon"></i>Blog</a>
+
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- /.container -->
-</nav>
+    <div class="mobile only row">
+        <div class="ui fixed inverted menu">
+            <div class="left header item">
+                <a id="menu-logo" href="/">
+                    <img class="brand-logo" src="/images/blockstream-emblem.png" />
+                    <img class="brand-name" src="/images/blockstream.png" />
+                </a>
+            </div>
+            <div class="ui right menu">
+                <a onclick="$('#sidebar-menu').sidebar('toggle');" class="ui right icon toc item">
+                    <i class="sidebar icon"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>

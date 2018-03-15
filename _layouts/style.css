@@ -1,1 +1,2 @@
-{% include css/bootstrap.min.css %}
+/* include the external css libraries */
+{% include css/tidy.min.css %}
