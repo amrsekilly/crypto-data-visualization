@@ -235,3 +235,12 @@ html {
 .mapboxgl-ctrl-bottom-right {
   display: none;
 }
+
+// marker styles 
+.marker {
+  display: block;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+}

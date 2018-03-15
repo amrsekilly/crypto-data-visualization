@@ -1,7 +1,115 @@
 <div class="ui vertical masthead aligned segment" id="home-banner">
   <div class="ui wide">
+    <!-- map section -->
     <div id='map'></div>
+    
     <script>
+      // locations data 
+      var geojson = {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "message": "< 500 GB",
+                "iconSize": 20
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  20.201469,
+                  9.712924
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {
+                "message": "< 500 GB",
+                "iconSize": 10
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  40.201469,
+                  9.712924
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {
+                "message": "< 1 TB",
+                "iconSize": 30
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -63.29223632812499,
+                  -18.28151823530889
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {
+                "message": "< 500 GB",
+                "iconSize": 10
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -53.29223632812499,
+                  -28.28151823530889
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {
+                "message": "< 500 GB",
+                "iconSize": 20
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  20.201469,
+                  19.712924
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {
+                "message": "< 500 GB",
+                "iconSize": 20
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  49.902097,
+                  64.205112
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {
+                "message": "< 500 GB",
+                "iconSize": 20
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -96.324462890625,
+                  40.024695711685304
+                ]
+              }
+            },
+          ]
+        };
+
+      // MapBox's API key
       mapboxgl.accessToken = 'pk.eyJ1IjoiYW1yc2VraWxseSIsImEiOiJjamVzbWwxeTc3MWV6MzNvMTA4NnE1cGRqIn0.gduDJTnrg9nbXGLe0GSiIw';
       var map = new mapboxgl.Map({
         container: 'map',
@@ -10,6 +118,54 @@
 
       // add the map controls 
       map.addControl(new mapboxgl.NavigationControl(), 'top-left');
+
+      // add markers to map
+      geojson.features.forEach(function (marker) {
+        // create a DOM element for the marker
+        var el = document.createElement('div');
+        el.className = 'marker';
+        el.style.backgroundColor = '#00FFBA';
+        el.style.width = marker.properties.iconSize + 'px';
+        el.style.height = marker.properties.iconSize + 'px';
+
+        el.addEventListener('click', function () {
+          window.alert(marker.properties.message);
+        });
+
+        // add marker to map
+        new mapboxgl.Marker(el)
+          .setLngLat(marker.geometry.coordinates)
+          .addTo(map);
+      });
     </script>
   </div>
 </div>
+
+
+<!-- map buttons section -->
+<!-- <div class="ui vertical masthead aligned segment" id="home-banner">
+  <div class="ui wide">
+    <div class="ui grid" id="main-site-header">
+      <div class="">
+        <div class="ui inverted huge menu">
+          <div class="ui container">
+            <div class="left header item" style="padding-left: 100px;">
+              <a id="menu-logo" href="/">
+                <img class="brand-logo" src="{{site.baseurl}}/images/blockstream-emblem.png" />
+                <img class="brand-name" src="{{site.baseurl}}/images/blockstream.png" />
+              </a>
+            </div>
+            <div class="ui right menu">
+              <a class="item menu-details " href="/about" data-content="Blockstream: About">
+                <i class="left quote icon"></i>About</a>
+              <a class="item menu-details " href="/technology" data-content="Blockstream: Technologies">
+                <i class="cubes icon"></i>Technologies</a>
+              <a class="item menu-details " href="/blog" data-content="Blockstream: Blog">
+                <i class="newspaper icon"></i>Blog</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
