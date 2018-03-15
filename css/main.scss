@@ -5,3 +5,12 @@
 /*!
   The main styles for the website
  */
+
+// get the Noto Sans CJK SC font 
+@import url(//fonts.googleapis.com/earlyaccess/notosanssc.css);
+
+// universal settings
+html {
+  font-family: 'Noto Sans SC', sans-serif;
+}
+
