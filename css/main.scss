@@ -244,3 +244,29 @@ html {
   cursor: pointer;
   padding: 0;
 }
+
+// pop-up style
+// the entire popup
+.mapboxgl-popup {
+  border: 1px solid yellow;
+}
+// the content 
+.mapboxgl-popup-content {
+  min-width: 10vw;
+  min-height: 10vw;
+  font-size: 1em;
+  border: 1px solid red;
+  .exchange-logo {
+    max-width: 100px;
+  }
+  .exchange-country {
+    text-transform: uppercase;
+  }
+}
+
+.mapboxgl-popup-tip {
+  // margin-bottom: 20px;
+  margin-bottom: -15px;
+  padding-bottom: 0;
+  background-color: green;
+}

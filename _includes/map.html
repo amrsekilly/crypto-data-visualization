@@ -2,173 +2,234 @@
   <div class="ui wide">
     <!-- map section -->
     <div id='map'></div>
-    
-    <script>
-      // locations data 
-      var geojson = {
-          "type": "FeatureCollection",
-          "features": [
-            {
-              "type": "Feature",
-              "properties": {
-                "message": "< 500 GB",
-                "iconSize": 20
-              },
-              "geometry": {
-                "type": "Point",
-                "coordinates": [
-                  20.201469,
-                  9.712924
-                ]
-              }
-            },
-            {
-              "type": "Feature",
-              "properties": {
-                "message": "< 500 GB",
-                "iconSize": 10
-              },
-              "geometry": {
-                "type": "Point",
-                "coordinates": [
-                  40.201469,
-                  9.712924
-                ]
-              }
-            },
-            {
-              "type": "Feature",
-              "properties": {
-                "message": "< 1 TB",
-                "iconSize": 30
-              },
-              "geometry": {
-                "type": "Point",
-                "coordinates": [
-                  -63.29223632812499,
-                  -18.28151823530889
-                ]
-              }
-            },
-            {
-              "type": "Feature",
-              "properties": {
-                "message": "< 500 GB",
-                "iconSize": 10
-              },
-              "geometry": {
-                "type": "Point",
-                "coordinates": [
-                  -53.29223632812499,
-                  -28.28151823530889
-                ]
-              }
-            },
-            {
-              "type": "Feature",
-              "properties": {
-                "message": "< 500 GB",
-                "iconSize": 20
-              },
-              "geometry": {
-                "type": "Point",
-                "coordinates": [
-                  20.201469,
-                  19.712924
-                ]
-              }
-            },
-            {
-              "type": "Feature",
-              "properties": {
-                "message": "< 500 GB",
-                "iconSize": 20
-              },
-              "geometry": {
-                "type": "Point",
-                "coordinates": [
-                  49.902097,
-                  64.205112
-                ]
-              }
-            },
-            {
-              "type": "Feature",
-              "properties": {
-                "message": "< 500 GB",
-                "iconSize": 20
-              },
-              "geometry": {
-                "type": "Point",
-                "coordinates": [
-                  -96.324462890625,
-                  40.024695711685304
-                ]
-              }
-            },
-          ]
-        };
-
-      // MapBox's API key
-      mapboxgl.accessToken = 'pk.eyJ1IjoiYW1yc2VraWxseSIsImEiOiJjamVzbWwxeTc3MWV6MzNvMTA4NnE1cGRqIn0.gduDJTnrg9nbXGLe0GSiIw';
-      var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/amrsekilly/cjesn29l429772rphyzf63dbk'
-      });
-
-      // add the map controls 
-      map.addControl(new mapboxgl.NavigationControl(), 'top-left');
-
-      // add markers to map
-      geojson.features.forEach(function (marker) {
-        // create a DOM element for the marker
-        var el = document.createElement('div');
-        el.className = 'marker';
-        el.style.backgroundColor = '#00FFBA';
-        el.style.width = marker.properties.iconSize + 'px';
-        el.style.height = marker.properties.iconSize + 'px';
-
-        el.addEventListener('click', function () {
-          window.alert(marker.properties.message);
-        });
-
-        // add marker to map
-        new mapboxgl.Marker(el)
-          .setLngLat(marker.geometry.coordinates)
-          .addTo(map);
-        });
-
-        // disable map zoom when using scroll
-        map.scrollZoom.disable();
-    </script>
   </div>
 </div>
 
 
 <!-- map buttons section -->
-<!-- <div class="ui vertical masthead aligned segment" id="home-banner">
-  <div class="ui wide">
-    <div class="ui grid" id="main-site-header">
-      <div class="">
-        <div class="ui inverted huge menu">
-          <div class="ui container">
-            <div class="left header item" style="padding-left: 100px;">
-              <a id="menu-logo" href="/">
-                <img class="brand-logo" src="{{site.baseurl}}/images/blockstream-emblem.png" />
-                <img class="brand-name" src="{{site.baseurl}}/images/blockstream.png" />
-              </a>
-            </div>
-            <div class="ui right menu">
-              <a class="item menu-details " href="/about" data-content="Blockstream: About">
-                <i class="left quote icon"></i>About</a>
-              <a class="item menu-details " href="/technology" data-content="Blockstream: Technologies">
-                <i class="cubes icon"></i>Technologies</a>
-              <a class="item menu-details " href="/blog" data-content="Blockstream: Blog">
-                <i class="newspaper icon"></i>Blog</a>
-            </div>
+<div class="ui segment">
+  <div class="container">
+    <div class="ui form">
+      <form action="" class="inline fields">
+        <div class="field">
+          <div class="ui radio checkbox">
+            <label>Bitcoin</label>
+            <input type="radio" name="currency" checked="checked" value="bitcoin" onChange="changeCurrency()">
           </div>
         </div>
-      </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <label>Ethereum</label>
+            <input type="radio" name="currency" value="ethereum" onChange="changeCurrency()">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <label>Litecoin</label>
+            <input type="radio" name="currency" value="litecoin" onChange="changeCurrency()">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <label>Dash</label>
+            <input type="radio" name="currency" value="dash" onChange="changeCurrency()">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <label>Ripple</label>
+            <input type="radio" name="currency" value="ripple" onChange="changeCurrency()">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <label>Bitcoin Cash</label>
+            <input type="radio" name="currency" value="bitcoinCash" onChange="changeCurrency()">
+          </div>
+        </div>
+        
+      </form>
     </div>
   </div>
-</div> -->
+</div>
+
+
+<script>
+
+  // MapBox's API key
+  mapboxgl.accessToken = 'pk.eyJ1IjoiYW1yc2VraWxseSIsImEiOiJjamVzbWwxeTc3MWV6MzNvMTA4NnE1cGRqIn0.gduDJTnrg9nbXGLe0GSiIw';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/amrsekilly/cjesn29l429772rphyzf63dbk'
+  });
+
+  // add the map controls 
+  map.addControl(new mapboxgl.NavigationControl(), 'top-left');
+  // disable map zoom when using scroll
+  map.scrollZoom.disable();
+
+
+  var geojson = {
+      "type": "FeatureCollection",
+      "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "logo": "https://i.imgur.com/2IVXVHL.png",
+          "country": "Hong Kong",
+          "description": "< 500 GB",
+          "iconSize": 20
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.201469,
+            9.712924
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "logo": "https://i.imgur.com/2IVXVHL.png",
+          "country": "Hong Kong",
+          "description": "< 500 GB",
+          "iconSize": 10
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.201469,
+            9.712924
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "logo": "https://i.imgur.com/2IVXVHL.png",
+          "country": "Hong Kong",
+          "description": "< 1 TB",
+          "iconSize": 30
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -63.29223632812499,
+            -18.28151823530889
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "logo": "https://i.imgur.com/2IVXVHL.png",
+          "country": "Hong Kong",
+          "description": "< 500 GB",
+          "iconSize": 10
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -53.29223632812499,
+            -28.28151823530889
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "logo": "https://i.imgur.com/2IVXVHL.png",
+          "country": "Hong Kong",
+          "description": "< 500 GB",
+          "iconSize": 20
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.201469,
+            19.712924
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "logo": "https://i.imgur.com/2IVXVHL.png",
+          "country": "Hong Kong",
+          "description": "< 500 GB",
+          "iconSize": 20
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            49.902097,
+            64.205112
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "logo": "https://i.imgur.com/2IVXVHL.png",
+          "country": "Hong Kong",
+          "description": "< 500 GB",
+          "iconSize": 20
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -96.324462890625,
+            40.024695711685304
+          ]
+        }
+      },
+    ]
+};
+
+  // wait until the map is displayed
+  map.on('load', function () {
+
+    // Add a layer showing the places.
+    map.addLayer({
+      "id": "markers",
+      "type": "symbol",
+      "source": {
+        "type": "geojson",
+        "data": geojson
+      }
+    });
+
+    // loop over the exchange centers 
+    geojson.features.forEach(function (marker) {
+      // create a DOM element for the marker
+      var el = document.createElement('div');
+      el.className = 'marker';
+      el.style.backgroundColor = '#00FFBA';
+      el.style.width = marker.properties.iconSize + 'px';
+      el.style.height = marker.properties.iconSize + 'px';
+
+      // add marker to map
+      var m = new mapboxgl.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .setPopup(new mapboxgl.Popup({ 
+          offset: 25, 
+          closeButton: false
+          }) // add popups
+        .setHTML('<img class="exchange-logo" src=' + marker.properties.logo + '</img> <p class="exchange-country">' + marker.properties.country + '</p>'))
+        .addTo(map);
+    });
+  });
+
+  // handle the currency changes
+  function changeCurrency() {
+    let currency = document.forms[0];
+    for (var i = 0; i < currency.length; i++) {
+      if (currency[i].checked) {
+        console.log(currency[i].value);
+      }
+    }
+  }
+
+
+</script>
