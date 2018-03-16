@@ -266,7 +266,13 @@ html {
   }
 }
 
+// The tip of the pop-up message
 .mapboxgl-popup-tip {
-  margin-bottom: -15px;
+
   border-top-color: #00C0EC !important;
+  margin-bottom: -15px;
+  
+  // border-bottom-color: #00C0EC !important;
+  // border-left-color: #00C0EC !important;
+  // border-right-color: #00C0EC !important;
 }
