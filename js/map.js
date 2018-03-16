@@ -1,0 +1,196 @@
+
+ // import the cryptocurrency icons
+ const bitcoin = "images/icons/btc.png";
+ const ethereum = "images/icons/eth.png";
+ const litecoin = "images/icons/ltc.png";
+ const bch = "images/icons/bch.png";
+ const btcz = "images/icons/btcz.png";
+
+// make sure that the map is loaded to the page
+if ($("#map").length != 0) {
+
+  // MapBox's API key
+  mapboxgl.accessToken = 'pk.eyJ1IjoiYW1yc2VraWxseSIsImEiOiJjamVzbWwxeTc3MWV6MzNvMTA4NnE1cGRqIn0.gduDJTnrg9nbXGLe0GSiIw';
+  // create the Map with the custom styles I designed
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/amrsekilly/cjesn29l429772rphyzf63dbk'
+  });
+  // add the map controls 
+  map.addControl(new mapboxgl.NavigationControl(), 'top-left');
+  // disable map zoom when using scroll
+  map.scrollZoom.disable();
+
+  // the places' geojson data
+  var geojson = {
+    "type": "FeatureCollection",
+    "features": [{
+        "type": "Feature",
+        "properties": {
+          "logo": "https://i.imgur.com/2IVXVHL.png",
+          "currencies": [bitcoin, litecoin, bch, btcz],
+          "country": "Hong Kong",
+          "description": "< 500 GB",
+          "iconSize": 20
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.201469,
+            9.712924
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "logo": "https://i.imgur.com/2IVXVHL.png",
+          "currencies": [bitcoin, ethereum, bch, btcz],
+          "country": "Hong Kong",
+          "description": "< 500 GB",
+          "iconSize": 10
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            40.201469,
+            9.712924
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "logo": "https://i.imgur.com/2IVXVHL.png",
+          "country": "Hong Kong",
+          "currencies": [bitcoin, litecoin, ethereum, bch, btcz],
+          "description": "< 1 TB",
+          "iconSize": 30
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-63.29223632812499, -18.28151823530889]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "logo": "https://i.imgur.com/2IVXVHL.png",
+          "currencies": [bitcoin, ethereum, bch, btcz],
+          "country": "Hong Kong",
+          "description": "< 500 GB",
+          "iconSize": 10
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-53.29223632812499, -28.28151823530889]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "logo": "https://i.imgur.com/2IVXVHL.png",
+          "currencies": [bitcoin, litecoin, ethereum, bch],
+          "country": "Hong Kong",
+          "description": "< 500 GB",
+          "iconSize": 20
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            20.201469,
+            19.712924
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "logo": "https://i.imgur.com/2IVXVHL.png",
+          "currencies": [bitcoin, litecoin, ethereum, btcz],
+          "country": "Hong Kong",
+          "description": "< 500 GB",
+          "iconSize": 20
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            49.902097,
+            64.205112
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "logo": "https://i.imgur.com/2IVXVHL.png",
+          "currencies": [bitcoin, litecoin, bch, btcz],
+          "country": "Hong Kong",
+          "description": "< 500 GB",
+          "iconSize": 20
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-96.324462890625,
+            40.024695711685304
+          ]
+        }
+      },
+    ]
+  };
+
+  // wait until the map is displayed
+  map.on('load', function () {
+
+    // Add a layer showing the places.
+    map.addLayer({
+      "id": "markers",
+      "type": "symbol",
+      "source": {
+        "type": "geojson",
+        "data": geojson
+      }
+    });
+
+    // loop over the exchange centers 
+    geojson.features.forEach(function (marker) {
+      // create a DOM element for the marker
+      var el = document.createElement('div');
+      el.className = 'marker';
+      el.style.backgroundColor = '#00FFBA';
+      el.style.width = marker.properties.iconSize + 'px';
+      el.style.height = marker.properties.iconSize + 'px';
+
+      // add marker to map
+      var m = new mapboxgl.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .setPopup(new mapboxgl.Popup({
+            offset: 25,
+            closeButton: false
+          }) // add popups
+          .setHTML(`
+          <img class="exchange-logo" src="${marker.properties.logo}" />
+          <p class="exchange-country"> 
+            ${marker.properties.country}
+          </p>
+          ${
+            marker.properties.currencies
+            .map(currency => `<span><img src="${currency}" /></span>`)
+            .join('')
+          }
+        `))
+        .addTo(map);
+    });
+  });
+
+  // handle the currency changes
+  function changeCurrency() {
+    let currency = document.forms[0];
+    for (var i = 0; i < currency.length; i++) {
+      if (currency[i].checked) {
+        console.log(currency[i].value);
+      }
+    }
+  }
+
+}
