@@ -151,8 +151,8 @@ if ($("#map").length != 0) {
       var el = document.createElement('div');
       el.className = 'marker';
       el.style.backgroundColor = '#00FFBA';
-      el.style.width = marker.properties.iconSize + 'px';
-      el.style.height = marker.properties.iconSize + 'px';
+      el.style.width = marker.properties.iconSize/16 + 'em';
+      el.style.height = marker.properties.iconSize/16 + 'em';
 
       // add marker to map
       var m = new mapboxgl.Marker(el)
