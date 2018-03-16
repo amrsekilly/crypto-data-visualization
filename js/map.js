@@ -169,6 +169,7 @@ if ($("#map").length != 0) {
               </p>
               ${
                 marker.properties.currencies
+                // to make sure that each row contains at most 3 logos
                 .map((currency, i) => !(i%2) && i ? `<span><img src="${currency}" /></span><br>` : `<span><img src="${currency}" /></span>`)
                 .join('')
               }
