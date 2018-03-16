@@ -56,6 +56,13 @@
 
 <script>
 
+  // import the cryptocurrency icons
+  const bitcoin = "{{site.baseurl}}/images/icons/btc.png";
+  const ethereum = "{{site.baseurl}}/images/icons/eth.png";
+  const litecoin = "{{site.baseurl}}/images/icons/ltc.png";
+  const bch = "{{site.baseurl}}/images/icons/bch.png";
+  const btcz = "{{site.baseurl}}/images/icons/btcz.png";
+
   // MapBox's API key
   mapboxgl.accessToken = 'pk.eyJ1IjoiYW1yc2VraWxseSIsImEiOiJjamVzbWwxeTc3MWV6MzNvMTA4NnE1cGRqIn0.gduDJTnrg9nbXGLe0GSiIw';
   var map = new mapboxgl.Map({
@@ -76,6 +83,7 @@
         "type": "Feature",
         "properties": {
           "logo": "https://i.imgur.com/2IVXVHL.png",
+          "currencies": [bitcoin, litecoin, bch, btcz],
           "country": "Hong Kong",
           "description": "< 500 GB",
           "iconSize": 20
@@ -92,6 +100,7 @@
         "type": "Feature",
         "properties": {
           "logo": "https://i.imgur.com/2IVXVHL.png",
+          "currencies": [bitcoin, ethereum, bch, btcz],
           "country": "Hong Kong",
           "description": "< 500 GB",
           "iconSize": 10
@@ -109,6 +118,7 @@
         "properties": {
           "logo": "https://i.imgur.com/2IVXVHL.png",
           "country": "Hong Kong",
+          "currencies": [bitcoin, litecoin, ethereum, bch, btcz],
           "description": "< 1 TB",
           "iconSize": 30
         },
@@ -124,6 +134,7 @@
         "type": "Feature",
         "properties": {
           "logo": "https://i.imgur.com/2IVXVHL.png",
+          "currencies": [bitcoin, ethereum, bch, btcz],
           "country": "Hong Kong",
           "description": "< 500 GB",
           "iconSize": 10
@@ -140,6 +151,7 @@
         "type": "Feature",
         "properties": {
           "logo": "https://i.imgur.com/2IVXVHL.png",
+          "currencies": [bitcoin, litecoin, ethereum, bch],
           "country": "Hong Kong",
           "description": "< 500 GB",
           "iconSize": 20
@@ -156,6 +168,7 @@
         "type": "Feature",
         "properties": {
           "logo": "https://i.imgur.com/2IVXVHL.png",
+          "currencies": [bitcoin, litecoin, ethereum, btcz],
           "country": "Hong Kong",
           "description": "< 500 GB",
           "iconSize": 20
@@ -172,6 +185,7 @@
         "type": "Feature",
         "properties": {
           "logo": "https://i.imgur.com/2IVXVHL.png",
+          "currencies": [bitcoin, litecoin, bch, btcz],
           "country": "Hong Kong",
           "description": "< 500 GB",
           "iconSize": 20
@@ -216,7 +230,17 @@
           offset: 25, 
           closeButton: false
           }) // add popups
-        .setHTML('<img class="exchange-logo" src=' + marker.properties.logo + '</img> <p class="exchange-country">' + marker.properties.country + '</p>'))
+        .setHTML(`
+          <img class="exchange-logo" src="${marker.properties.logo}" />
+          <p class="exchange-country"> 
+            ${marker.properties.country}
+          </p>
+          ${
+            marker.properties.currencies
+            .map(currency => `<span><img src="${currency}" /></span>`)
+            .join('')
+          }
+        `))
         .addTo(map);
     });
   });
