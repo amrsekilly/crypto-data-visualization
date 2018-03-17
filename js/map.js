@@ -9,20 +9,8 @@
 // make sure that the map is loaded to the page
 if ($("#map").length != 0) {
 
-  // MapBox's API key
-  mapboxgl.accessToken = 'pk.eyJ1IjoiYW1yc2VraWxseSIsImEiOiJjamVzbWwxeTc3MWV6MzNvMTA4NnE1cGRqIn0.gduDJTnrg9nbXGLe0GSiIw';
-  // create the Map with the custom styles I designed
-  var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/amrsekilly/cjesn29l429772rphyzf63dbk'
-  });
-  // add the map controls 
-  map.addControl(new mapboxgl.NavigationControl(), 'top-left');
-  // disable map zoom when using scroll
-  map.scrollZoom.disable();
-
-  // the places' geojson data
-  var geojson = {
+  // the places' geojson data for each cryptocurrency
+  var bicoinData = {
     "type": "FeatureCollection",
     "features": [{
         "type": "Feature",
@@ -132,59 +120,173 @@ if ($("#map").length != 0) {
     ]
   };
 
-  // wait until the map is displayed
-  map.on('load', function () {
-
-    // Add a layer showing the places.
-    map.addLayer({
-      "id": "markers",
-      "type": "symbol",
-      "source": {
-        "type": "geojson",
-        "data": geojson
+  var ethereumData = {
+    "type": "FeatureCollection",
+    "features": [{
+      "type": "Feature",
+      "properties": {
+        "logo": "https://i.imgur.com/2IVXVHL.png",
+        "currencies": [bitcoin, litecoin, bch, btcz],
+        "country": "Hong Kong",
+        "iconSize": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.201469,
+          9.712924
+        ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "logo": "https://i.imgur.com/2IVXVHL.png",
+        "currencies": [bitcoin, ethereum, bch, btcz],
+        "country": "Korea",
+        "iconSize": 10
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.201469,
+          9.712924
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "logo": "https://i.imgur.com/2IVXVHL.png",
+        "country": "Thailand",
+        "currencies": [bitcoin, litecoin, ethereum, bch, btcz],
+        "iconSize": 30
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-63.29223632812499, -18.28151823530889]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "logo": "https://i.imgur.com/2IVXVHL.png",
+        "currencies": [bitcoin, ethereum, bch, btcz],
+        "country": "USA",
+        "iconSize": 10
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-78.29223632812499, -14.28151823530889]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "logo": "https://i.imgur.com/2IVXVHL.png",
+        "currencies": [bitcoin, litecoin, ethereum, btcz],
+        "country": "Chiang Mai",
+        "iconSize": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.902097,
+          32.205112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "logo": "https://i.imgur.com/2IVXVHL.png",
+        "currencies": [bitcoin, litecoin, bch, btcz],
+        "country": "Kansas",
+        "iconSize": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-54.324462890625,
+          40.024695711685304
+        ]
+      }
+    },
+    ]
+  };
+
+  // update the map with new data
+  function updateMap(map, geojson) {
+
+    // MapBox's API key
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYW1yc2VraWxseSIsImEiOiJjamVzbWwxeTc3MWV6MzNvMTA4NnE1cGRqIn0.gduDJTnrg9nbXGLe0GSiIw';
+    // create the Map with the custom styles I designed
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/amrsekilly/cjesn29l429772rphyzf63dbk'
     });
+    // add the map controls 
+    map.addControl(new mapboxgl.NavigationControl(), 'top-left');
+    // disable map zoom when using scroll
+    map.scrollZoom.disable();
 
-    // loop over the exchange centers 
-    geojson.features.forEach(function (marker) {
-      // create a DOM element for the marker
-      var el = document.createElement('div');
-      el.className = 'marker';
-      el.style.backgroundColor = '#00FFBA';
-      el.style.width = marker.properties.iconSize/16 + 'em';
-      el.style.height = marker.properties.iconSize/16 + 'em';
+    
+    // wait until the map is displayed
+    map.on('load', function () {
 
-      // add marker to map
-      var m = new mapboxgl.Marker(el)
-        .setLngLat(marker.geometry.coordinates)
-        .setPopup(new mapboxgl.Popup({
+      // Add a layer showing the places.
+      map.addLayer({
+        "id": "markers",
+        "type": "symbol",
+        "source": {
+          "type": "geojson",
+          "data": geojson
+        }
+      });
+
+      // loop over the exchange centers 
+      geojson.features.forEach(function (marker) {
+        // create a DOM element for the marker
+        var el = document.createElement('div');
+        el.className = 'marker';
+        el.style.backgroundColor = '#00FFBA';
+        el.style.width = marker.properties.iconSize / 16 + 'em';
+        el.style.height = marker.properties.iconSize / 16 + 'em';
+
+        // add marker to map
+        var m = new mapboxgl.Marker(el)
+          .setLngLat(marker.geometry.coordinates)
+          .setPopup(new mapboxgl.Popup({
             offset: 25,
             closeButton: false
           }) // add popups
-          .setHTML(`
+            .setHTML(`
             <div >
               <img class="exchange-logo" src="${marker.properties.logo}" />
               <p class="exchange-country"> 
                 ${marker.properties.country}
               </p>
               ${
-                marker.properties.currencies
+              marker.properties.currencies
                 // to make sure that each row contains at most 3 logos
-                .map((currency, i) => !(i%2) && i ? `<span><img src="${currency}" /></span><br>` : `<span><img src="${currency}" /></span>`)
+                .map((currency, i) => !(i % 2) && i ? `<span><img src="${currency}" /></span><br>` : `<span><img src="${currency}" /></span>`)
                 .join('')
               }
             </div>
           `))
-        .addTo(map);
+          .addTo(map);
+      });
+
+      // detect hovering over a marker 
+      // map.on('click', (e) => {
+      //   console.log("mouse moved: ", e.lngLat);
+
+      // });
+
     });
+  }
 
-    // detect hovering over a marker 
-    // map.on('click', (e) => {
-    //   console.log("mouse moved: ", e.lngLat);
-      
-    // });
-
-  });
+  // call the map function once to display the default data 
+  updateMap(map, bicoinData);
 
   // handle the currency changes
   function changeCurrency() {
@@ -192,6 +294,18 @@ if ($("#map").length != 0) {
     for (var i = 0; i < currency.length; i++) {
       if (currency[i].checked) {
         console.log(currency[i].value);
+        switch (currency[i].value) {
+          case 'bitcoin':
+            updateMap(map, bicoinData);
+            break;
+          case 'ethereum':
+            updateMap(map, ethereumData);
+            break;
+        
+          default:
+            updateMap(map, bicoinData);
+            break;
+        }
       }
     }
   }
