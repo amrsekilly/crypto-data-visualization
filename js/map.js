@@ -215,8 +215,13 @@ if ($("#map").length != 0) {
   };
 
   // update the map with new data
-  function updateMap(map, geojson) {
+  function updateMap(geojson) {
 
+    if (map) {
+      // remove the old GL Map to free the used resources before creating a new one
+      map.remove();
+    }
+    
     // MapBox's API key
     mapboxgl.accessToken = 'pk.eyJ1IjoiYW1yc2VraWxseSIsImEiOiJjamVzbWwxeTc3MWV6MzNvMTA4NnE1cGRqIn0.gduDJTnrg9nbXGLe0GSiIw';
     // create the Map with the custom styles I designed
@@ -286,24 +291,23 @@ if ($("#map").length != 0) {
   }
 
   // call the map function once to display the default data 
-  updateMap(map, bicoinData);
+  updateMap(bicoinData);
 
   // handle the currency changes
   function changeCurrency() {
     let currency = document.forms[0];
     for (var i = 0; i < currency.length; i++) {
       if (currency[i].checked) {
-        console.log(currency[i].value);
         switch (currency[i].value) {
           case 'bitcoin':
-            updateMap(map, bicoinData);
+            updateMap(bicoinData);
             break;
           case 'ethereum':
-            updateMap(map, ethereumData);
+            updateMap(ethereumData);
             break;
         
           default:
-            updateMap(map, bicoinData);
+            updateMap(bicoinData);
             break;
         }
       }
