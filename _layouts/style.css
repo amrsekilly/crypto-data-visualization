@@ -1,2 +1,3 @@
 /* include the external css libraries */
 {% include css/tidy.min.css %}
+{% include css/semantic.min.css %}

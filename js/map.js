@@ -147,6 +147,7 @@ if ($("#map").length != 0) {
 
     // loop over the exchange centers 
     geojson.features.forEach(function (marker) {
+      console.log("marker's data: ", marker);
       // create a DOM element for the marker
       var el = document.createElement('div');
       el.className = 'marker';
@@ -177,6 +178,13 @@ if ($("#map").length != 0) {
           `))
         .addTo(map);
     });
+
+    // detect hovering over a marker 
+    // map.on('click', (e) => {
+    //   console.log("mouse moved: ", e.lngLat);
+      
+    // });
+
   });
 
   // handle the currency changes
