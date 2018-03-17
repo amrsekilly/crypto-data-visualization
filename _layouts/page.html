@@ -2,11 +2,21 @@
 layout: default
 ---
 
-  <!-- Intro Header -->
-  <header class="intro">
-      <div class="intro-body">
-          <div class="container">
-            {{ content }}
-          </div>
+<div class="ui vertical masthead aligned segment" id="about">
+  <div class="ui one column centered grid">
+    <div class="twelve wide column">
+      <!-- the navigation buttons -->
+      <div class="three ui buttons">
+        <a class="ui large button  first active" href="index.html">About</a>
+        <a href="resources.html" class="ui large button">Resources</a>
+        <a href="exchanges.html" class="ui large button">Exchanges</a>
       </div>
-  </header>
+      <!-- //end of navigation buttons -->
+      <!-- About content -->
+      <div>
+        {{content}}
+      </div>
+      <!-- //end of about content -->
+    </div>
+  </div>
+</div>
