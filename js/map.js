@@ -147,7 +147,6 @@ if ($("#map").length != 0) {
 
     // loop over the exchange centers 
     geojson.features.forEach(function (marker) {
-      console.log("marker's data: ", marker);
       // create a DOM element for the marker
       var el = document.createElement('div');
       el.className = 'marker';

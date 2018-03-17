@@ -298,18 +298,29 @@ html {
 .cryptocurrencyButtons {
   position: relative;
   bottom: 80px;
+  .radio {
+    label {
+      font-size: 1.3em !important;
+      opacity: 0.5;
+    }
+  }
   
 }
 
-input[type="radio"] {
-  display: none !important;
+// Style the radio button 
+.ui.radio.checkbox input:checked~.box:after,
+.ui.radio.checkbox input:checked~label:after {
+  opacity: 1 !important;
+  background-color: #00ffb3 !important;
 }
 
-// .radio {
-//   input {
-//     display: inline-block;
-//     border: 1px solid red;
-//     color: red;
-//     background: red;
-//   }
-// }
+// style the dimensions of the radio button 
+.ui.radio.checkbox .box:after,
+.ui.radio.checkbox label:after {
+  // opacity: 1 !important;
+  top: -14px;
+  left: -16px;
+  width: 45px;
+  height: 45px;
+}
+
