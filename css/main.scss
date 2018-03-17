@@ -298,29 +298,56 @@ html {
 .cryptocurrencyButtons {
   position: relative;
   bottom: 80px;
-  .radio {
-    label {
-      font-size: 1.3em !important;
-      opacity: 0.5;
-    }
+  // Style the radio button 
+  .ui.radio.checkbox input:checked~.box:after,
+  .ui.radio.checkbox input:checked~label:after {
+    background-color: #00ffb3 !important;
   }
-  
+
+  // style the dimensions of the radio button 
+  .ui.radio.checkbox .box:after,
+  .ui.radio.checkbox label:after {
+    top: -14px;
+    left: -16px;
+    width: 45px;
+    height: 45px;
+  }
+  // style the labels
+  label {
+    color: rgba(255, 255, 255, 0.534) !important;
+  }
+
+  // each currency name label
+  .currencyLabel {
+    font-size: 1.3em !important;
+    margin-left: 50px;
+  }
+
+  // position the label before the input 
+  .ui.radio.checkbox label {
+    padding-left: 0;
+    padding-right: 1.5em;
+  }
+
+  .ui.checkbox input,
+  .ui.radio.checkbox label:before {
+    left: auto;
+    right: 0;
+  }
+
+  .ui.radio.checkbox label:after {
+    left: auto;
+    right: 1.2em;
+    // transition: background 0.3s ease 0s, all 0.3s ease 0s;
+  }
+
+  .ui.radio.checkbox input:checked+label:after {
+    left: auto;
+    right: -1em;
+    // transition: background 0.3s ease 0s, all 0.3s ease 0s;
+  }
+
+
 }
 
-// Style the radio button 
-.ui.radio.checkbox input:checked~.box:after,
-.ui.radio.checkbox input:checked~label:after {
-  opacity: 1 !important;
-  background-color: #00ffb3 !important;
-}
-
-// style the dimensions of the radio button 
-.ui.radio.checkbox .box:after,
-.ui.radio.checkbox label:after {
-  // opacity: 1 !important;
-  top: -14px;
-  left: -16px;
-  width: 45px;
-  height: 45px;
-}
 
