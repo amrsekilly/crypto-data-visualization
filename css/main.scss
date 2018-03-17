@@ -16,7 +16,7 @@ html {
 
 
  body {
-   background-color: #FFFFFF;
+   background-color: {{ site.data.colors.primary-white }};
  }
 
 .bg.blockstream-blue-light {
@@ -52,11 +52,11 @@ html {
  }
 
  .bg.blockstream-green {
-   background-color: #00ffb3;
+   background-color: {{ site.data.colors.markers-color }};
  }
 
  .txt.blockstream-green {
-   color: #00ffb3;
+   color: {{ site.data.colors.markers-color }};
  }
 
  .ui.fixed.inverted.menu {
@@ -74,7 +74,7 @@ html {
  }
 
  .ui.vertical.phosgreen.stripe.segment {
-   background-color: #00ffb3 !important;
+   background-color: {{ site.data.colors.markers-color }} !important;
    color: #FFFFFF !important;
  }
 
@@ -203,7 +203,7 @@ html {
    -ms-border-radius: 100%;
    -o-border-radius: 100%;
    border-radius: 100%;
-   border: 1px solid #00ffb3;
+   border: 1px solid {{ site.data.colors.markers-color }};
  }
 
  .ui.divider:not(.vertical):not(.horizontal) {
@@ -213,7 +213,7 @@ html {
  }
 
  .ui.divider.short:not(.vertical):not(.horizontal) {
-   border-top: 1px solid #00ffb3;
+   border-top: 1px solid {{ site.data.colors.markers-color }};
    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
    width: 100px;
  }
@@ -303,7 +303,7 @@ html {
   // Style the radio button 
   .ui.radio.checkbox input:checked~.box:after,
   .ui.radio.checkbox input:checked~label:after {
-    background-color: #00ffb3 !important;
+    background-color: {{ site.data.colors.markers-color }} !important;
   }
 
   // style the dimensions of the radio button 
