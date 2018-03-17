@@ -296,6 +296,20 @@ html {
 
 // style the buttons beneath the map 
 .cryptocurrencyButtons {
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  bottom: 80px;
+  
 }
+
+input[type="radio"] {
+  display: none !important;
+}
+
+// .radio {
+//   input {
+//     display: inline-block;
+//     border: 1px solid red;
+//     color: red;
+//     background: red;
+//   }
+// }
