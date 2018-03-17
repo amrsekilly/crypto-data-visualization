@@ -358,7 +358,7 @@ html {
   .buttons {
     border-bottom: 6px solid {{ site.data.colors.active-button }};
   }
-  button {
+  .button {
     // to have sharp edges matching the designs
     border-radius: 0 !important;
     // to have this white left border shown in designs 
