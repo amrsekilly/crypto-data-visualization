@@ -2,12 +2,12 @@
 <html>
     {% include head.html %}
     <body>
+        {% include nav.html %}
+        {% include map.html %}
         <div id="wrap">
-            {% include nav.html %}
-            {% include map.html %}
                 {{ content }}
             {% include footer.html %}
-            {% include js.html %}
         </div>
+        {% include js.html %}
     </body>
 </html>
