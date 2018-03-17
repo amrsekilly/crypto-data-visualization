@@ -350,10 +350,29 @@ html {
   }
 }
 
+// Page transitions' animations (to load a new page without reloading the tab)
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 10px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+// apply the animation to the content wrapper 
+#content-wrapper {
+  animation-duration: .38s;
+  animation-fill-mode: both;
+  animation-name: slideInUp;
+}
+
 
 // about.html styles
 // navigation buttons (about, resources, exchanges)
-#about {
+#default-page {
   margin-top: 40px;
   .buttons {
     border-bottom: 6px solid {{ site.data.colors.active-button }};
@@ -379,4 +398,5 @@ html {
     color: {{ site.data.colors.nav-buttons-primary }};
   }
 }
+
 
