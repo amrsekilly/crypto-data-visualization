@@ -156,21 +156,21 @@ a.header {
 body.fira,
 body.fira .ui.text.container,
 body.fira .ui.menu {
-  font-family: Helvetica, Arial, sans-serif
+  /* font-family: Helvetica, Arial, sans-serif */
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: Helvetica, Arial, sans-serif
+  /* font-family: Helvetica, Arial, sans-serif */
 }
 
 h1.ui.header,
 h2.ui.header,
 h3.ui.header,
 h4.ui.header {
-  font-family: Helvetica, Arial, sans-serif
+  /* font-family: Helvetica, Arial, sans-serif */
 }
 
 h4.ui.header {
@@ -178,12 +178,12 @@ h4.ui.header {
 }
 
 .ui.button {
-  font-family: Helvetica, Arial, sans-serif
+  /* font-family: Helvetica, Arial, sans-serif */
 }
 
 .ui.cards>.card>.content>.header,
 .ui.card>.content>.header {
-  font-family: Helvetica, Arial, sans-serif
+  /* font-family: Helvetica, Arial, sans-serif */
 }
 
 .display-none {
@@ -227,7 +227,7 @@ article.blockstream-post header h1.ui.header h1 {
 }
 
 #main-site-header #menu-logo {
-  font-family: 'Fira Mono' !important;
+  /* font-family: 'Fira Mono' !important; */
   font-weight: 400;
   padding-top: 2px;
   margin-top: -2px

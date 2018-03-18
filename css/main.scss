@@ -10,12 +10,9 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanssc.css);
 
 // universal settings
-html {
-  font-family: 'Noto Sans SC', sans-serif;
-}
-
-
  body {
+   font-family: 'Noto Sans SC',
+   sans-serif !important;
    background-color: {{ site.data.colors.primary-white }};
  }
 
@@ -396,6 +393,23 @@ html {
   .active {
     background: {{ site.data.colors.active-button }};
     color: {{ site.data.colors.nav-buttons-primary }};
+  }
+
+  // about page 
+  .column {
+    padding-bottom: 0;
+  }
+  .about-data {
+    img {
+      // for debugging
+      // border: 1px solid red;
+      margin-top: 10px;
+    }
+    a {
+      color: {{ site.data.colors.active-button }};
+      padding-bottom: 1px;
+      border-bottom: 1px solid {{ site.data.colors.active-button }};
+    }
   }
 }
 
