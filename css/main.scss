@@ -426,7 +426,14 @@
     color: {{ site.data.colors.active-button }};
     border-bottom: 2px solid {{ site.data.colors.active-button }};
   }
-  
+
+  .why-blockstream {
+    img {
+      margin-bottom: 30px;
+      max-height: 95px;
+    }
+  }
+
 }
 
 
