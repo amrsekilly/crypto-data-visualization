@@ -214,6 +214,9 @@ if ($("#map").length != 0) {
     ]
   };
 
+  // A flag to indicate whether the user clicked on the marker or not
+  var markerClicked = false;
+
   mapboxgl.accessToken = 'pk.eyJ1IjoiYW1yc2VraWxseSIsImEiOiJjamVzbWwxeTc3MWV6MzNvMTA4NnE1cGRqIn0.gduDJTnrg9nbXGLe0GSiIw';
   // create the Map with the custom styles I designed
   var map = new mapboxgl.Map({
@@ -322,16 +325,29 @@ if ($("#map").length != 0) {
     }
 
     map.on('mouseenter', 'markers', function (e) {
-      showPopup(e);
+      if (!markerClicked) {
+        showPopup(e);
+      }
     });
 
-    // map.on("click", 'markers', function (e) {
-    //   showPopup(e);
-    // });
+    map.on("click", 'markers', function (e) {
+      showPopup(e);
+      markerClicked = true;
+    });
+
+    map.on("mousedown", function (e) {
+      if (markerClicked) {
+        map.getCanvas().style.cursor = '';
+        popup.remove();
+        markerClicked = false;
+      }
+    });
 
     map.on('mouseleave', 'markers', function () {
-      map.getCanvas().style.cursor = '';
-      popup.remove();
+      if (!markerClicked) {
+          map.getCanvas().style.cursor = '';
+          popup.remove();
+      }
     });
   });
 
