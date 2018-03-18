@@ -367,9 +367,12 @@
 }
 
 
-// about.html styles
+// all default pages
 // navigation buttons (about, resources, exchanges)
 #default-page {
+  .header {
+     color: {{ site.data.colors.nav-buttons-primary }};
+   }
   margin-top: 40px;
   .buttons {
     border-bottom: 6px solid {{ site.data.colors.active-button }};
@@ -398,6 +401,10 @@
   // about page 
   .column {
     padding-bottom: 0;
+    
+  }
+  .grid {
+    margin-bottom: 10px;
   }
   .about-data {
     img {
@@ -411,6 +418,15 @@
       border-bottom: 1px solid {{ site.data.colors.active-button }};
     }
   }
+
+  // why blocksream and ice?
+  .divider {
+    width: 100%;
+    margin-top: 1px;
+    color: {{ site.data.colors.active-button }};
+    border-bottom: 2px solid {{ site.data.colors.active-button }};
+  }
+  
 }
 
 
