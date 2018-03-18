@@ -224,6 +224,12 @@ if ($("#map").length != 0) {
   map.addControl(new mapboxgl.NavigationControl(), 'top-left');
   // disable map zoom when using scroll
   map.scrollZoom.disable();
+  // disable the double click zoom
+  // map.doubleClickZoom.disable();
+  // disable the touch to zoom on phones 
+  map.touchZoomRotate.disable();
+  // disable scrolling on mobile devices 
+  // map.dragPan.disable();
 
   // add the legend to the map 
   var legend = document.getElementById('legend');
