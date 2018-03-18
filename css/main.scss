@@ -223,7 +223,7 @@
 #map {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 700px;
   top: 20px;
 }
 
@@ -233,14 +233,6 @@
   display: none;
 }
 
-// marker styles 
-.marker {
-  display: block;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  padding: 0;
-}
 
 // pop-up style
 // the entire popup
@@ -338,7 +330,7 @@
 
   // each currency name label
   .currencyLabel {
-    font-size: 1.3em !important;
+    font-size: 1.2em !important;
     margin-left: 50px;
   }
 
