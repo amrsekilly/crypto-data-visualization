@@ -214,72 +214,100 @@ if ($("#map").length != 0) {
     ]
   };
 
+  mapboxgl.accessToken = 'pk.eyJ1IjoiYW1yc2VraWxseSIsImEiOiJjamVzbWwxeTc3MWV6MzNvMTA4NnE1cGRqIn0.gduDJTnrg9nbXGLe0GSiIw';
+  // create the Map with the custom styles I designed
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/amrsekilly/cjesn29l429772rphyzf63dbk'
+  });
+  // add the map controls 
+  map.addControl(new mapboxgl.NavigationControl(), 'top-left');
+  // disable map zoom when using scroll
+  map.scrollZoom.disable();
+
   // update the map with new data
   function updateMap(geojson) {
 
-    if (map) {
-      // remove the old GL Map to free the used resources before creating a new one
-      map.remove();
-    }
+    // if (map) {
+    //   // remove the old GL Map to free the used resources before creating a new one
+    //   map.remove();
+    // }
     
     // MapBox's API key
-    mapboxgl.accessToken = 'pk.eyJ1IjoiYW1yc2VraWxseSIsImEiOiJjamVzbWwxeTc3MWV6MzNvMTA4NnE1cGRqIn0.gduDJTnrg9nbXGLe0GSiIw';
-    // create the Map with the custom styles I designed
-    var map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/amrsekilly/cjesn29l429772rphyzf63dbk'
-    });
-    // add the map controls 
-    map.addControl(new mapboxgl.NavigationControl(), 'top-left');
-    // disable map zoom when using scroll
-    map.scrollZoom.disable();
 
     
     // wait until the map is displayed
     map.on('load', function () {
 
+      // // check if the layer exists 
+      // if (getLayer("markers")) {
+      //   // remove it 
+      //   map.removeLayer("markers");
+      // }
+      
       // Add a layer showing the places.
       map.addLayer({
         "id": "markers",
-        "type": "symbol",
+        "type": "circle",
+        "paint": {
+          "circle-radius": {
+            property: "iconSize",
+            stops: [
+              [10, 8],
+              [20, 13],
+              [30, 15]
+            ]
+          },
+          "circle-color": "#00FFBA",
+        },
+        "layout": {
+          "visibility": "visible",
+        },
         "source": {
           "type": "geojson",
-          "data": geojson
+          "data": geojson,
         }
       });
 
-      // loop over the exchange centers 
-      geojson.features.forEach(function (marker) {
-        // create a DOM element for the marker
-        var el = document.createElement('div');
-        el.className = 'marker';
-        el.style.backgroundColor = '#00FFBA';
-        el.style.width = marker.properties.iconSize / 16 + 'em';
-        el.style.height = marker.properties.iconSize / 16 + 'em';
+      // geojson.features.forEach(function (marker) {
+       
+      //   var width = marker.properties.iconSize;
+      //   console.log("marker: ", width);
+      //   map.setPaintProperty("markers", "circle-radius", width);
+      // });
 
-        // add marker to map
-        var m = new mapboxgl.Marker(el)
-          .setLngLat(marker.geometry.coordinates)
-          .setPopup(new mapboxgl.Popup({
-            offset: 25,
-            closeButton: false
-          }) // add popups
-            .setHTML(`
-            <div >
-              <img class="exchange-logo" src="${marker.properties.logo}" />
-              <p class="exchange-country"> 
-                ${marker.properties.country}
-              </p>
-              ${
-              marker.properties.currencies
-                // to make sure that each row contains at most 3 logos
-                .map((currency, i) => !(i % 2) && i ? `<span><img src="${currency}" /></span><br>` : `<span><img src="${currency}" /></span>`)
-                .join('')
-              }
-            </div>
-          `))
-          .addTo(map);
-      });
+      // // loop over the exchange centers 
+      // geojson.features.forEach(function (marker) {
+      //   // create a DOM element for the marker
+      //   var el = document.createElement('div');
+      //   el.className = 'marker';
+      //   el.style.backgroundColor = '#00FFBA';
+      //   el.style.width = marker.properties.iconSize / 16 + 'em';
+      //   el.style.height = marker.properties.iconSize / 16 + 'em';
+
+      //   // add marker to map
+      //   var m = new mapboxgl.Marker(el)
+      //     .setLngLat(marker.geometry.coordinates)
+      //     .setPopup(new mapboxgl.Popup({
+      //       offset: 25,
+      //       closeButton: false
+      //     }) // add popups
+      //       .setHTML(`
+      //       <div >
+      //         <img class="exchange-logo" src="${marker.properties.logo}" />
+      //         <p class="exchange-country"> 
+      //           ${marker.properties.country}
+      //         </p>
+      //         ${
+      //         marker.properties.currencies
+      //           // to make sure that each row contains at most 3 logos
+      //           .map((currency, i) => !(i % 2) && i ? `<span><img src="${currency}" /></span><br>` : `<span><img src="${currency}" /></span>`)
+      //           .join('')
+      //         }
+      //       </div>
+      //     `))
+      //     .addTo(map);
+      // });
 
       // detect hovering over a marker 
       // map.on('click', (e) => {
