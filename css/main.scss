@@ -276,6 +276,26 @@
   // border-right-color: #00C0EC !important;
 }
 
+// map's legend 
+.legend {
+   background-color: transparent;
+   position: absolute;
+   top: 60px;
+   right: 30px;
+   z-index: 1;
+  span {
+    color: white;
+    margin-right: 20px;
+  }
+  .circle {
+    position: relative;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    background-color: {{ site.data.colors.markers-color }};
+  }
+}
+
 // top logo for powered by 
 .top-logo {
   position: absolute;

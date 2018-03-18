@@ -225,6 +225,26 @@ if ($("#map").length != 0) {
   // disable map zoom when using scroll
   map.scrollZoom.disable();
 
+  // add the legend to the map 
+  var legend = document.getElementById('legend');
+
+  [{
+    size: 30,
+    text: "< 1TB"
+  },
+    {
+      size: 25,
+      text: "< 500GB"
+    },
+    {
+      size: 16,
+      text: "< 500GB"
+    }].forEach(function (radius) {
+    legend.insertAdjacentHTML('beforeend', '<span class="circle" style="width:' + radius.size + 'px;top: ' + radius.size / 5 + 'px;height:' + radius.size + 'px;"></span><span>'+ radius.text +'</span>');
+  });
+
+
+
   // update the map with new data
   function updateMap(geojson) {
 
