@@ -1,5 +1,5 @@
 <div class="ui vertical masthead aligned segment" id="home-banner">
-  <div class="ui wide" style="margin-bottom: -100px !important;">
+  <div class="ui wide" style="margin-bottom: -90px;">
     <!-- map section -->
     <div id='map'></div>
     <!-- the legend -->
@@ -52,6 +52,45 @@
     </div>
 
   </div>
-</div>
+  </div>
 
- 
+  <!-- Fiat Buttons section -->
+  <div class="ui stackable grid fiat-currency-container">
+    <div class="ui one column stackable center aligned form inverted fiat-currency middle aligned">
+      <form action="" class="inline fields">
+        <label>Fiat Currency</label>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="currency" checked="checked" value="usdt" onChange="changeCurrency()" />
+            <label class="currencyLabel">USDT</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="currency" value="usd" onChange="changeCurrency()" />
+            <label class="currencyLabel">USD</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="currency" value="eur" onChange="changeCurrency()" />
+            <label class="currencyLabel">EUR</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="currency" value="jpy" onChange="changeCurrency()" />
+            <label class="currencyLabel">JPY</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="currency" value="gbp" onChange="changeCurrency()" />
+            <label class="currencyLabel">GBP</label>
+          </div>
+        </div>
+  
+      </form>
+    </div>
+  </div>
+  
