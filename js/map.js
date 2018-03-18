@@ -244,151 +244,98 @@ if ($("#map").length != 0) {
   });
 
 
-
-  // update the map with new data
-  function updateMap(geojson) {
-
-    // if (map) {
-    //   // remove the old GL Map to free the used resources before creating a new one
-    //   map.remove();
-    // }
-    
-    // MapBox's API key
-
-    
-    // wait until the map is displayed
-    map.on('load', function () {
-
-      // // check if the layer exists 
-      // if (getLayer("markers")) {
-      //   // remove it 
-      //   map.removeLayer("markers");
-      // }
-      
-      // Add a layer showing the places.
-      map.addLayer({
-        "id": "markers",
-        "type": "circle",
-        "paint": {
-          "circle-radius": {
-            property: "iconSize",
-            stops: [
-              [10, 8],
-              [20, 13],
-              [30, 15]
-            ]
-          },
-          "circle-color": "#00FFBA",
+  // wait until the map is displayed
+  map.on('load', function () {
+    // Add a layer showing the places.
+    map.addLayer({
+      "id": "markers",
+      "type": "circle",
+      "paint": {
+        "circle-radius": {
+          property: "iconSize",
+          stops: [
+            [10, 8],
+            [20, 13],
+            [30, 15]
+          ]
         },
-        "layout": {
-          "visibility": "visible",
-        },
-        "source": {
-          "type": "geojson",
-          "data": geojson,
-        }
-      });
+        "circle-color": "#00FFBA",
+      },
+      "layout": {
+        "visibility": "visible",
+      },
+      "source": {
+        "type": "geojson",
+        "data": bicoinData,
+      }
+    });
 
-      // show the popup 
-      // Create a popup, but don't add it to the map yet.
-      var popup = new mapboxgl.Popup({
-        closeButton: false,
-        closeOnClick: false
-      });
+    // show the popup 
+    // Create a popup, but don't add it to the map yet.
+    var popup = new mapboxgl.Popup({
+      closeButton: false,
+      closeOnClick: false
+    });
 
-      map.on('mouseenter', 'markers', function (e) {
-        // Change the cursor style as a UI indicator.
-        map.getCanvas().style.cursor = 'pointer';
+    // to show the popup 
+    function showPopup(e) {
 
-        var coordinates = e.features[0].geometry.coordinates.slice();
-        var description = e.features[0].properties;
-        var regex = /\[\s*(.*?)\s*\]/g;
-        m = regex.exec(description.currencies);
-        var currencies = m[1].split(",");
+      // Change the cursor style as a UI indicator.
+      map.getCanvas().style.cursor = 'pointer';
+      var coordinates = e.features[0].geometry.coordinates.slice();
+      var description = e.features[0].properties;
+      var regex = /\[\s*(.*?)\s*\]/g;
+      m = regex.exec(description.currencies);
+      var currencies = m[1].split(",");
 
-        // Ensure that if the map is zoomed out such that multiple
-        // copies of the feature are visible, the popup appears
-        // over the copy being pointed to.
-        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-          coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-        }
+      // Ensure that if the map is zoomed out such that multiple
+      // copies of the feature are visible, the popup appears
+      // over the copy being pointed to.
+      while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+      }
 
-        // Populate the popup and set its coordinates
-        // based on the feature found.
-        popup.setLngLat(coordinates)
-          .setHTML(`
+      // Populate the popup and set its coordinates
+      // based on the feature found.
+      popup.setLngLat(coordinates)
+        .setHTML(`
             <div >
               <img class="exchange-logo" src="${ description.logo}" />
               <p class="exchange-country"> 
                 ${ description.country}
               </p>
              ${
-                currencies
-                // to make sure that each row contains at most 3 logos
-                .map((currency, i) => !(i % 2) && i ? `<span><img src=${currency} /></span><br>` : `<span><img src=${currency} /></span>`)
-                .join('')
-              }
+          currencies
+            // to make sure that each row contains at most 3 logos
+            .map((currency, i) => !(i % 2) && i ? `<span><img src=${currency} /></span><br>` : `<span><img src=${currency} /></span>`)
+            .join('')
+          }
             </div>
           `)
-          .addTo(map);
-      });
+        .addTo(map);
+    }
 
-      map.on('mouseleave', 'places', function () {
-        map.getCanvas().style.cursor = '';
-        popup.remove();
-      });
-
-      // geojson.features.forEach(function (marker) {
-       
-      //   var width = marker.properties.iconSize;
-      //   console.log("marker: ", width);
-      //   map.setPaintProperty("markers", "circle-radius", width);
-      // });
-
-      // // loop over the exchange centers 
-      // geojson.features.forEach(function (marker) {
-      //   // create a DOM element for the marker
-      //   var el = document.createElement('div');
-      //   el.className = 'marker';
-      //   el.style.backgroundColor = '#00FFBA';
-      //   el.style.width = marker.properties.iconSize / 16 + 'em';
-      //   el.style.height = marker.properties.iconSize / 16 + 'em';
-
-      //   // add marker to map
-      //   var m = new mapboxgl.Marker(el)
-      //     .setLngLat(marker.geometry.coordinates)
-      //     .setPopup(new mapboxgl.Popup({
-      //       offset: 25,
-      //       closeButton: false
-      //     }) // add popups
-      //       .setHTML(`
-      //       <div >
-      //         <img class="exchange-logo" src="${marker.properties.logo}" />
-      //         <p class="exchange-country"> 
-      //           ${marker.properties.country}
-      //         </p>
-      //         ${
-      //         marker.properties.currencies
-      //           // to make sure that each row contains at most 3 logos
-      //           .map((currency, i) => !(i % 2) && i ? `<span><img src="${currency}" /></span><br>` : `<span><img src="${currency}" /></span>`)
-      //           .join('')
-      //         }
-      //       </div>
-      //     `))
-      //     .addTo(map);
-      // });
-
-      // detect hovering over a marker 
-      // map.on('click', (e) => {
-      //   console.log("mouse moved: ", e.lngLat);
-
-      // });
-
+    map.on('mouseenter', 'markers', function (e) {
+      showPopup(e);
     });
+
+    // map.on("click", 'markers', function (e) {
+    //   showPopup(e);
+    // });
+
+    map.on('mouseleave', 'markers', function () {
+      map.getCanvas().style.cursor = '';
+      popup.remove();
+    });
+  });
+
+  // update the map with new data
+  // getojson is the new geojson data object
+  function updateMap(geojson) {
+    // get the current layer you're showing the markers on and update its data
+    map.getSource('markers').setData(geojson);
   }
 
-  // call the map function once to display the default data 
-  updateMap(bicoinData);
 
   // handle the currency changes
   function changeCurrency() {
@@ -396,6 +343,7 @@ if ($("#map").length != 0) {
     for (var i = 0; i < currency.length; i++) {
       if (currency[i].checked) {
         switch (currency[i].value) {
+          // Add more data sources to the cryptocurrency buttons 
           case 'bitcoin':
             updateMap(bicoinData);
             break;
@@ -410,5 +358,4 @@ if ($("#map").length != 0) {
       }
     }
   }
-
 }
