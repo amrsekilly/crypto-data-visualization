@@ -1,9 +1,22 @@
 $(document).ready(function() {
 
+
+  var $wrap = $("#wrap");
+  // to change the active tab 
+  function changeActiveTab() {
+    // manage the active button
+    var selectedPage = './' + window.location.pathname.split('/').pop() || "./";
+    $('#nav-buttons').find('a').each(function () {
+      $(this).toggleClass('active', $(this).attr('href') == selectedPage);
+    });
+  }
+
+  // select the active tab once the page is reloaded 
+  changeActiveTab();
+
   // The History API Management
   // For smooth page transitions
   // for moving between the pages
-  var $wrap = $("#wrap");
   $wrap.on("click", ".page-link", function (event) {
     event.preventDefault();
     if (window.location === this.href) {
@@ -22,9 +35,12 @@ $(document).ready(function() {
           return;
         }
         $wrap.html($(elem).html());
+        changeActiveTab();
       });
     });
   });
+
+
 
   //  Semantic UI settings 
   $('#slider').cycle({
