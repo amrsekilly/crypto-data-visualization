@@ -456,20 +456,22 @@ if ($("#map").length != 0) {
   // handle the currency changes
   function changeCurrency() {
     // cryptocurrency
-    let cryptocurrency = document.forms[0];
-    // fiat currency 
-    let fiatCurrency = document.forms[1]; 
-
+    let currency = document.forms[0];
+  
     // insert the data for the cryptocurrencies
-    for (var i = 0; i < cryptocurrency.length; i++) {
-      if (cryptocurrency[i].checked) {
-        switch (cryptocurrency[i].value) {
+    for (var i = 0; i < currency.length; i++) {
+      if (currency[i].checked) {
+        switch (currency[i].value) {
           // Add more data sources to the cryptocurrency buttons 
           case 'bitcoin':
             updateMap(bicoinData);
             break;
           case 'ethereum':
             updateMap(ethereumData);
+            break;
+
+          case 'usd':
+            updateMap(usdData);
             break;
         
           default:
@@ -478,23 +480,6 @@ if ($("#map").length != 0) {
         }
       }
     }
-
-    // insert the data for the fiat currencies 
-    for (var i = 0; i < fiatCurrency.length; i++) {
-      if (fiatCurrency[i].checked) {
-        switch (fiatCurrency[i].value) {
-          case 'usd':
-            updateMap(usdData);
-            break;
-            // load more data for the other coins in other cases below
-
-          default:
-            updateMap(bicoinData);
-            break;
-        }
-      }
-    }
-
 
   }
 }
