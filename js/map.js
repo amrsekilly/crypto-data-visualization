@@ -214,6 +214,100 @@ if ($("#map").length != 0) {
     ]
   };
 
+  var usdData = {
+    "type": "FeatureCollection",
+    "features": [{
+      "type": "Feature",
+      "properties": {
+        "logo": "https://i.imgur.com/2IVXVHL.png",
+        "currencies": [bitcoin, litecoin, bch, btcz],
+        "country": "Hong Kong",
+        "iconSize": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.201469,
+          -9.712924
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "logo": "https://i.imgur.com/2IVXVHL.png",
+        "currencies": [bitcoin, ethereum, bch, btcz],
+        "country": "Korea",
+        "iconSize": 10
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -40.201469,
+          -9.712924
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "logo": "https://i.imgur.com/2IVXVHL.png",
+        "country": "Thailand",
+        "currencies": [bitcoin, litecoin, ethereum, bch, btcz],
+        "iconSize": 30
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.29223632812499, -38.28151823530889]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "logo": "https://i.imgur.com/2IVXVHL.png",
+        "currencies": [bitcoin, ethereum, bch, btcz],
+        "country": "USA",
+        "iconSize": 10
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-68.29223632812499, -34.28151823530889]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "logo": "https://i.imgur.com/2IVXVHL.png",
+        "currencies": [bitcoin, litecoin, ethereum, btcz],
+        "country": "Chiang Mai",
+        "iconSize": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.902097,
+          12.205112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "logo": "https://i.imgur.com/2IVXVHL.png",
+        "currencies": [bitcoin, litecoin, bch, btcz],
+        "country": "Kansas",
+        "iconSize": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-44.324462890625,
+          10.024695711685304
+        ]
+      }
+    },
+    ]
+  };
+
   // A flag to indicate whether the user clicked on the marker or not
   var markerClicked = false;
 
@@ -361,10 +455,15 @@ if ($("#map").length != 0) {
 
   // handle the currency changes
   function changeCurrency() {
-    let currency = document.forms[0];
-    for (var i = 0; i < currency.length; i++) {
-      if (currency[i].checked) {
-        switch (currency[i].value) {
+    // cryptocurrency
+    let cryptocurrency = document.forms[0];
+    // fiat currency 
+    let fiatCurrency = document.forms[1]; 
+
+    // insert the data for the cryptocurrencies
+    for (var i = 0; i < cryptocurrency.length; i++) {
+      if (cryptocurrency[i].checked) {
+        switch (cryptocurrency[i].value) {
           // Add more data sources to the cryptocurrency buttons 
           case 'bitcoin':
             updateMap(bicoinData);
@@ -379,5 +478,23 @@ if ($("#map").length != 0) {
         }
       }
     }
+
+    // insert the data for the fiat currencies 
+    for (var i = 0; i < fiatCurrency.length; i++) {
+      if (fiatCurrency[i].checked) {
+        switch (fiatCurrency[i].value) {
+          case 'usd':
+            updateMap(usdData);
+            break;
+            // load more data for the other coins in other cases below
+
+          default:
+            updateMap(bicoinData);
+            break;
+        }
+      }
+    }
+
+
   }
 }

@@ -9,88 +9,93 @@
     <!-- call to action text -->
     <h3 class="ui center aligned header inverted callToAction"><a href="https://google.com">Click to see more information about participating cryptocurrency exchanges</a></h3>
     <!-- map buttons section -->
-    <div class="ui form inverted one column stackable center aligned page grid cryptocurrencyButtons">
-      <form action="" class="inline fields ">
-        <label>Cryptocurrency</label>
-        <div class="field">
-          <div class="ui radio checkbox">
-            <input type="radio" name="currency" checked="checked" value="bitcoin" onChange="changeCurrency()" />
-            <label class="currencyLabel">Bitcoin</label>
+    <div class="ui form inverted stackable center aligned grid cryptocurrencyButtons">
+      <form action="" style="width:100%;">
+        <div class="form sixteen wide column">
+          <div class="inline fields">
+            <label>Cryptocurrency</label>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="currency" checked="checked" value="bitcoin" onChange="changeCurrency()" />
+                <label class="currencyLabel">Bitcoin</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="currency" value="ethereum" onChange="changeCurrency()" />
+                <label class="currencyLabel">Ethereum</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="currency" value="litecoin" onChange="changeCurrency()" />
+                <label class="currencyLabel">Litecoin</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="currency" value="dash" onChange="changeCurrency()" />
+                <label class="currencyLabel">Dash</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="currency" value="ripple" onChange="changeCurrency()" />
+                <label class="currencyLabel">Ripple</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="currency" value="bitcoinCash" onChange="changeCurrency()" />
+                <label class="currencyLabel">Bitcoin Cash</label>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="field">
-          <div class="ui radio checkbox">
-            <input type="radio" name="currency" value="ethereum" onChange="changeCurrency()" />
-            <label class="currencyLabel">Ethereum</label>
+        
+
+        <div class=" column form fiat-currency-container">
+          <div class="inline fields">
+            <label>Fiat Currency</label>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="currency" value="usdt" onChange="changeCurrency()" />
+                <label class="currencyLabel">USDT</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="currency" value="usd" onChange="changeCurrency()" />
+                <label class="currencyLabel">USD</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="currency" value="eur" onChange="changeCurrency()" />
+                <label class="currencyLabel">EUR</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="currency" value="jpy" onChange="changeCurrency()" />
+                <label class="currencyLabel">JPY</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="currency" value="gbp" onChange="changeCurrency()" />
+                <label class="currencyLabel">GBP</label>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="field">
-          <div class="ui radio checkbox">
-            <input type="radio" name="currency" value="litecoin" onChange="changeCurrency()"  />
-            <label class="currencyLabel">Litecoin</label>
-          </div>
-        </div>
-        <div class="field">
-          <div class="ui radio checkbox">
-            <input type="radio" name="currency" value="dash" onChange="changeCurrency()" />
-            <label class="currencyLabel">Dash</label>
-          </div>
-        </div>
-        <div class="field">
-          <div class="ui radio checkbox">
-            <input type="radio" name="currency" value="ripple" onChange="changeCurrency()" />
-            <label class="currencyLabel">Ripple</label>
-          </div>
-        </div>
-        <div class="field">
-          <div class="ui radio checkbox">
-            <input type="radio" name="currency" value="bitcoinCash" onChange="changeCurrency()" />
-            <label class="currencyLabel">Bitcoin Cash</label>
-          </div>
-        </div>
+          
+
+
+
       </form>
     </div>
 
   </div>
   </div>
 
-  <!-- Fiat Buttons section -->
-  <div class="ui stackable grid fiat-currency-container">
-    <div class="ui one column stackable center aligned form inverted fiat-currency middle aligned">
-      <form action="" class="inline fields">
-        <label>Fiat Currency</label>
-        <div class="field">
-          <div class="ui radio checkbox">
-            <input type="radio" name="currency" checked="checked" value="usdt" onChange="changeCurrency()" />
-            <label class="currencyLabel">USDT</label>
-          </div>
-        </div>
-        <div class="field">
-          <div class="ui radio checkbox">
-            <input type="radio" name="currency" value="usd" onChange="changeCurrency()" />
-            <label class="currencyLabel">USD</label>
-          </div>
-        </div>
-        <div class="field">
-          <div class="ui radio checkbox">
-            <input type="radio" name="currency" value="eur" onChange="changeCurrency()" />
-            <label class="currencyLabel">EUR</label>
-          </div>
-        </div>
-        <div class="field">
-          <div class="ui radio checkbox">
-            <input type="radio" name="currency" value="jpy" onChange="changeCurrency()" />
-            <label class="currencyLabel">JPY</label>
-          </div>
-        </div>
-        <div class="field">
-          <div class="ui radio checkbox">
-            <input type="radio" name="currency" value="gbp" onChange="changeCurrency()" />
-            <label class="currencyLabel">GBP</label>
-          </div>
-        </div>
-  
-      </form>
-    </div>
-  </div>
-  
