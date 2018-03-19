@@ -54,6 +54,7 @@ $(document).ready(function() {
     })
     .slick({
       slidesToShow: 5,
+      draggable: false,
       slidesToScroll: 1,
       arrows: false,
       focusOnSelect: true,
