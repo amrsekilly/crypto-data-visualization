@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-    {% include head.html %}
+    {% include shared-views/head.html %}
     <body>
-        {% include nav.html %}
-        {% include map.html %}
+        {% include shared-views/nav.html %}
+        {% include shared-views/map.html %}
         <div id="wrap">
             {{ content }}
         </div>
-        {% include footer.html %}
-        {% include js.html %}
+        {% include shared-views/footer.html %}
+        {% include shared-views/js.html %}
     </body>
 </html>
