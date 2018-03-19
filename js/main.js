@@ -58,7 +58,7 @@ $(document).ready(function() {
       slidesToScroll: 1,
       arrows: false,
       focusOnSelect: true,
-      swipeToSlide: true,
+      swipeToSlide: false,
       infinite: true,
       centerMode: true,
       centerPadding: 0,
