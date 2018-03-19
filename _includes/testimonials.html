@@ -1,0 +1,35 @@
+<div class="ui stackable grid testimonials-slider">
+
+  <div class="sixteen wide column">
+    <h2 class="ui header">
+      Testimonials
+    </h2>
+    <div class="ui section divider"></div>
+  </div>
+
+
+  <!-- the images slider -->
+<div class="twelve wide centered column slider slider-nav">
+    {% for testimonial in site.data.testimonials %}
+      <div class="ui small circular image slider-img">
+          <img class="" src="{{ testimonial.image }}" alt="{{ testimonial.name }}" />
+      </div>
+    {% endfor %}
+  </div>
+  <!-- the quote slider -->
+    <div class="fourteen wide centered column center aligned slider slider-single">
+     {% for testimonial in site.data.testimonials %}
+      <div class="">
+        <blockquote class="ui testimonial">
+          <p class="ui quote">
+            {{ testimonial.quote }}
+          </p>
+        </blockquote>
+        <footer class="ui citation">
+          {{ testimonial.name }}
+        </footer>
+      </div>
+    {% endfor %}
+  </div>
+
+</div>

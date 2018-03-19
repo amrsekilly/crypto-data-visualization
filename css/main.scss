@@ -98,53 +98,6 @@
    color: #4C4C4C;
  }
 
- #next2 {
-   display: block;
-   position: absolute;
-   width: 50px;
-   height: 50px;
-   top: 45%;
-   right: 0;
-   -moz-border-radius: 50px;
-   -webkit-border-radius: 50px;
-   border-radius: 50px;
-   cursor: pointer;
-   z-index: 1000;
- }
-
- #prev2 {
-   display: block;
-   position: absolute;
-   width: 50px;
-   height: 50px;
-   top: 45%;
-   left: 0;
-   -moz-border-radius: 50px;
-   -webkit-border-radius: 50px;
-   border-radius: 50px;
-   radius: 50%;
-   cursor: pointer;
-   z-index: 1000;
- }
-
- #slider {
-   position: relative;
-   display: block;
-   width: 100%;
-   height: 100%;
-   margin: 0 auto;
- }
-
- #slider img.background {
-   position: absolute;
-   width: 100%;
-   height: 100%;
-   margin: 0;
-   top: 50%;
-   left: 50%;
-   margin-right: -50%;
- }
-
  .hidden.menu {
    display: none;
  }
@@ -452,6 +405,61 @@
     }
   }
 
+  // the testimonials section 
+  .testimonials-slider {
+    .js .slider-single>div:nth-child(1n+2) {
+      display: none
+    }
+    .slider-nav>div:nth-child(1n+2) {
+      display: none
+    }
+    .js .slider-single.slick-initialized>div:nth-child(1n+2) {
+      display: block
+    }
+    .slider-img {
+      position: relative !important;
+    }
+    .slider-nav .slick-slide {
+      cursor: pointer;
+    }
+    .slick-slide {
+      margin-left: 20px;
+      margin-top: 20px;
+      margin-bottom: 20px; // remove the grey outline that appears when you click on a certain slide 
+      outline: none;
+      img {
+        -webkit-filter: blur(3px);
+        /* Safari 6.0 - 9.0 */
+        filter: blur(3px);
+      }
+    }
+    .slick-slide.is-active img {
+      -webkit-filter: none;
+      /* Safari 6.0 - 9.0 */
+      filter: none;
+    }
+    .slick-slide.is-active img~img {
+      -webkit-filter: none;
+      /* Safari 6.0 - 9.0 */
+      filter: none;
+    } // arrows in slick
+    .slick-prev:after {
+      position: relative;
+      top: -120px;
+      // previous arrow
+      content: url('{{site.baseurl}}/images/prev.png');
+      color: {{ site.data.colors.nav-buttons-primary}};
+      font-size: 30px;
+    }
+    .slick-next:after {
+      position: relative;
+      top: -120px;
+      // next arrow
+      content: url('{{site.baseurl}}/images/next.png');
+      color: {{ site.data.colors.nav-buttons-primary }};
+      font-size: 30px;
+    }
+  }
 }
 
 

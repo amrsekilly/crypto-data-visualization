@@ -1,0 +1,36 @@
+# Put all the testimonials here in the following format
+- name: Brian
+  image: images/testimonials/faces/brian.jpg
+  quote: Brian Lorem ipsum dolor sit amet consectetur adipisicing elit.
+
+- name: Dan
+  image: images/testimonials/faces/dan.jpg
+  quote: Dan Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.
+
+- name: Guido
+  image: images/testimonials/faces/guido.jpg
+  quote: Guido Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet.
+
+- name: Helen
+  image: images/testimonials/faces/helen.jpg
+  quote: Helen Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.ipsum dolor sit amet consectetur adipisicing elit.
+
+- name: Jim
+  image: images/testimonials/faces/jim.jpg
+  quote: Jim Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dol. dolor sit amet consectetu.
+
+- name: Karin
+  image: images/testimonials/faces/karin.jpg
+  quote: Karin elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.ipsum dolor sit amet consectetur adipisicing elit.
+
+- name: Limor Fried
+  image: images/testimonials/faces/limor.jpg
+  quote: Lady Ada Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor dolor sit amet consectetu.
+
+- name: Linus Torvalds
+  image: images/testimonials/faces/linus.jpg
+  quote: Linus Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectet.
+
+- name: Sara
+  image: images/testimonials/faces/sara.jpg
+  quote: Sara sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet.

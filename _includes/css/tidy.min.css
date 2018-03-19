@@ -73,7 +73,7 @@ a.header {
 
 .quote.stripe.segment .grid .column {
   padding-top: 5em;
-  padding-bottom: 5em
+  /* padding-bottom: 5em */
 }
 
 .footer.segment {
