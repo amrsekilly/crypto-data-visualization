@@ -57,7 +57,7 @@ $(document).ready(function() {
       draggable: false,
       slidesToScroll: 1,
       arrows: false,
-      focusOnSelect: true,
+      focusOnSelect: false,
       swipeToSlide: false,
       infinite: true,
       centerMode: true,
