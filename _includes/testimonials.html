@@ -20,12 +20,15 @@
     <div class="fourteen wide centered column center aligned slider slider-single">
      {% for testimonial in site.data.testimonials %}
       <div class="">
-        <blockquote class="ui testimonial">
+        <blockquote class="curly-quotes">
           <p class="ui quote">
-            {{ testimonial.quote }}
+            <q>
+              {{ testimonial.quote }}
+              {{ testimonial.quote }}
+            </q>
           </p>
         </blockquote>
-        <footer class="ui citation">
+        <footer >
           {{ testimonial.name }}
         </footer>
       </div>

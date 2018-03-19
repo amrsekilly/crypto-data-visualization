@@ -407,6 +407,25 @@
 
   // the testimonials section 
   .testimonials-slider {
+    color: {{ site.data.colors.nav-buttons-primary}};
+    q {
+      quotes: '\201c' '\201d';
+      font-size: 2em;
+      line-height: 1.3em;
+    }
+    footer {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    q:before {
+      content: open-quote;
+    }
+
+    q:after {
+      content: close-quote;
+    }
+
     .js .slider-single>div:nth-child(1n+2) {
       display: none
     }
@@ -448,7 +467,6 @@
       top: -120px;
       // previous arrow
       content: url('{{site.baseurl}}/images/prev.png');
-      color: {{ site.data.colors.nav-buttons-primary}};
       font-size: 30px;
     }
     .slick-next:after {
@@ -456,7 +474,6 @@
       top: -120px;
       // next arrow
       content: url('{{site.baseurl}}/images/next.png');
-      color: {{ site.data.colors.nav-buttons-primary }};
       font-size: 30px;
     }
   }
