@@ -54,12 +54,14 @@ $(document).ready(function() {
     })
     .slick({
       slidesToShow: 5,
+      asNavFor: '.slider-single',
       draggable: false,
       slidesToScroll: 1,
       arrows: false,
       focusOnSelect: false,
       swipeToSlide: false,
       infinite: true,
+      speed: 200,
       centerMode: true,
       centerPadding: 0,
       responsive: [{
@@ -86,13 +88,14 @@ $(document).ready(function() {
   $('.slider-single').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
+    asNavFor: '.slider-nav',
     arrows: true,
     fade: false,
     adaptiveHeight: true,
     infinite: true,
-    useTransform: true,
-    speed: 400,
-    cssEase: 'cubic-bezier(0.77, 0, 0.18, 1)',
+    speed: 200,
+    // useTransform: true,
+    // cssEase: 'cubic-bezier(0.77, 0, 0.18, 1)',
     responsive: [{
       breakpoint: 420,
       settings: {
