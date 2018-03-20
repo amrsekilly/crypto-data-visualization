@@ -263,6 +263,11 @@
 .cryptocurrencyButtons {
   position: relative;
   bottom: 80px;
+
+  .main-currency-lable {
+    padding-left: 10vw;
+  }
+
   // Style the radio button 
   .ui.radio.checkbox input:checked~.box:after,
   .ui.radio.checkbox input:checked~label:after {
@@ -333,10 +338,14 @@
 }
 .fiat-currency-container {
   background: #313131;
-  border: 2px solid red !important;
+  padding-top: 30px;
+  padding-bottom: 20px;
   // width: 100vw !important;
 }
-
+// fix a responsiveness issue with the radio buttons on the top
+.form {
+  max-width: none !important;
+}
 
 // all default pages
 // navigation buttons (about, resources, exchanges)
@@ -478,5 +487,3 @@
     }
   }
 }
-
-
