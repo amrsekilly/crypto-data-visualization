@@ -10,3 +10,7 @@ sass:
     style: compressed
 markdown: kramdown
 permalink: pretty
+
+collections:
+    partners:
+        output: true

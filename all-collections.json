@@ -1,0 +1,10 @@
+---
+layout: none
+---
+{
+  "partners" : [
+    {% for partner in site.partners %}
+    "{{ partner.url | prepend: site.baseurl }}"{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}

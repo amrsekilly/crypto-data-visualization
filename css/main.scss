@@ -487,3 +487,59 @@
     }
   }
 }
+
+// the partners section
+.partner-div {
+  background-color: {{ site.data.colors.nav-buttons-primary }};
+  margin-left: 50px;
+  margin-bottom: 50px !important;
+  width: 50%;
+  // the logo
+  .image {
+    position: absolute;
+    // display: inline-block;
+    // vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    top: 20%;
+  }
+}
+.partner-div:after {
+  content: "";
+  display: block;
+  padding-bottom: 120%;
+}
+
+// infinite scrolling spinner
+.infinite-spinner {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background-color: #333;
+  margin: 60px auto;
+  -webkit-animation: scaleout 1.0s infinite ease-in-out;
+  animation: scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes scaleout {
+  0% {
+    -webkit-transform: scale(0.0)
+  }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes scaleout {
+  0% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  }
+  100% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
