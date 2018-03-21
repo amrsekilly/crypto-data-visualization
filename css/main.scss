@@ -489,6 +489,17 @@
 }
 
 // the partners section
+.floating-right {
+  position: absolute;
+  right: 2%;
+  top: 40px;
+  a {
+    color: {{ site.data.colors.nav-buttons-primary }};
+  }
+  .arrow {
+    color: {{ site.data.colors.active-button }};
+  }
+}
 .partner-div {
   background-color: {{ site.data.colors.nav-buttons-primary }};
   margin-left: 5%;
