@@ -5,9 +5,10 @@ $(document).ready(function() {
   // to change the active tab 
   function changeActiveTab() {
     // manage the active button
-    var selectedPage = './' + window.location.pathname.split('/').pop() || "./";
-    $('#nav-buttons').find('a').each(function () {
-      $(this).toggleClass('active', $(this).attr('href') == selectedPage);
+    var selectedPage =  window.location.pathname.split('/').pop();
+    var pageCategory = window.location.pathname.split('/')[window.location.pathname.split('/').length - 2];
+    $('#nav-buttons').find('a').each(function () {   
+      $(this).toggleClass('active', $(this).attr('href').split('/').slice(Math.max($(this).attr('href').split('/').length - 2)).join("/") == window.location.pathname.split('/').slice(Math.max(window.location.pathname.split('/').length - 2)).join("/"));
     });
   }
 

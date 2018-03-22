@@ -1,10 +1,10 @@
 
  // import the cryptocurrency icons
- const bitcoin = "images/icons/btc.png";
- const ethereum = "images/icons/eth.png";
- const litecoin = "images/icons/ltc.png";
- const bch = "images/icons/bch.png";
- const btcz = "images/icons/btcz.png";
+const bitcoin = "/market-data-project/images/icons/btc.png";
+const ethereum = "/market-data-project/images/icons/eth.png";
+const litecoin = "/market-data-project/images/icons/ltc.png";
+const bch = "/market-data-project/images/icons/bch.png";
+const btcz = "/market-data-project/images/icons/btcz.png";
 
 // make sure that the map is loaded to the page
 if ($("#map").length != 0) {

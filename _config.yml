@@ -1,5 +1,6 @@
 # Site settings
 title: Blockstream - Crypto Feed
+siteurl: http://127.0.0.1:4000
 description: "Cryptocurrency data feed"
 # edit this to fix the deployment issue (relative path)
 baseurl: /market-data-project
@@ -10,6 +11,10 @@ sass:
     style: compressed
 markdown: kramdown
 permalink: pretty
+
+plugins: [jekyll-paginate] 
+paginate: 2
+paginate_path: "/blog/page:num/"
 
 collections:
     partners:
