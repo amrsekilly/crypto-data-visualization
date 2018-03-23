@@ -1,20 +1,4 @@
-.ui.vertical.stripe .ui.text.container p {
-  font-size: 1em;
-  line-height: 1.8em
-}
-
-.ui[class*="very very padded"].segment {
-  padding: 5em
-}
-
-.ui[class*="very very padded"].segment.stripe {
-  padding: 5em 0
-}
-
-.ui.cards>.card>.extra {
-  border-top: 0 !important;
-  box-shadow: none
-}
+/* the blockstream styles */
 
 .pusher {
   display: flex;
@@ -67,15 +51,6 @@ a.header {
   font-size: 1.33em
 }
 
-.quote.stripe.segment {
-  padding: 0
-}
-
-.quote.stripe.segment .grid .column {
-  padding-top: 5em;
-  /* padding-bottom: 5em */
-}
-
 .footer.segment {
   padding: 5em 0
 }
@@ -106,101 +81,16 @@ a.header {
   float: left
 }
 
-.ui.bs-green.button {
-  background-color: #00ffb3;
-  color: #4c4c4c;
-  text-shadow: none;
-  background-image: none
-}
-
-.ui.bs-green.button {
-  box-shadow: 0 rgba(0, 255, 179, .15) inset
-}
-
-.ui.bs-green.button:hover {
-  background-color: #33ffc2;
-  color: #4c4c4c;
-  text-shadow: none
-}
-
-.ui.bs-green.button:focus {
-  background-color: #33ffc2;
-  color: #4c4c4c;
-  text-shadow: none
-}
-
-.ui.bs-green.button:active {
-  background-color: #33ffc2;
-  color: #4c4c4c;
-  text-shadow: none
-}
-
-.ui.medium.large.image {
-  width: 400px;
-  height: auto;
-  font-size: 1.14285714rem
-}
-
-.ui[class*="without margin"] {
-  margin: 0 !important
-}
-
-.ui[class*="without margin-top"] {
-  margin-top: 0 !important
-}
-
 .masthead h1.ui.smaller.header {
   font-size: 3.6em
-}
-
-body.fira,
-body.fira .ui.text.container,
-body.fira .ui.menu {
-  /* font-family: Helvetica, Arial, sans-serif */
-}
-
-h1,
-h2,
-h3,
-h4 {
-  /* font-family: Helvetica, Arial, sans-serif */
-}
-
-h1.ui.header,
-h2.ui.header,
-h3.ui.header,
-h4.ui.header {
-  /* font-family: Helvetica, Arial, sans-serif */
 }
 
 h4.ui.header {
   font-size: 1.5em
 }
 
-.ui.button {
-  /* font-family: Helvetica, Arial, sans-serif */
-}
-
-.ui.cards>.card>.content>.header,
-.ui.card>.content>.header {
-  /* font-family: Helvetica, Arial, sans-serif */
-}
-
-.display-none {
-  display: none !important
-}
-
-.unbordered .ui.card {
-  box-shadow: none
-}
-
 .inverted.segment .item {
   color: #fff !important
-}
-
-article.blockstream-post header h1.ui.header,
-article.blockstream-post header h1.ui.header h1 {
-  font-size: 2.3rem
 }
 
 #main-site-header {
@@ -227,7 +117,6 @@ article.blockstream-post header h1.ui.header h1 {
 }
 
 #main-site-header #menu-logo {
-  /* font-family: 'Fira Mono' !important; */
   font-weight: 400;
   padding-top: 2px;
   margin-top: -2px
@@ -326,53 +215,6 @@ footer .brand-name {
     max-width: 25em;
     margin: 0 auto 2em
   }
-}
-
-#team-cards .card .header {
-  font-size: 1em;
-  font-weight: 300;
-  margin-bottom: 0
-}
-
-#team-cards .card .content {
-  padding: 1em
-}
-
-#team-cards .card .meta {
-  font-size: .9em
-}
-
-#team-cards .ui.image {
-  width: 100%
-}
-
-.sidechain-demo {
-  min-height: 980px
-}
-
-@media screen and (max-width:1200px) {
-  .sidechain-demo {
-    min-height: 879px
-  }
-}
-
-@media screen and (max-width:992px) {
-  .sidechain-demo {
-    min-height: 765px
-  }
-}
-
-@media screen and (max-width:768px) {
-  .sidechain-demo {
-    min-height: 600px
-  }
-}
-
-a.anchor {
-  display: block;
-  position: relative;
-  top: -60px;
-  visibility: hidden
 }
 
 .ui.header:first-child {
