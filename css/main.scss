@@ -625,3 +625,22 @@
     opacity: 0;
   }
 }
+
+// the form styles 
+.form {
+  margin-top: 4vw;
+  input[type="text"],
+  textarea {
+    background-color: {{ site.data.colors.form-background }} !important;
+    border-radius: 0 !important;
+  }
+  textarea:focus,
+  input:focus {
+    outline: none !important;
+  }
+  .button {
+    background-color: {{ site.data.colors.active-button }} !important;
+    color: black !important;
+    font-size: 1.5em;
+  }
+}
