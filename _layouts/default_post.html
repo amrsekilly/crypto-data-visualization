@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<div class="ui vertical masthead aligned segment" id="default-page">
+  <div class="ui one column centered grid">
+    <div class="twelve wide column">
+      <!-- the navigation buttons -->
+      <div class="blog-main-nav">
+        <a 
+         class="page-link"
+         href="{{site.siteurl}}{{ site.baseurl }}/blog/"
+         title="{{site.title}}"
+        >
+          <h2 class="ui header">
+            <i class="angle left icon"></i>Back to Resources
+          </h2>
+        </a>
+      </div>
+      <!-- //end of navigation buttons -->
+      <!-- Page Content -->
+      <div id="content-wrapper">
+        {{content}}
+      </div>
+      <!-- //end of page content -->
+    </div>
+  </div>
+</div>
+
+<!-- to make sure that the page loads at the top -->
+<script>
+  $(document).ready(function () {
+    $(this).scrollTop(800);
+  });
+</script>

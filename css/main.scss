@@ -337,7 +337,7 @@
   margin-left: 50px;
 }
 .fiat-currency-container {
-  background: #313131;
+  background: {{ site.data.colors.primary-grey }};
   padding-top: 30px;
   padding-bottom: 20px;
   // width: 100vw !important;
@@ -546,6 +546,14 @@
     background: {{ site.data.colors.active-button }};
     a {
       color: black;
+    }
+  }
+
+  // the buttons for the blog post navigation
+  .blog-main-nav {
+    margin-bottom: 3vw;
+    .angle {
+      color: {{ site.data.colors.primary-grey }};
     }
   }
 }
