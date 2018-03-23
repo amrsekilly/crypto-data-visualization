@@ -7,53 +7,13 @@
  */
 
 // get the Noto Sans CJK SC font 
-@import url(//fonts.googleapis.com/earlyaccess/notosanssc.css);
+@import url('{{site.siteurl}}{{site.baseurl}}/css/notosanssc.css');
 
 // universal settings
  body {
    font-family: 'Noto Sans SC',
    sans-serif !important;
    background-color: {{ site.data.colors.primary-white }};
- }
-
-.bg.blockstream-blue-light {
-   background-color: #7EE0FF;
- }
-
- .txt.blockstream-blue-light {
-   color: #7EE0FF;
- }
-
- .bg.blockstream-blue {
-   background-color: #00CCFF;
- }
-
- .txt.blockstream-blue {
-   color: #00CCFF;
- }
-
- .bg.blockstream-blue-dark {
-   background-color: #002D3B;
- }
-
- .txt.blockstream-blue-dark {
-   color: #002D3B;
- }
-
- .bg.blockstream-blue-med {
-   background-color: #00789D;
- }
-
- .txt.blockstream-blue-med {
-   color: #00789D;
- }
-
- .bg.blockstream-green {
-   background-color: {{ site.data.colors.markers-color }};
- }
-
- .txt.blockstream-green {
-   color: {{ site.data.colors.markers-color }};
  }
 
  .ui.fixed.inverted.menu {
@@ -65,38 +25,10 @@
    color: #FFFFFF !important;
  }
 
- .ui.vertical.seablue.stripe.segment {
-   background-color: #00CCFF !important;
-   color: #FFFFFF !important;
- }
-
- .ui.vertical.phosgreen.stripe.segment {
-   background-color: {{ site.data.colors.markers-color }} !important;
-   color: #FFFFFF !important;
- }
-
- .ui.vertical.ltblue.stripe.segment {
-   background-color: #7EE0FF !important;
-   color: #FFFFFF !important;
- }
-
- .ui.vertical.drkblue.stripe.segment {
-   background-color: #002D3B !important;
-   color: #FFFFFF !important;
- }
-
- .ui.vertical.blackish.stripe.segment {
-   background-color: #00131a !important;
-   color: #FFFFFF !important;
- }
-
  .ui.inverted.header {
    font-weight: 600;
  }
 
- .italic {
-   color: #4C4C4C;
- }
 
  .hidden.menu {
    display: none;
@@ -118,17 +50,6 @@
    margin-right: 1.5em;
  }
 
- .overlay {
-   float: left;
-   margin: 0em 3em 1em 0em;
- }
-
- .overlay .menu {
-   position: relative;
-   left: 0;
-   transition: left 0.5s ease;
- }
-
  .main.menu.fixed {
    background-color: #FFFFFF;
    border: 1px solid #DDD;
@@ -143,32 +64,6 @@
    padding: 5em 0em;
  }
 
- .cards.container {
-   margin-top: 4em;
- }
-
- .ui.tiny.image {
-   -webkit-border-radius: 100%;
-   -moz-border-radius: 100%;
-   -ms-border-radius: 100%;
-   -o-border-radius: 100%;
-   border-radius: 100%;
-   border: 1px solid {{ site.data.colors.markers-color }};
- }
-
- .ui.divider:not(.vertical):not(.horizontal) {
-   border-top: 1px solid #00CCFF;
-   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-   width: 150px;
- }
-
- .ui.divider.short:not(.vertical):not(.horizontal) {
-   border-top: 1px solid {{ site.data.colors.markers-color }};
-   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-   width: 100px;
- }
-
-
 /* 
  Mapbox styles
 */
@@ -180,19 +75,23 @@
   top: 20px;
 }
 
+// styling the markers for the map
+ .ui.tiny.image {
+   -webkit-border-radius: 100%;
+   -moz-border-radius: 100%;
+   -ms-border-radius: 100%;
+   -o-border-radius: 100%;
+   border-radius: 100%;
+   border: 1px solid {{ site.data.colors.markers-color }};
+ }
+
 // remove the mapbox attribution 
 .mapboxgl-ctrl-bottom-left,
 .mapboxgl-ctrl-bottom-right {
   display: none;
 }
 
-
 // pop-up style
-// the entire popup
-.mapboxgl-popup {
-  // border: 1px solid yellow;
-  // border-radius: 0 !important;
-}
 // the content 
 .mapboxgl-popup-content {
   border-radius: 0 !important;
@@ -200,7 +99,6 @@
   min-height: 11vw;
   font-size: 1em;
   background-color: #00C0EC !important;
-  // border: 1px solid red;
   .exchange-logo {
     max-width: 100px;
   }
@@ -212,13 +110,7 @@
 
 // The tip of the pop-up message
 .mapboxgl-popup-tip {
-
   border-top-color: #00C0EC !important;
-  // margin-bottom: -15px;
-  
-  // border-bottom-color: #00C0EC !important;
-  // border-left-color: #00C0EC !important;
-  // border-right-color: #00C0EC !important;
 }
 
 // map's legend 
@@ -261,19 +153,17 @@
 
 // style the buttons beneath the map 
 .cryptocurrencyButtons {
+
   position: relative;
   bottom: 80px;
-
   .main-currency-lable {
     padding-left: 10vw;
   }
-
   // Style the radio button 
   .ui.radio.checkbox input:checked~.box:after,
   .ui.radio.checkbox input:checked~label:after {
     background-color: {{ site.data.colors.markers-color }} !important;
   }
-
   // style the dimensions of the radio button 
   .ui.radio.checkbox .box:after,
   .ui.radio.checkbox label:after {
@@ -302,13 +192,11 @@
   .ui.radio.checkbox label:after {
     left: auto;
     right: 1.2em;
-    // transition: background 0.3s ease 0s, all 0.3s ease 0s;
   }
 
   .ui.radio.checkbox input:checked+label:after {
     left: auto;
     right: -1em;
-    // transition: background 0.3s ease 0s, all 0.3s ease 0s;
   }
 }
 
@@ -340,7 +228,6 @@
   background: {{ site.data.colors.primary-grey }};
   padding-top: 30px;
   padding-bottom: 20px;
-  // width: 100vw !important;
 }
 // fix a responsiveness issue with the radio buttons on the top
 .form {
@@ -388,8 +275,6 @@
   }
   .about-data {
     img {
-      // for debugging
-      // border: 1px solid red;
       margin-top: 10px;
     }
     a {
@@ -501,7 +386,7 @@
     /* 50% 50% centers image in div */
     width: 37vw;
     height: 37vw;
-     // fixed side to make sure that the columns will collapse on smaller screens
+    // fixed side to make sure that the columns will collapse on smaller screens
     /* Extra small devices (phones, 600px and down) */
     @media only screen and (max-width: 600px) {
       width: 400px;
@@ -578,8 +463,6 @@
   // the logo
   .image {
     position: absolute;
-    // display: inline-block;
-    // vertical-align: middle;
     width: 100%;
     height: 100%;
     top: 20%;
