@@ -538,10 +538,10 @@
       margin-top: 10vw;
     }
   }
-  .text-right{
+  .odd{
     background: {{ site.data.colors.nav-buttons-primary }};
   }
-  .text-left {
+  .even {
     text-align: right;
     background: {{ site.data.colors.active-button }};
     a {

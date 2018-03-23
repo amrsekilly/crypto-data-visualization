@@ -4,53 +4,53 @@ layout: page
 
 ---
 
-
-<div class="content resources-container">
-  <div class="ui two column centered grid">
-    <!-- left image post -->
-    <div style="background: url('{{site.baseurl}}/images/mining1.jpg') 50% 50% no-repeat;"
-     class="column img-rect"></div>
-    <div class="column text-rect text-right">
-      <a href="https://google.com" class="">
-        <p class"post-category">Video, Press Release, Blog Post</p>
-
-        <h2 class="post-title">Download Data sheet</h2>
-
-        <p class="post-description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos amet quam asperiores esse iure autem. Facere, consectetur neque pariatur veritatis nesciunt debitis blanditiis deleniti quia magnam eius voluptatum, unde minima?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi natus voluptatum rerum delectus.
-        </p>
-
-        <i class="arrow right icon"></i>
-      </a>
-    </div>
-
-    <!-- right image post -->
-    <div class="column text-rect text-left">
-      <a href="https://google.com" class="">
-        <p class "post-category">Video, Press Release, Blog Post</p>
-    
-        <h2 class="post-title">Download Data sheet</h2>
-    
-        <p class="post-description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos amet quam asperiores esse iure autem. Facere, consectetur
-          neque pariatur veritatis nesciunt debitis blanditiis deleniti quia magnam eius voluptatum, unde minima?Lorem ipsum,
-          dolor sit amet consectetur adipisicing elit. Quasi natus voluptatum rerum delectus.
-        </p>
-    
-        <i class="arrow right icon"></i>
-      </a>
-    </div>
-    <div style="background: url('{{site.baseurl}}/images/mining2.jpg') 50% 50% no-repeat;" class="column img-rect"></div>
-
-  </div>
+<div class="resources-container">
+  <div class="content">
+    <div class="ui two column centered grid">
+      <!-- left image post -->
+      {% for post in paginator.posts %}
+      <div style="background: url('{{site.baseurl}}/images/mining1.jpg') 50% 50% no-repeat;" class="column img-rect"></div>
+      <div class="column text-rect {% cycle 'odd', 'even' %}">
+        <a href="https://google.com" class="">
+          <p class "post-category">Video, Press Release, Blog Post</p>
   
+          <h2 class="post-title">Download Data sheet</h2>
+  
+          <p class="post-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos amet quam asperiores esse iure autem. Facere, consectetur
+            neque pariatur veritatis nesciunt debitis blanditiis deleniti quia magnam eius voluptatum, unde minima?Lorem ipsum,
+            dolor sit amet consectetur adipisicing elit. Quasi natus voluptatum rerum delectus.
+          </p>
+  
+          <i class="arrow right icon"></i>
+        </a>
+      </div>
+      {% endfor %} {% if paginator.total_pages > 1 %}
+      <div class="pagination" style="display: none;">
+        {% if paginator.previous_page %} {% if paginator.page == 2 %}
+        <a href="{{ site.baseurl }}">&laquo; Prev</a>
+        {% else %}
+        <a href="{{ site.baseurl }}/blog/page{{ paginator.previous_page }}/">&laquo; Prev</a>
+        {% endif %} {% else %}
+        <span>&laquo; Prev</span>
+        {% endif %} {% if paginator.next_page %}
+        <a class='next' href="{{ site.baseurl }}/blog/page{{ paginator.next_page }}/">Next &raquo;</a>
+        {% else %}
+        <span class='next'>Next &raquo;</span>
+        {% endif %}
+      </div>
+      {% endif %}
+  
+    </div>
+  
+  </div>
 </div>
 
-<!-- <script src="{{ site.baseurl }}/js/jquery.jscroll.min.js"></script> -->
+<script src="{{ site.baseurl }}/js/jquery.jscroll.min.js"></script>
 
-<!-- <script>
+<script>
   $('.content').jscroll({
     contentSelector: ".content",
     nextSelector: '.next'
   });
-</script> -->
+</script>
