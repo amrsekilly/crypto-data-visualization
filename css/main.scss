@@ -490,6 +490,59 @@
   .exchanges-head {
     margin-bottom: 30px;
   }
+
+  // the resources page 
+  .resources-container {
+    margin-top: 50px;
+  }
+  // the image square
+  .img-rect {
+    background-size: cover !important;
+    /* 50% 50% centers image in div */
+    width: 37vw;
+    height: 37vw;
+     // fixed side to make sure that the columns will collapse on smaller screens
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+      width: 400px;
+      height: 400px;
+    }
+  }
+  // the post description 
+  .text-rect {
+    display: block;
+    background: {{ site.data.colors.nav-buttons-primary }};
+    width: 37vw;
+    height: 37vw;
+    @media only screen and (max-width: 600px) {
+      width: 400px;
+      height: 400px;
+    }
+    a {
+      color: white;
+    }
+    // common styles
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+
+    // arrow style 
+    .arrow {
+      color: {{ site.data.colors.active-button }};
+      font-size: 3.5em;
+      position: absolute;
+      right: 3vw;
+      bottom: 1vw;
+    }
+    .post-title {
+      margin-top: 10vw;
+    }
+  }
+  // for aligning the text inside the square 
+  .text-left {
+    text-align: right;
+  }
 }
 
 // the partners section
