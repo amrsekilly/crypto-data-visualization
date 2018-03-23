@@ -511,7 +511,6 @@
   // the post description 
   .text-rect {
     display: block;
-    background: {{ site.data.colors.nav-buttons-primary }};
     width: 37vw;
     height: 37vw;
     @media only screen and (max-width: 600px) {
@@ -529,7 +528,7 @@
 
     // arrow style 
     .arrow {
-      color: {{ site.data.colors.active-button }};
+      color: {{ site.data.colors.markers-color }};
       font-size: 3.5em;
       position: absolute;
       right: 3vw;
@@ -539,9 +538,15 @@
       margin-top: 10vw;
     }
   }
-  // for aligning the text inside the square 
+  .text-right{
+    background: {{ site.data.colors.nav-buttons-primary }};
+  }
   .text-left {
     text-align: right;
+    background: {{ site.data.colors.active-button }};
+    a {
+      color: black;
+    }
   }
 }
 
