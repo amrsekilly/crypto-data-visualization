@@ -1,7 +1,7 @@
 ---
 author: ceberhardt
 title: "MVVM with ReactiveCocoa"
-image: "ceberhardt/assets/featured/reactive-mvvm.jpg"
+image: /images/mining2.jpg
 categories: 
 tags:
   - featuredcolin

@@ -4,6 +4,7 @@ title: iOS 7 By Tutorials In Print
 categories: 
 summary: The book, iOS 7 By Tutorials, which I contributed four chapters to, is now in print.
 layout: default_post
+image: /images/mining2.jpg
 ---
 
 A few days ago I was happy to receive a weighty package through the post containing the following:

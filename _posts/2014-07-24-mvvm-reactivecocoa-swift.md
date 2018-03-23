@@ -3,7 +3,7 @@ author: ceberhardt
 title: "MVVM, Swift and ReactiveCocoa - It's all good!"
 categories: 
 tags:
-
+image: /images/mining2.jpg
 summary: "This blog post looks out how Swift makes the combination of ReactiveCocoa and MVVM even better ..."
 layout: default_post
 ---

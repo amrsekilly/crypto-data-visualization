@@ -3,7 +3,7 @@ author: ceberhardt
 title: "White Paper - HTML5 At Enterprise Scale"
 categories: 
 tags:
-
+image: /images/mining2.jpg
 summary: "Moving from desktop or plugin technologies (Flex, Silverlight, Java Applets) to HTML5 
 is a challenge for developers of large-scale enterprise applications. This White Paper discusses the challenges and offers potential solutions."
 layout: default_post

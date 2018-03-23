@@ -11,17 +11,15 @@ layout: page
       {% for post in paginator.posts %}
        {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
        {% if thecycle == 'odd' %}
-        <div style="background: url('{{site.baseurl}}/images/mining1.jpg') 50% 50% no-repeat;" class="column img-rect"></div>
+        <div style="background: url('{{site.baseurl}}{{post.image}}') 50% 50% no-repeat;" class="column img-rect"></div>
         <div class="column text-rect odd">
-          <a href="https://google.com" class="">
-            <p class "post-category">Video, Press Release, Blog Post</p>
+          <a href="{{ site.siteurl }}{{site.baseurl}}{{ post.url }}" class="">
+            <p class "post-category">{{post.tags | join: " "}}</p>
         
-            <h2 class="post-title">Download Data sheet</h2>
+            <h2 class="post-title">{{post.title}}</h2>
         
             <p class="post-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos amet quam asperiores esse iure autem. Facere, consectetur
-              neque pariatur veritatis nesciunt debitis blanditiis deleniti quia magnam eius voluptatum, unde minima?Lorem ipsum,
-              dolor sit amet consectetur adipisicing elit. Quasi natus voluptatum rerum delectus.
+               {{ post.content | truncatewords:50 | strip_html }}
             </p>
         
             <i class="arrow right icon"></i>
@@ -31,21 +29,19 @@ layout: page
 
        {% if thecycle == 'even' %}
       <div class="column text-rect even">
-        <a href="https://google.com" class="">
-          <p class "post-category">Video, Press Release, Blog Post</p>
+        <a href="{{ site.siteurl }}{{site.baseurl}}{{ post.url }}" class="">
+          <p class "post-category">{{post.tags | join: " "}}</p>
       
-          <h2 class="post-title">Download Data sheet</h2>
+          <h2 class="post-title">{{post.title}}</h2>
       
           <p class="post-description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos amet quam asperiores esse iure autem. Facere, consectetur
-            neque pariatur veritatis nesciunt debitis blanditiis deleniti quia magnam eius voluptatum, unde minima?Lorem ipsum,
-            dolor sit amet consectetur adipisicing elit. Quasi natus voluptatum rerum delectus.
+           {{ post.content | truncatewords:50 | strip_html }}
           </p>
       
           <i class="arrow right icon"></i>
         </a>
       </div>
-      <div style="background: url('{{site.baseurl}}/images/mining1.jpg') 50% 50% no-repeat;" class="column img-rect"></div>
+      <div style="background: url('{{site.baseurl}}{{post.image}}') 50% 50% no-repeat;" class="column img-rect"></div>
       {% endif %}
       
       {% endfor %} {% if paginator.total_pages > 1 %}

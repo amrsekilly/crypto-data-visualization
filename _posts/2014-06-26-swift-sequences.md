@@ -1,7 +1,7 @@
 ---
 author: ceberhardt
 title: "Swift Sequences and Lazy Evaluation"
-image: "ceberhardt/assets/featured/sequence.jpg"
+image: /images/mining2.jpg
 categories: 
 tags:
   - featured

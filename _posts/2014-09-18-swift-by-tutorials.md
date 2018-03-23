@@ -2,6 +2,8 @@
 author: ceberhardt
 title: "Swift By Tutorials is Published"
 layout: default_post
+tags: Video, Press Relesase, Blog Post
+image: /images/mining1.jpg
 summary: "Apple released the first public beta of the Swift programming language just over three months ago. Within days of the release myself and Matt Galloway started working on our book Swift by Tutorials, which as of yesterday is finally finished and shipping!"
 ---
 

@@ -1,8 +1,7 @@
 ---
 author: ceberhardt
 title: Understanding JavaScript Object Creation Patterns
-image: "ceberhardt/assets/featured/JavaScriptObjectCreation.png"
-image-attribution: "image courtesy of <a href='http://www.flickr.com/photos/byronj/12637612753/sizes/z/'>Byron James</a>"
+image: /images/mining2.jpg
 tags: 
   - featuredcolin
 categories: 
