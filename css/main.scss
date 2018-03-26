@@ -180,6 +180,26 @@
   .ui.radio.checkbox input:checked~label:after {
     background-color: {{ site.data.colors.markers-color }} !important;
   }
+
+  .ui.checkbox .box:before,
+  .ui.checkbox label:before {
+    background: {{ site.data.colors.deselected-radio }};
+    border: none;
+    width: 21px;
+    height: 21px;
+  }
+
+  .ui.checkbox input:checked~.box:before,
+  .ui.checkbox input:checked~label:before {
+    background: transparent;
+    border: none;
+  }
+
+  .ui.radio.checkbox input:checked~.box:before,
+  .ui.radio.checkbox input:checked~label:before {
+    background-color: transparent;
+  }
+
   // style the dimensions of the radio button 
   .ui.radio.checkbox .box:after,
   .ui.radio.checkbox label:after {
@@ -271,7 +291,7 @@
 // fiat currencies 
 .currencyLabel {
   font-size: 1.2em !important;
-  margin-left: 50px;
+  margin-left: 74px;
 }
 .fiat-currency-container {
   background: {{ site.data.colors.primary-grey }};
