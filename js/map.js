@@ -10,7 +10,7 @@ const btcz = "/market-data-project/images/icons/btcz.png";
 if ($("#map").length != 0) {
 
   // the places' geojson data for each cryptocurrency
-  var bicoinData = {
+  var bitcoinData = {
     "type": "FeatureCollection",
     "features": [{
         "type": "Feature",
@@ -369,7 +369,7 @@ if ($("#map").length != 0) {
       },
       "source": {
         "type": "geojson",
-        "data": bicoinData,
+        "data": bitcoinData,
       }
     });
 
@@ -461,25 +461,37 @@ if ($("#map").length != 0) {
     // insert the data for the cryptocurrencies
     for (var i = 0; i < currency.length; i++) {
       if (currency[i].checked) {
-        switch (currency[i].value) {
-          // Add more data sources to the cryptocurrency buttons 
-          case 'bitcoin':
-            updateMap(bicoinData);
-            break;
-          case 'ethereum':
-            updateMap(ethereumData);
-            break;
-
-          case 'usd':
-            updateMap(usdData);
-            break;
-        
-          default:
-            updateMap(bicoinData);
-            break;
-        }
+        selectCurrency(currency[i].value);
       }
     }
+  }
 
+  function selectCurrency(currency) {
+    switch (currency) {
+      // Add more data sources to the cryptocurrency buttons 
+      case 'bitcoin':
+        updateMap(bitcoinData);
+        break;
+      case 'ethereum':
+        updateMap(ethereumData);
+        break;
+
+      case 'usd':
+        updateMap(usdData);
+        break;
+
+      default:
+        updateMap(bitcoinData);
+        break;
+    }
   }
 }
+
+$(document).ready(function () {
+  $('.currency-dropdown').dropdown({
+    onChange: function (value) {
+      console.log("new value: ", value);
+      selectCurrency(value);
+    }
+  });
+});

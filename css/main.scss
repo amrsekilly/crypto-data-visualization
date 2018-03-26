@@ -200,6 +200,39 @@
   }
 }
 
+// the styles for the dropdown menu 
+.dropdown-form {
+  background-color: #181818;
+  position: relative;
+  top: 3vw;
+  color: white;
+
+  .default.text,
+  .ui.form .field>.selection.dropdown {
+    color: white !important;
+  }
+  
+
+  .form {
+    width: 50%;
+  }
+
+  .selection.dropdown {
+    background-color: transparent;
+    text-align: center;
+    font-size: 1.5em;
+    min-width: 10em;
+    outline: none;
+  }
+
+  .dropdown.icon {
+    color: {{ site.data.colors.markers-color }};
+    float: left !important;
+    text-align: left;
+  }
+
+}
+
 // Page transitions' animations (to load a new page without reloading the tab)
 @keyframes slideInUp {
   from {

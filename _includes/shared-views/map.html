@@ -9,7 +9,7 @@
     <!-- call to action text -->
     <h3 class="ui center aligned header inverted callToAction"><a href="https://google.com">Click to see more information about participating cryptocurrency exchanges</a></h3>
     <!-- map buttons section -->
-    <div class="ui form inverted stackable center aligned grid cryptocurrencyButtons">
+    <div class="ui form inverted stackable center aligned grid cryptocurrencyButtons computer only">
       <form action="" style="width:100%;">
         <div class="form sixteen wide column">
           <div class="inline fields">
@@ -98,4 +98,39 @@
 
   </div>
   </div>
+
+
+<div class="ui centered grid dropdown-form">
+  <div class="two column tablet only mobile only row">
+    <div class="centered column">
+      <div class="ui inverted form">
+        <div class="field">
+          <div class="ui selection dropdown currency-dropdown">
+            <input type="hidden" name="selectedCurrency"
+            value="default" />
+            <i class="dropdown icon"></i>
+            <div class="default text">Bitcoin</div>
+            <div class="menu">
+              <!-- cryptocurrencies -->
+              <div class="selected item" data-value="default">Bitcoin</div>
+              <div class="item" data-value="ethereum">Ethereum</div>
+              <div class="item" data-value="litecoin">Litecoin</div>
+              <div class="item" data-value="dash">Dash</div>
+              <div class="item" data-value="ripple">Ripple</div>
+              <div class="item" data-value="bitcoinCash">Bitcoin Cash</div>
+              
+              <!-- fiat currencies -->
+              <div class="item" data-value="usdt">USDT</div>
+              <div class="item" data-value="usd">USD</div>
+              <div class="item" data-value="eur">EUR</div>
+              <div class="item" data-value="jpy">JPY</div>
+              <div class="item" data-value="gbp">GBP</div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
