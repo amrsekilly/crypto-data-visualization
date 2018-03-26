@@ -291,7 +291,7 @@
 // fiat currencies 
 .currencyLabel {
   font-size: 1.2em !important;
-  margin-left: 74px;
+  margin-left: 30px;
 }
 .fiat-currency-container {
   background: {{ site.data.colors.primary-grey }};
@@ -301,6 +301,22 @@
 // fix a responsiveness issue with the radio buttons on the top
 .form {
   max-width: none !important;
+}
+// to align the two radials rows.
+.fiat-first {
+  margin-left: 25px !important;
+}
+.fiat-second {
+  margin-left: 44px !important;
+}
+.fiat-third {
+  margin-left: 30px !important;
+}
+.fiat-fourth {
+  margin-left: 9px !important;
+}
+.fiat-fifth {
+  margin-left: 18px !important;
 }
 
 // all default pages
