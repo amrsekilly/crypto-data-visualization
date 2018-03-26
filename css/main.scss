@@ -131,7 +131,19 @@
     margin-right: 5px;
     background-color: {{ site.data.colors.markers-color }};
   }
+
+  @media only screen and (max-width: 991px) {
+    // reset position  
+    top: auto;
+    right: auto;
+    // new position 
+    bottom: 0;
+    left: 20vw;
+    padding-bottom: 30px;
+  }
+
 }
+
 
 // top logo for powered by 
 .top-logo {
@@ -147,6 +159,10 @@
   bottom: 100px;
   a {
     color: white;
+  }
+
+  @media only screen and (max-width: 991px) {
+    bottom: 150px;
   }
 }
 
