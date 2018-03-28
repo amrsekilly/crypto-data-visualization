@@ -1,7 +1,7 @@
 ---
-name: TIDEX
-logo: images/partners/partner.png
-link: https://google.com
+name: HUOBI
+logo: images/partners/huobi.png
+link: https://www.huobi.pro/
 ---
 
 <a class="sixteen wide mobile five wide tablet three wide computer column inverted partner-div" href="{{ page.link }}">

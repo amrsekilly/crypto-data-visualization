@@ -1,7 +1,7 @@
 ---
-name: TIDEX
-logo: images/partners/partner.png
-link: https://google.com
+name: COINCHECK
+logo: images/partners/coincheck.png
+link: https://coincheck.com/
 ---
 
 <a class="sixteen wide mobile five wide tablet three wide computer column inverted partner-div" href="{{ page.link }}">

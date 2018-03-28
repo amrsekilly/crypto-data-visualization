@@ -1,7 +1,7 @@
 ---
-name: TIDEX
-logo: images/partners/partner.png
-link: https://google.com
+name: BITSTAMP
+logo: images/partners/bitstamp.png
+link: https://www.bitstamp.net/
 ---
 
 <a class="sixteen wide mobile five wide tablet three wide computer column inverted partner-div" href="{{ page.link }}">

@@ -1,7 +1,7 @@
 ---
-name: BTC
-logo: images/partners/btc.png
-link: https://google.com
+name: OKCOIN
+logo: images/partners/okcoin.png
+link: https://www.okcoin.com/
 ---
 
 <a class="sixteen wide mobile five wide tablet three wide computer column inverted partner-div" href="{{ page.link }}">

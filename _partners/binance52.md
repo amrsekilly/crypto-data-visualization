@@ -1,7 +1,7 @@
 ---
-name: TIDEX
-logo: images/partners/partner.png
-link: https://google.com
+name: COINFLOOR 
+logo: images/partners/coinfloor.png
+link: https://www.coinfloor.co.uk/
 ---
 
 <a class="sixteen wide mobile five wide tablet three wide computer column inverted partner-div" href="{{ page.link }}">

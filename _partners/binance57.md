@@ -1,7 +1,7 @@
 ---
-name: TIDEX
-logo: images/partners/partner.png
-link: https://google.com
+name: CEX IO
+logo: images/partners/cexio.png
+link: https://cex.io/
 ---
 
 <a class="sixteen wide mobile five wide tablet three wide computer column inverted partner-div" href="{{ page.link }}">

@@ -1,7 +1,7 @@
 ---
-name: BTC
-logo: images/partners/btc.png
-link: https://google.com
+name: THE ROCK
+logo: images/partners/therock.png
+link: https://www.therocktrading.com/exchange/currency
 ---
 
 <a class="sixteen wide mobile five wide tablet three wide computer column inverted partner-div" href="{{ page.link }}">

@@ -1,7 +1,7 @@
 ---
-name: BTC
-logo: images/partners/btc.png
-link: https://google.com
+name: VAULTORO
+logo: images/partners/vaultoro.png
+link: https://www.vaultoro.com/
 ---
 
 <a class="sixteen wide mobile five wide tablet three wide computer column inverted partner-div" href="{{ page.link }}">

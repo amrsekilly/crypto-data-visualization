@@ -1,7 +1,7 @@
 ---
-name: BTC
-logo: images/partners/btc.png
-link: https://google.com
+name: GOPAX
+logo: images/partners/gopax.png
+link: https://www.gopax.co.kr/
 ---
 
 <a class="sixteen wide mobile five wide tablet three wide computer column inverted partner-div" href="{{ page.link }}">
