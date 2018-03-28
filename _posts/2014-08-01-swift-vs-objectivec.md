@@ -2,7 +2,7 @@
 author: ceberhardt
 title: "Swift Adoption Statistics"
 categories: 
-tags:
+tags: VIDEO
 image: /images/mining2.jpg
 
 summary: "It was just two months ago that Apple took us by surprise in releasing the Swift programming language. This blog post reflects on the first few months of Swift adoption."

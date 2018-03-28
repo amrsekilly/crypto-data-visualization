@@ -1,7 +1,7 @@
 ---
 author: ceberhardt
 title: Windows Phone App Studio - Shows Potential ...
-tags: Video, Press Relesase, Blog Post
+tags: PRESS RELEASE
 image: /images/mining2.jpg
 categories: 
 summary: A couple of days ago Microsoft announced Windows Phone App Studio, a web based tool for the rapid creation of Windows Phone applications. In this blog post I take this new technology for a spin to see what it's capable of, and the interesting potential it has for creating 'personal' apps.

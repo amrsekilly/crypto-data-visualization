@@ -2,7 +2,7 @@
 author: ceberhardt
 title: "The Game of Life with Functional Swift"
 layout: default_post
-tags: test tag, blog post
+tags: BLOG
 image: /images/mining2.jpg
 ---
 

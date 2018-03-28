@@ -2,6 +2,7 @@
 author: ceberhardt
 title: PropertyCross 1.3 Released
 categories: 
+tags: BLOG
 summary: PropertyCross has just announced a v1.3 release, which includes two new frameworks, a number of updates and an improved build system.
 layout: default_post
 image: /images/mining2.jpg

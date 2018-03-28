@@ -2,6 +2,7 @@
 author: ceberhardt
 title: iOS 7 By Tutorials In Print
 categories: 
+tags: BLOG
 summary: The book, iOS 7 By Tutorials, which I contributed four chapters to, is now in print.
 layout: default_post
 image: /images/mining2.jpg

@@ -2,8 +2,7 @@
 author: ceberhardt
 title: Understanding JavaScript Object Creation Patterns
 image: /images/mining2.jpg
-tags: 
-  - featuredcolin
+tags: FEATURED
 categories: 
 summary: This article explores the various ways you can create objects with the JavaScript language, and through this exploration finds that there is much to learn about the language!
 layout: default_post

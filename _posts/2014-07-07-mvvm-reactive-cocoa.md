@@ -3,8 +3,7 @@ author: ceberhardt
 title: "MVVM with ReactiveCocoa"
 image: /images/mining2.jpg
 categories: 
-tags:
-  - featuredcolin
+tags: FEATURED
 summary: "I've recently had a two-part tutorial published on Ray Wenderlich's website that details how ReactiveCocoa can be used to implement the MVVM pattern within iOS applications. "
 layout: default_post
 originalArticleLink: http://www.raywenderlich.com/74106/mvvm-tutorial-with-reactivecocoa-part-1
