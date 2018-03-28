@@ -462,6 +462,9 @@
   }
 
   // the resources page 
+  .post-category {
+    font-weight:700;
+  }
   .resources-container {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -491,6 +494,10 @@
     a {
       color: white;
     }
+
+    .post-description {
+      font-weight:100;
+    }
     // common styles
     padding-left: 5vw;
     padding-right: 5vw;
@@ -506,9 +513,11 @@
       bottom: 1vw;
     }
     .post-title {
-      margin-top: 10vw;
+      
     }
   }
+
+
   .odd{
     background: {{ site.data.colors.nav-buttons-primary }};
   }
