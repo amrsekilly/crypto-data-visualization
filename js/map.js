@@ -396,14 +396,167 @@ if ($("#map").length != 0) {
   var ethereumData = {
     "type": "FeatureCollection",
     "features": [
+      Bitso,
+      Bitstamp,
+      
+      BTCC,
+      CEXIO,
+      Coincheck,
+      
+      GoPax,
+      Huobi,
+      
+      Kraken,
+      OKCoin,
+      OKEx,
+      SurBTC,
+      SurBTC2,
+      SurBTC3,
+      TheRock,
+     
+      Zaif
+    ]
+  };
+
+  var bitcoinCashData = {
+    "type": "FeatureCollection",
+    "features": [
+      
+      Bitso,
+      Bitstamp,
+     
+      CEXIO,
+      Coincheck,
+      Coinfloor,
+      GoPax,
+      Huobi,
+      
+      Kraken,
+     
+      OKEx,
+      SurBTC,
+      SurBTC2,
+      SurBTC3,
+      TheRock,
+      Zaif
+    ]
+  };
+
+  var litecoinData = {
+    "type": "FeatureCollection",
+    "features": [
+      Bitbank,
+      Bitso,
+      Bitstamp,
+     
+      Coincheck,
+    
+      GoPax,
+      Huobi,
+     
+      Kraken,
+      OKCoin,
+      OKEx,
+      TheRock,
+    ]
+  };
+
+  var rippleData = {
+    "type": "FeatureCollection",
+    "features": [
+      Bitbank,
+      
+      Bitso,
+      Bitstamp,
+     
+      CEXIO,
+      Coincheck,
+    
+      Huobi,
+
+      Kraken,
+     
+      TheRock,
+    
+    ]
+  };
+
+  var dashData = {
+    "type": "FeatureCollection",
+    "features": [
+      CEXIO,
+      Coincheck,
+      Huobi,
+      Kraken,
+      OKEx
     ]
   };
 
   var usdData = {
     "type": "FeatureCollection",
     "features": [
+      Bitmex,
+
+      Bitstamp,
+
+      BTCC,
+      CEXIO,
+
+      Coinfloor,
+  
+      Kraken,
+      OKCoin,
+     
     ]
   };
+
+  var usdtData = {
+    "type": "FeatureCollection",
+    "features": [
+      Huobi,
+      ItBit,
+      OKEx,
+    ]
+  };
+
+  var eurData = {
+    "type": "FeatureCollection",
+    "features": [
+   
+      Bitstamp,
+   
+      CEXIO,
+   
+      Coinfloor,
+     
+      Kraken,
+    
+      TheRock
+    ]
+  };
+
+  var jpyData = {
+    "type": "FeatureCollection",
+    "features": [
+      Bitbank,
+   
+      BTCBox,
+   
+      Coincheck,
+   
+      Kraken,
+     
+      Zaif
+    ]
+  };
+
+  var gbpData = {
+    "type": "FeatureCollection",
+    "features": [
+      Coinfloor,
+    ]
+  };
+
 
   // A flag to indicate whether the user clicked on the marker or not
   var markerClicked = false;
@@ -565,18 +718,42 @@ if ($("#map").length != 0) {
 
   function selectCurrency(currency) {
     switch (currency) {
-      // Add more data sources to the cryptocurrency buttons 
+      // cryptocurrency buttons
       case 'bitcoin':
         updateMap(bitcoinData);
         break;
       case 'ethereum':
         updateMap(ethereumData);
         break;
-
+      case 'litecoin':
+        updateMap(litecoinData);
+        break;
+      case 'dash':
+        updateMap(dashData);
+        break;
+      case 'ripple':
+        updateMap(rippleData);
+        break;
+      case 'bitcoinCash':
+        updateMap(bitcoinCash);
+        break;
+      // fiat currency buttons
       case 'usd':
         updateMap(usdData);
         break;
-
+      case 'usdt':
+        updateMap(usdtData);
+        break;
+      case 'eur':
+        updateMap(eurData);
+        break;
+      case 'jpy':
+        updateMap(jpyData);
+        break;
+      case 'gbp':
+        updateMap(gbpData);
+        break;
+      // by default select the bitcoin
       default:
         updateMap(bitcoinData);
         break;
