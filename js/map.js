@@ -1,11 +1,18 @@
 
  // import the cryptocurrency icons
-const bitcoin = "/market-data-project/images/icons/btc.png";
-const ethereum = "/market-data-project/images/icons/eth.png";
-const bitcoinCash = "/market-data-project/images/icons/bcc.png";
-const litecoin = "/market-data-project/images/icons/ltc.png";
-const ripple = "/market-data-project/images/icons/rep.png";
-const dash = "/market-data-project/images/icons/dash.png";
+const bitcoin = "/market-data-project/images/icons/btc@2x.png";
+const ethereum = "/market-data-project/images/icons/eth@2x.png";
+const bitcoinCash = "/market-data-project/images/icons/bch@2x.png";
+const litecoin = "/market-data-project/images/icons/ltc@2x.png";
+const ripple = "/market-data-project/images/icons/xrp@2x.png";
+const dash = "/market-data-project/images/icons/dash@2x.png";
+
+// import the fiat currency icons 
+const usd = "/market-data-project/images/icons/usd@2x.png";
+const usdt = "/market-data-project/images/icons/usdt@2x.png";
+const eur = "/market-data-project/images/icons/eur@2x.png";
+const jpy = "/market-data-project/images/icons/jpy@2x.png";
+const gbp = "/market-data-project/images/icons/gbp@2x.png";
 
 
 // make sure that the map is loaded to the page
@@ -16,7 +23,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/partners/bitbank.png",
-      "currencies": [bitcoin, litecoin, ripple],
+      "currencies": [bitcoin, litecoin, ripple, jpy],
       "country": "Japan",
       "iconSize": 10
     },
@@ -33,7 +40,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/partners/bitbank.png",
-      "currencies": [bitcoin],
+      "currencies": [bitcoin, usd],
       "country": "Seychelles",
       "iconSize": 30
     },
@@ -67,7 +74,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/partners/bitbank.png",
-      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple],
+      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple, usd, eur],
       "country": "Luxembourg",
       "iconSize": 30
     },
@@ -85,7 +92,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/partners/bitbank.png",
-      "currencies": [bitcoin],
+      "currencies": [bitcoin, jpy],
       "country": "Japan",
       "iconSize": 20
     },
@@ -102,7 +109,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/partners/bitbank.png",
-      "currencies": [bitcoin, ethereum],
+      "currencies": [bitcoin, ethereum, usd],
       "country": "Hong Kong",
       "iconSize": 20
     },
@@ -119,7 +126,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/partners/bitbank.png",
-      "currencies": [bitcoin, ethereum, bitcoinCash, ripple, dash],
+      "currencies": [bitcoin, ethereum, bitcoinCash, ripple, dash, usd, eur],
       "country": "UK",
       "iconSize": 10
     },
@@ -136,7 +143,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/partners/bitbank.png",
-      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash],
+      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash, jpy],
       "country": "Japan",
       "iconSize": 10
     },
@@ -153,7 +160,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/partners/bitbank.png",
-      "currencies": [bitcoin, bitcoinCash],
+      "currencies": [bitcoin, bitcoinCash, usd, eur, gbp],
       "country": "UK",
       "iconSize": 10
     },
@@ -186,7 +193,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/partners/bitbank.png",
-      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash],
+      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash, usdt],
       "country": "China",
       "iconSize": 30
     },
@@ -202,7 +209,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/partners/bitbank.png",
-      "currencies": [bitcoin],
+      "currencies": [bitcoin, usdt],
       "country": "USA",
       "iconSize": 10
     },
@@ -218,7 +225,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/partners/bitbank.png",
-      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash],
+      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash, usd, eur, jpy],
       "country": "USA",
       "iconSize": 30
     },
@@ -234,7 +241,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/partners/bitbank.png",
-      "currencies": [bitcoin, ethereum, litecoin],
+      "currencies": [bitcoin, ethereum, litecoin, usd],
       "country": "Hong Kong",
       "iconSize": 10
     },
@@ -250,7 +257,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/partners/bitbank.png",
-      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, dash],
+      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, dash, usdt],
       "country": "Belize",
       "iconSize": 30
     },
@@ -310,7 +317,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/partners/bitbank.png",
-      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash],
+      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash, eur],
       "country": "Malta",
       "iconSize": 10
     },
@@ -353,7 +360,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/partners/bitbank.png",
-      "currencies": [bitcoin, ethereum, bitcoinCash],
+      "currencies": [bitcoin, ethereum, bitcoinCash, jpy],
       "country": "Japan",
       "iconSize": 20
     },
@@ -660,7 +667,7 @@ if ($("#map").length != 0) {
              ${
           currencies
             // to make sure that each row contains at most 3 logos
-            .map((currency, i) => !(i % 2) && i ? `<span><img src=${currency} /></span><br>` : `<span><img src=${currency} /></span>`)
+            .map((currency, i) => !(i % 3) && i ? `<span><img src=${currency} style="max-width:30px" /></span><br>` : `<span><img src=${currency} style="max-width:30px" /></span>`)
             .join('')
           }
             </div>
