@@ -742,7 +742,7 @@ if ($("#map").length != 0) {
         updateMap(rippleData);
         break;
       case 'bitcoinCash':
-        updateMap(bitcoinCash);
+        updateMap(bitcoinCashData);
         break;
       // fiat currency buttons
       case 'usd':
