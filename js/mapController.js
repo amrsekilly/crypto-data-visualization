@@ -23,6 +23,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/exchange-centers/bitbank.png",
+      "name": "BitBank",
       "currencies": [bitcoin, litecoin, ripple, jpy],
       "country": "Japan",
       "iconSize": 10
@@ -40,6 +41,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/exchange-centers/bitfinex.png",
+      "name": "Bitmex",
       "currencies": [bitcoin, usd],
       "country": "Seychelles",
       "iconSize": 30
@@ -57,6 +59,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/exchange-centers/Bitso.png",
+      "name": "Bitso",
       "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple],
       "country": "Mexico",
       "iconSize": 10
@@ -74,6 +77,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/exchange-centers/Bitstamp.png",
+      "name": "Bitstamp",
       "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple, usd, eur],
       "country": "Luxembourg",
       "iconSize": 30
@@ -92,6 +96,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/exchange-centers/btc-box.jpg",
+      "name": "BTCBox",
       "currencies": [bitcoin, jpy],
       "country": "Japan",
       "iconSize": 20
@@ -109,6 +114,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/exchange-centers/btcc.jpg",
+      "name": "BTCC",
       "currencies": [bitcoin, ethereum, usd],
       "country": "Hong Kong",
       "iconSize": 20
@@ -126,6 +132,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/exchange-centers/cex-io.png",
+      "name": "CEX.IO",
       "currencies": [bitcoin, ethereum, bitcoinCash, ripple, dash, usd, eur],
       "country": "UK",
       "iconSize": 10
@@ -143,6 +150,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/exchange-centers/coincheck.jpg",
+      "name": "Coincheck",
       "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash, jpy],
       "country": "Japan",
       "iconSize": 10
@@ -160,6 +168,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/exchange-centers/coinfloor.png",
+      "name": "Coinfloor",
       "currencies": [bitcoin, bitcoinCash, usd, eur, gbp],
       "country": "UK",
       "iconSize": 10
@@ -177,6 +186,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/exchange-centers/gopax.png",
+      "name": "GoPax",
       "currencies": [bitcoin, ethereum, litecoin, bitcoinCash],
       "country": "South Korea",
       "iconSize": 20
@@ -193,6 +203,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/exchange-centers/huobi.jpg",
+      "name": "Huobi",
       "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash, usdt],
       "country": "China",
       "iconSize": 30
@@ -209,6 +220,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/exchange-centers/itbit.png",
+      "name": "ItBit",
       "currencies": [bitcoin, usdt],
       "country": "USA",
       "iconSize": 10
@@ -225,6 +237,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/exchange-centers/kraken.png",
+      "name": "Kraken",
       "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash, usd, eur, jpy],
       "country": "USA",
       "iconSize": 30
@@ -241,6 +254,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/exchange-centers/okCoin.jpeg",
+      "name": "OKCoin",
       "currencies": [bitcoin, ethereum, litecoin, usd],
       "country": "Hong Kong",
       "iconSize": 10
@@ -257,6 +271,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/partners/bitbank.png",
+      "name": "OKEx",
       "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, dash, usdt],
       "country": "Belize",
       "iconSize": 30
@@ -273,6 +288,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/exchange-centers/surbtc.png",
+      "name": "SurBTC",
       "currencies": [bitcoin, ethereum, bitcoinCash],
       "country": "Chile",
       "iconSize": 10
@@ -289,6 +305,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/exchange-centers/surbtc.png",
+      "name": "SurBTC",
       "currencies": [bitcoin, ethereum, bitcoinCash],
       "country": "Colombia",
       "iconSize": 10
@@ -303,6 +320,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/exchange-centers/surbtc.png",
+      "name": "SurBTC",
       "currencies": [bitcoin, ethereum, bitcoinCash],
       "country": "Peru",
       "iconSize": 10
@@ -317,6 +335,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/exchange-centers/theRock.png",
+      "name": "The Rock",
       "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash, eur],
       "country": "Malta",
       "iconSize": 10
@@ -331,6 +350,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/exchange-centers/unocoin.png",
+      "name": "Unocoin",
       "currencies": [bitcoin],
       "country": "India",
       "iconSize": 10
@@ -345,6 +365,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/exchange-centers/vaultoro.png",
+      "name": "Vaultoro",
       "currencies": [bitcoin],
       "country": "UK",
       "iconSize": 10
@@ -360,6 +381,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "logo": "/market-data-project/images/exchange-centers/Zaif.png",
+      "name": "Zaif",
       "currencies": [bitcoin, ethereum, bitcoinCash, jpy],
       "country": "Japan",
       "iconSize": 20
@@ -660,7 +682,7 @@ if ($("#map").length != 0) {
       popup.setLngLat(coordinates)
         .setHTML(`
             <div >
-              <img class="exchange-logo" src="${ description.logo}" />
+              <h2>${ description.name}</h2>
               <p class="exchange-country"> 
                 ${ description.country}
               </p>
