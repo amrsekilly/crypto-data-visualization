@@ -691,7 +691,7 @@ if ($("#map").length != 0) {
                 ${
                   currencies
                     // to make sure that each row contains at most 3 logos
-                    .map((currency, i) => !(i % 3) && i ? `<span><img src=${currency} style="max-width:25px" /></span><br>` : `<span><img src=${currency} style="max-width:25px" /></span>`)
+          .map((currency, i) => !(i % 3) && i ? `<span><img src=${currency} style="max-width:25px;" /></span><br>` : `<span><img src=${currency} style="max-width:25px; margin-right: 5px;" /></span>`)
                     .join('')
                         }
                 </div>

@@ -1,6 +1,6 @@
 # Site settings
 title: Blockstream - Crypto Feed
-siteurl: http://amrsekilly.gitlab.io
+siteurl: http://127.0.0.1:4000
 description: "Cryptocurrency data feed"
 # edit this to fix the deployment issue (relative path)
 baseurl: /market-data-project
