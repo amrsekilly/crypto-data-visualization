@@ -686,12 +686,17 @@ if ($("#map").length != 0) {
               <p class="exchange-country"> 
                 ${ description.country}
               </p>
-             ${
-          currencies
-            // to make sure that each row contains at most 3 logos
-            .map((currency, i) => !(i % 3) && i ? `<span><img src=${currency} style="max-width:30px" /></span><br>` : `<span><img src=${currency} style="max-width:30px" /></span>`)
-            .join('')
-          }
+              <div style="text-align: left;">
+                <div style="display: inline-block;">
+                ${
+                  currencies
+                    // to make sure that each row contains at most 3 logos
+                    .map((currency, i) => !(i % 3) && i ? `<span><img src=${currency} style="max-width:25px" /></span><br>` : `<span><img src=${currency} style="max-width:25px" /></span>`)
+                    .join('')
+                        }
+                </div>
+              </div>
+              
             </div>
           `)
         .addTo(map);
