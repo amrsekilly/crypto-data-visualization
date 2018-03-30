@@ -610,6 +610,7 @@
 .contact-form {
   margin-top: 4vw;
   input[type="text"],
+  input[type="email"],
   textarea {
     background-color: {{ site.data.colors.form-background }} !important;
     border-radius: 0 !important;

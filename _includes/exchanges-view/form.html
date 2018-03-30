@@ -1,40 +1,54 @@
 <div class="ui section divider"></div>
 <h2 class="ui header">Join the strong and growing list of contributing exchanges</h2>
 
-<div class="ui equal width form contact-form">
+<form class="ui equal width form contact-form"
+ action="https://amrsekilly.us12.list-manage.com/subscribe/post" method="POST">
+ 
   <div class="fields">
     <div class="field">
       <label>First Name</label>
-      <input type="text" placeholder="First Name">
+      <input type="text"
+       name="MERGE1" id="MERGE1" 
+       placeholder="First Name">
     </div>
     <div class="field">
       <label>Last Name</label>
-      <input type="text" placeholder="Last Name">
+      <input type="text" 
+       name="MERGE2" id="MERGE2" 
+       placeholder="Last Name">
     </div>
   </div>
 
   <div class="fields">
     <div class="field">
       <label>Exchange Name</label>
-      <input type="text" placeholder="Exchange Name">
+      <input type="text" 
+       name="MERGE6" id="MERGE6"
+       placeholder="Exchange Name">
     </div>
     <div class="field">
       <label>Email</label>
-      <input type="text" placeholder="Email">
+      <input type="email"
+       autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0"
+        placeholder="Email">
     </div>
   </div>
   <div class="fields">
     <div class="field">
       <label>Link to your API</label>
-      <input type="text" placeholder="Link to your API">
+      <input type="text"
+       name="MERGE3" id="MERGE3"
+       placeholder="Link to your API">
     </div>
   </div>
   <div class="fields">
     <div class="field">
       <label>Custom Message</label>
-      <textarea rows="2" placeholder="Custom Message"></textarea>
+      <textarea rows="2" 
+       name="MERGE4" id="MERGE4"
+       placeholder="Custom Message"></textarea>
     </div>
   </div>
 
-  <button class="fluid ui button">Contact Us</button>
-</div>
+  <button type="submit" name="submit" class="fluid ui button">Contact Us</button>
+</form>
