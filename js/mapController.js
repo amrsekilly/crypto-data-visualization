@@ -499,18 +499,21 @@ if ($("#map").length != 0) {
   var legend = document.getElementById('legend');
 
   [{
-    size: 30,
+    size: 16,
+    color: "#00ffb3",
     text: "< 1TB"
   },
     {
-      size: 25,
-      text: "< 500GB"
+      size: 16,
+      text: "< 500GB",
+      color: "#007999"
     },
     {
       size: 16,
-      text: "< 500GB"
+      text: "< 500GB",
+      color: "#77E2FC"
     }].forEach(function (radius) {
-    legend.insertAdjacentHTML('beforeend', '<span class="circle" style="width:' + radius.size + 'px;top: ' + radius.size / 5 + 'px;height:' + radius.size + 'px;"></span><span>'+ radius.text +'</span>');
+    legend.insertAdjacentHTML('beforeend', '<span class="circle" style="width:' + radius.size + 'px; background-color: '+ radius.color +'; top: 2px; height:' + radius.size + 'px;"></span><span>'+ radius.text +'</span>');
   });
 
 
@@ -521,15 +524,15 @@ if ($("#map").length != 0) {
       "id": "markers",
       "type": "circle",
       "paint": {
-        "circle-radius": {
+        "circle-radius": 8,
+        "circle-color": {
           property: "iconSize",
           stops: [
-            [10, 8],
-            [20, 13],
-            [30, 15]
+            [10, "#77E2FC"],
+            [20, "#007999"],
+            [30, "#00ffb3"]
           ]
         },
-        "circle-color": "#00FFBA",
       },
       "layout": {
         "visibility": "visible",
