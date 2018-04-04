@@ -1,11 +1,50 @@
-<div class="ui relaxed grid">
-  <div class="row post-list">
+<div class="ui stackable grid">
+  <div class="four column row slider post-list partners-slider">
     <!-- the partners list -->
     {% random site.partners partners %}
     {% for partner in partners %}
-      <a target="_blank" class="sixteen wide mobile five wide tablet three wide computer column inverted partner-div" href="{{ partner.link }}">
+      <div class="column partner-div">
         <img src="{{ partner.logo }}" alt="{{ partner.name }}" class="ui large image">
-      </a>
+      </div>
     {% endfor %}
   </div>
 </div>
+
+
+<script>
+  $(document).ready(function () {
+    // the slider 
+    $('.partners-slider')
+      .slick({
+        slidesToShow: 4,
+        rows: 2,
+        infinite: true,
+        speed: 200,
+        centerMode: true,
+        centerPadding: 0,
+        responsive: [{
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4,
+            rows: 2,
+          }
+        }, {
+          breakpoint: 640,
+          settings: {
+            slidesToShow: 2,
+            rows: 2,
+          }
+        }, {
+          breakpoint: 420,
+          settings: {
+            slidesToShow: 1,
+            rows: 2,
+          }
+        }]
+      });
+
+      // force slidesToScroll in centerMode
+    $('.partners-slider').slick('slickSetOption', 'slidesToScroll', 8, true);
+  
+  });
+</script>
