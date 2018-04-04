@@ -2,6 +2,7 @@
 # the colors used in the website's Sass file
 primary-white: '#FFFFFF'
 primary-grey: '#313131'
+light-grey: '#383838'
 markers-color: '#00ffb3'
 nav-buttons-primary: '#0C2D37'
 active-button: '#00CBFA'

@@ -158,89 +158,118 @@
 // the call to action text 
 .callToAction {
   position: relative;
-  bottom: 100px;
+  bottom: 60px;
   a {
     color: white;
   }
-
   @media only screen and (max-width: 991px) {
     bottom: 150px;
   }
 }
 
+// the cryptocurrency lable 
+.crypto-lable {
+  color: white;
+  opacity: 0.8;
+  position: absolute;
+  left: 20px;
+  font-size: 0.9em;
+  // make sure it shows only on computers 
+   @media only screen and (max-width: 991px) {
+     display: none;
+   }
+}
+
+
 
 // style the buttons beneath the map 
 .cryptocurrencyButtons {
 
-  position: relative;
-  bottom: 80px;
+  // make sure it shows only on computers 
+  @media only screen and (max-width: 991px) {
+    display: none;
+  }
 
-  .form {
-    padding-left: 7% !important;
+  position: relative;
+  bottom: 60px;
+ 
+  .field {
+    height: 50px;
+    
+    // center the image and button 
+    .checkbox {
+      padding-left: 35%;
+    }
+
+    img {
+      max-width: 30px;
+    }
   }
-  .main-currency-lable {
-    padding-left: 10vw;
+
+  // to style the radio buttons' fields backgrounds 
+  .field:nth-child(odd) {
+    background-color: {{ site.data.colors.primary-grey }};
   }
-  // Style the radio button 
+
+  .field:nth-child(even) {
+    background-color: {{ site.data.colors.light-grey }};
+  }
+
+  // Style the radio buttons
   .ui.radio.checkbox input:checked~.box:after,
   .ui.radio.checkbox input:checked~label:after {
     background-color: {{ site.data.colors.markers-color }} !important;
   }
-
   .ui.checkbox .box:before,
   .ui.checkbox label:before {
     background: {{ site.data.colors.deselected-radio }};
     border: none;
-    width: 21px;
-    height: 21px;
+    top: 8px !important;
+    width: 15px;
+    height: 15px;
   }
-
   .ui.checkbox input:checked~.box:before,
   .ui.checkbox input:checked~label:before {
     background: transparent;
     border: none;
   }
-
   .ui.radio.checkbox input:checked~.box:before,
   .ui.radio.checkbox input:checked~label:before {
     background-color: transparent;
   }
-
+  
   // style the dimensions of the radio button 
   .ui.radio.checkbox .box:after,
   .ui.radio.checkbox label:after {
-    top: -12px;
-    width: 45px;
-    height: 45px;
+    top: 0px;
+    width: 30px;
+    height: 30px;
   }
-  // style the labels
-  label {
-    color: rgba(255, 255, 255, 0.534) !important;
-  }
-
+ 
   // position the label before the input 
   .ui.radio.checkbox label {
     padding-left: 0;
-    padding-right: 1.5em;
+    padding-right: 3.5em;
   }
-
   .ui.checkbox input,
   .ui.radio.checkbox label:before {
     left: auto;
     top: 0;
     right: -2px;
   }
-
   .ui.radio.checkbox label:after {
     left: auto;
     right: 1.2em;
   }
-
   .ui.radio.checkbox input:checked+label:after {
     left: auto;
-    right: -1em;
+    right: -0.65em;
   }
 }
+
+
+
+
 
 // the styles for the dropdown menu 
 .dropdown-form {
@@ -292,37 +321,6 @@
   animation-duration: .38s;
   animation-fill-mode: both;
   animation-name: slideInUp;
-}
-
-// fiat currencies 
-.currencyLabel {
-  font-size: 1.2em !important;
-  margin-left: 30px;
-}
-.fiat-currency-container {
-  background: {{ site.data.colors.primary-grey }};
-  padding-top: 30px;
-  padding-bottom: 20px;
-}
-// fix a responsiveness issue with the radio buttons on the top
-.form {
-  max-width: none !important;
-}
-// to align the two radials rows.
-.fiat-first {
-  margin-left: 25px !important;
-}
-.fiat-second {
-  margin-left: 44px !important;
-}
-.fiat-third {
-  margin-left: 30px !important;
-}
-.fiat-fourth {
-  margin-left: 9px !important;
-}
-.fiat-fifth {
-  margin-left: 18px !important;
 }
 
 // all default pages
@@ -478,7 +476,6 @@
   // the image square
   .img-rect {
     background-size: cover !important;
-    /* 50% 50% centers image in div */
     width: 37vw;
     height: 37vw;
     // fixed side to make sure that the columns will collapse on smaller screens

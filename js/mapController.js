@@ -7,14 +7,6 @@ const litecoin = "/market-data-project/images/icons/ltc@2x.png";
 const ripple = "/market-data-project/images/icons/xrp@2x.png";
 const dash = "/market-data-project/images/icons/dash@2x.png";
 
-// import the fiat currency icons 
-const usd = "/market-data-project/images/icons/usd@2x.png";
-const usdt = "/market-data-project/images/icons/usdt@2x.png";
-const eur = "/market-data-project/images/icons/eur@2x.png";
-const jpy = "/market-data-project/images/icons/jpy@2x.png";
-const gbp = "/market-data-project/images/icons/gbp@2x.png";
-
-
 // make sure that the map is loaded to the page
 if ($("#map").length != 0) {
 
@@ -22,9 +14,8 @@ if ($("#map").length != 0) {
   var Bitbank = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/exchange-centers/bitbank.png",
       "name": "BitBank",
-      "currencies": [bitcoin, litecoin, ripple, jpy],
+      "currencies": [bitcoin, litecoin, ripple],
       "country": "Japan",
       "iconSize": 10
     },
@@ -40,9 +31,8 @@ if ($("#map").length != 0) {
   var Bitmex = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/exchange-centers/bitfinex.png",
       "name": "Bitmex",
-      "currencies": [bitcoin, usd],
+      "currencies": [bitcoin],
       "country": "Seychelles",
       "iconSize": 30
     },
@@ -58,7 +48,6 @@ if ($("#map").length != 0) {
   var Bitso = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/exchange-centers/Bitso.png",
       "name": "Bitso",
       "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple],
       "country": "Mexico",
@@ -76,9 +65,8 @@ if ($("#map").length != 0) {
   var Bitstamp = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/exchange-centers/Bitstamp.png",
       "name": "Bitstamp",
-      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple, usd, eur],
+      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple],
       "country": "Luxembourg",
       "iconSize": 30
     },
@@ -95,9 +83,8 @@ if ($("#map").length != 0) {
   var BTCBox = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/exchange-centers/btc-box.jpg",
       "name": "BTCBox",
-      "currencies": [bitcoin, jpy],
+      "currencies": [bitcoin],
       "country": "Japan",
       "iconSize": 20
     },
@@ -113,9 +100,8 @@ if ($("#map").length != 0) {
   var BTCC = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/exchange-centers/btcc.jpg",
       "name": "BTCC",
-      "currencies": [bitcoin, ethereum, usd],
+      "currencies": [bitcoin, ethereum],
       "country": "Hong Kong",
       "iconSize": 20
     },
@@ -131,9 +117,8 @@ if ($("#map").length != 0) {
   var CEXIO = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/exchange-centers/cex-io.png",
       "name": "CEX.IO",
-      "currencies": [bitcoin, ethereum, bitcoinCash, ripple, dash, usd, eur],
+      "currencies": [bitcoin, ethereum, bitcoinCash, ripple, dash],
       "country": "UK",
       "iconSize": 10
     },
@@ -149,9 +134,8 @@ if ($("#map").length != 0) {
   var Coincheck = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/exchange-centers/coincheck.jpg",
       "name": "Coincheck",
-      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash, jpy],
+      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash],
       "country": "Japan",
       "iconSize": 10
     },
@@ -167,9 +151,8 @@ if ($("#map").length != 0) {
   var Coinfloor = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/exchange-centers/coinfloor.png",
       "name": "Coinfloor",
-      "currencies": [bitcoin, bitcoinCash, usd, eur, gbp],
+      "currencies": [bitcoin, bitcoinCash],
       "country": "UK",
       "iconSize": 10
     },
@@ -185,7 +168,6 @@ if ($("#map").length != 0) {
   var GoPax = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/exchange-centers/gopax.png",
       "name": "GoPax",
       "currencies": [bitcoin, ethereum, litecoin, bitcoinCash],
       "country": "South Korea",
@@ -202,9 +184,8 @@ if ($("#map").length != 0) {
   var Huobi = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/exchange-centers/huobi.jpg",
       "name": "Huobi",
-      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash, usdt],
+      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash],
       "country": "China",
       "iconSize": 30
     },
@@ -219,9 +200,8 @@ if ($("#map").length != 0) {
   var ItBit = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/exchange-centers/itbit.png",
       "name": "ItBit",
-      "currencies": [bitcoin, usdt],
+      "currencies": [bitcoin],
       "country": "USA",
       "iconSize": 10
     },
@@ -236,9 +216,8 @@ if ($("#map").length != 0) {
   var Kraken = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/exchange-centers/kraken.png",
       "name": "Kraken",
-      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash, usd, eur, jpy],
+      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash],
       "country": "USA",
       "iconSize": 30
     },
@@ -253,9 +232,8 @@ if ($("#map").length != 0) {
   var OKCoin = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/exchange-centers/okCoin.jpeg",
       "name": "OKCoin",
-      "currencies": [bitcoin, ethereum, litecoin, usd],
+      "currencies": [bitcoin, ethereum, litecoin],
       "country": "Hong Kong",
       "iconSize": 10
     },
@@ -270,9 +248,8 @@ if ($("#map").length != 0) {
   var OKEx = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/partners/bitbank.png",
       "name": "OKEx",
-      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, dash, usdt],
+      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, dash],
       "country": "Belize",
       "iconSize": 30
     },
@@ -287,7 +264,6 @@ if ($("#map").length != 0) {
   var SurBTC = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/exchange-centers/surbtc.png",
       "name": "SurBTC",
       "currencies": [bitcoin, ethereum, bitcoinCash],
       "country": "Chile",
@@ -304,7 +280,6 @@ if ($("#map").length != 0) {
   var SurBTC2 = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/exchange-centers/surbtc.png",
       "name": "SurBTC",
       "currencies": [bitcoin, ethereum, bitcoinCash],
       "country": "Colombia",
@@ -319,7 +294,6 @@ if ($("#map").length != 0) {
   var SurBTC3 = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/exchange-centers/surbtc.png",
       "name": "SurBTC",
       "currencies": [bitcoin, ethereum, bitcoinCash],
       "country": "Peru",
@@ -334,9 +308,8 @@ if ($("#map").length != 0) {
   var TheRock = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/exchange-centers/theRock.png",
       "name": "The Rock",
-      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash, eur],
+      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash],
       "country": "Malta",
       "iconSize": 10
     },
@@ -349,7 +322,6 @@ if ($("#map").length != 0) {
   var Unocoin = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/exchange-centers/unocoin.png",
       "name": "Unocoin",
       "currencies": [bitcoin],
       "country": "India",
@@ -364,7 +336,6 @@ if ($("#map").length != 0) {
   var Vaultoro = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/exchange-centers/vaultoro.png",
       "name": "Vaultoro",
       "currencies": [bitcoin],
       "country": "UK",
@@ -380,9 +351,8 @@ if ($("#map").length != 0) {
   var Zaif = {
     "type": "Feature",
     "properties": {
-      "logo": "/market-data-project/images/exchange-centers/Zaif.png",
       "name": "Zaif",
-      "currencies": [bitcoin, ethereum, bitcoinCash, jpy],
+      "currencies": [bitcoin, ethereum, bitcoinCash],
       "country": "Japan",
       "iconSize": 20
     },
@@ -450,18 +420,14 @@ if ($("#map").length != 0) {
   var bitcoinCashData = {
     "type": "FeatureCollection",
     "features": [
-      
       Bitso,
       Bitstamp,
-     
       CEXIO,
       Coincheck,
       Coinfloor,
       GoPax,
       Huobi,
-      
       Kraken,
-     
       OKEx,
       SurBTC,
       SurBTC2,
@@ -477,12 +443,9 @@ if ($("#map").length != 0) {
       Bitbank,
       Bitso,
       Bitstamp,
-     
       Coincheck,
-    
       GoPax,
       Huobi,
-     
       Kraken,
       OKCoin,
       OKEx,
@@ -494,19 +457,13 @@ if ($("#map").length != 0) {
     "type": "FeatureCollection",
     "features": [
       Bitbank,
-      
       Bitso,
       Bitstamp,
-     
       CEXIO,
       Coincheck,
-    
       Huobi,
-
       Kraken,
-     
-      TheRock,
-    
+      TheRock
     ]
   };
 
@@ -520,72 +477,6 @@ if ($("#map").length != 0) {
       OKEx
     ]
   };
-
-  var usdData = {
-    "type": "FeatureCollection",
-    "features": [
-      Bitmex,
-
-      Bitstamp,
-
-      BTCC,
-      CEXIO,
-
-      Coinfloor,
-  
-      Kraken,
-      OKCoin,
-     
-    ]
-  };
-
-  var usdtData = {
-    "type": "FeatureCollection",
-    "features": [
-      Huobi,
-      ItBit,
-      OKEx,
-    ]
-  };
-
-  var eurData = {
-    "type": "FeatureCollection",
-    "features": [
-   
-      Bitstamp,
-   
-      CEXIO,
-   
-      Coinfloor,
-     
-      Kraken,
-    
-      TheRock
-    ]
-  };
-
-  var jpyData = {
-    "type": "FeatureCollection",
-    "features": [
-      Bitbank,
-   
-      BTCBox,
-   
-      Coincheck,
-   
-      Kraken,
-     
-      Zaif
-    ]
-  };
-
-  var gbpData = {
-    "type": "FeatureCollection",
-    "features": [
-      Coinfloor,
-    ]
-  };
-
 
   // A flag to indicate whether the user clicked on the marker or not
   var markerClicked = false;
@@ -601,12 +492,9 @@ if ($("#map").length != 0) {
   // disable map zoom when using scroll
   map.scrollZoom.disable();
   // disable the double click zoom
-  // map.doubleClickZoom.disable();
   // disable the touch to zoom on phones 
   map.touchZoomRotate.disable();
-  // disable scrolling on mobile devices 
-  // map.dragPan.disable();
-
+  
   // add the legend to the map 
   var legend = document.getElementById('legend');
 
@@ -771,22 +659,7 @@ if ($("#map").length != 0) {
       case 'bitcoinCash':
         updateMap(bitcoinCashData);
         break;
-      // fiat currency buttons
-      case 'usd':
-        updateMap(usdData);
-        break;
-      case 'usdt':
-        updateMap(usdtData);
-        break;
-      case 'eur':
-        updateMap(eurData);
-        break;
-      case 'jpy':
-        updateMap(jpyData);
-        break;
-      case 'gbp':
-        updateMap(gbpData);
-        break;
+     
       // by default select the bitcoin
       default:
         updateMap(bitcoinData);

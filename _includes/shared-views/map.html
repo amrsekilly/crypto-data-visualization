@@ -7,91 +7,66 @@
     <!-- the logo on the top left corner -->
     <img class="top-logo" src="{{ site.baseurl }}/images/top-logo.png">
     <!-- call to action text -->
-    <h3 class="ui center aligned header inverted callToAction"><a href="https://google.com">Click to see more information about participating cryptocurrency exchanges</a></h3>
+    <h3 class="ui center aligned header inverted callToAction">
+    <span class="crypto-lable">Cryptocurrency</span>
+
+          <a href="https://google.com">Click to see more information about participating cryptocurrency exchanges</a></h3>
     <!-- map buttons section -->
-    <div class="ui form inverted stackable center aligned grid cryptocurrencyButtons computer only">
+    <div class="ui form inverted stackable center aligned cryptocurrencyButtons">
       <form action="" style="width:100%;">
-        <div class="form sixteen wide column">
+        <div class="form">
           <div class="inline fields">
-            <label class="main-currency-lable">Cryptocurrency</label>
-            <div class="field">
+           
+<div class="field three wide column">
               <div class="ui radio checkbox">
                 <input type="radio" name="currency" checked="checked" value="bitcoin" onChange="changeCurrency()" />
-                <label class="currencyLabel">Bitcoin</label>
+                <label>
+<img src="{{ site.baseurl }}/images/icons/btc@2x.png" class="ui mini image radio-image">
+                </label>
               </div>
             </div>
-            <div class="field">
+<div class="field  three wide column">
               <div class="ui radio checkbox">
                 <input type="radio" name="currency" value="ethereum" onChange="changeCurrency()" />
-                <label class="currencyLabel">Ethereum</label>
+                <label>
+                <img src="{{ site.baseurl }}/images/icons/eth@2x.png" class="ui mini image radio-image">
+                </label>
               </div>
             </div>
-            <div class="field">
+<div class="field  three wide column">
               <div class="ui radio checkbox">
                 <input type="radio" name="currency" value="litecoin" onChange="changeCurrency()" />
-                <label class="currencyLabel">Litecoin</label>
+                <label>
+                <img src="{{ site.baseurl }}/images/icons/ltc@2x.png" class="ui mini image radio-image">
+                </label>
               </div>
             </div>
-            <div class="field">
+<div class="field  three wide column">
               <div class="ui radio checkbox">
                 <input type="radio" name="currency" value="dash" onChange="changeCurrency()" />
-                <label class="currencyLabel">Dash</label>
+                <label>
+                <img src="{{ site.baseurl }}/images/icons/dash@2x.png" class="ui mini image radio-image">
+                </label>
               </div>
             </div>
-            <div class="field">
+<div class="field  three wide column">
               <div class="ui radio checkbox">
                 <input type="radio" name="currency" value="ripple" onChange="changeCurrency()" />
-                <label class="currencyLabel">Ripple</label>
+                <label>
+                  <img src="{{ site.baseurl }}/images/icons/xrp@2x.png" class="ui mini image radio-image">
+                </label>
               </div>
             </div>
-            <div class="field">
+<div class="field  three wide column">
               <div class="ui radio checkbox">
                 <input type="radio" name="currency" value="bitcoinCash" onChange="changeCurrency()" />
-                <label class="currencyLabel">Bitcoin Cash</label>
+                <label>
+                  <img src="{{ site.baseurl }}/images/icons/bch@2x.png" class="ui mini image radio-image">
+                </label>
               </div>
             </div>
           </div>
-        </div>
-        
-
-        <div class=" column form fiat-currency-container">
-          <div class="inline fields">
-            <label class="main-currency-lable">Fiat Currency</label>
-            <div class="field fiat-first">
-              <div class="ui radio checkbox">
-                <input type="radio" name="currency" value="usdt" onChange="changeCurrency()" />
-                <label class="currencyLabel">USDT</label>
-              </div>
-            </div>
-            <div class="field fiat-second">
-              <div class="ui radio checkbox">
-                <input type="radio" name="currency" value="usd" onChange="changeCurrency()" />
-                <label class="currencyLabel">USD</label>
-              </div>
-            </div>
-            <div class="field fiat-third">
-              <div class="ui radio checkbox">
-                <input type="radio" name="currency" value="eur" onChange="changeCurrency()" />
-                <label class="currencyLabel">EUR</label>
-              </div>
-            </div>
-            <div class="field fiat-fourth">
-              <div class="ui radio checkbox">
-                <input type="radio" name="currency" value="jpy" onChange="changeCurrency()" />
-                <label class="currencyLabel">JPY</label>
-              </div>
-            </div>
-            <div class="field fiat-fifth">
-              <div class="ui radio checkbox">
-                <input type="radio" name="currency" value="gbp" onChange="changeCurrency()" />
-                <label class="currencyLabel">GBP</label>
-              </div>
-            </div>
-          </div>
-        </div>
-          
-
-
+        </div>   
 
       </form>
     </div>
@@ -118,13 +93,6 @@
               <div class="item" data-value="dash">Dash</div>
               <div class="item" data-value="ripple">Ripple</div>
               <div class="item" data-value="bitcoinCash">Bitcoin Cash</div>
-              
-              <!-- fiat currencies -->
-              <div class="item" data-value="usdt">USDT</div>
-              <div class="item" data-value="usd">USD</div>
-              <div class="item" data-value="eur">EUR</div>
-              <div class="item" data-value="jpy">JPY</div>
-              <div class="item" data-value="gbp">GBP</div>
               
             </div>
           </div>
