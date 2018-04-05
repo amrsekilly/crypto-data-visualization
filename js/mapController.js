@@ -605,15 +605,12 @@ if ($("#map").length != 0) {
       if (circleSize == 10) {
         let tooltip = $(".mapboxgl-popup-tip");
         tooltip.addClass('small-circle');
-        console.log("circle clicked: ", tooltip.attr('class'));
       } else if (circleSize == 20) {
         let tooltip = $(".mapboxgl-popup-tip");
         tooltip.addClass('medium-circle');
-        console.log("circle clicked: ", tooltip.attr('class'));
       } else {
         let tooltip = $(".mapboxgl-popup-tip");
         tooltip.addClass('large-circle');
-        console.log("circle clicked: ", tooltip.attr('class'));
       }
     }
 
@@ -707,10 +704,18 @@ if ($("#map").length != 0) {
 
 
 $(document).ready(function () {
+  // for the dropdown menu on phones and small devices
   $('.currency-dropdown').dropdown({
     onChange: function (value) {
-      console.log("new value: ", value);
       selectCurrency(value);
     }
+  });
+
+  // if the user decided to use the divs instead of the radio buttons
+  $('.bitcoin, .ethereum, .litecoin, .dash, .ripple, .bitcoinCash').click(function () {
+    // click the coin's button 
+    $('input[name="currency"]', this).prop("checked", true);
+    var selectedCurrency = $(this)[0].classList[4];
+    selectCurrency(selectedCurrency);
   });
 });
