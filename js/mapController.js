@@ -7,6 +7,11 @@ const litecoin = "/market-data-project/images/icons/ltc@2x.png";
 const ripple = "/market-data-project/images/icons/xrp@2x.png";
 const dash = "/market-data-project/images/icons/dash@2x.png";
 
+// to map range of values to other range 
+function mapRange(num, in_min, in_max, out_min, out_max) {
+  return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+
 // make sure that the map is loaded to the page
 if ($("#map").length != 0) {
 
@@ -669,7 +674,18 @@ if ($("#map").length != 0) {
         break;
     }
   }
-}
+  // zoom range from 0 to 0.9
+  // depends on the width of the screen
+  // for responsiveness
+  $(window).resize(function () {
+  // screen width 
+  const screenWidth = $(window).width(); 
+  let newZoom = mapRange(screenWidth, 0, 1247, 0, 0.9);
+    map.setZoom(newZoom);
+  });
+
+} // end of map found
+
 
 $(document).ready(function () {
   $('.currency-dropdown').dropdown({
