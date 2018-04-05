@@ -284,7 +284,7 @@
   // position the label before the input 
   .ui.radio.checkbox label {
     padding-left: 0;
-    padding-right: 3.5em;
+    padding-right: 51px;
   }
   .ui.checkbox input,
   .ui.radio.checkbox label:before {
@@ -294,11 +294,11 @@
   }
   .ui.radio.checkbox label:after {
     left: auto;
-    right: 1.2em;
+    right: 20px;
   }
   .ui.radio.checkbox input:checked+label:after {
     left: auto;
-    right: -0.65em;
+    right: -10px;
   }
 }
 
