@@ -95,6 +95,7 @@
 // the content 
 .mapboxgl-popup-content {
   border-radius: 0 !important;
+  z-index: 10;
   min-width: 11vw;
   min-height: 11vw;
   font-size: 1em;
@@ -117,7 +118,27 @@
 
 // The tip of the pop-up message
 .mapboxgl-popup-tip {
-  border-top-color: #00C0EC !important;
+  border: none !important;
+  margin-bottom: 20px;
+}
+
+// to make that green tooltip
+.mapboxgl-popup-tip:after{
+  content: "";
+  display: block;
+  width: 7vw;
+  height: 25px;
+  position: relative;
+  z-index: -10;
+  left: -3.5vw;
+  top: -4px;
+  border: 2px solid {{ site.data.colors.markers-color }};
+
+  // for larger screens
+  @media only screen and (min-width: 1500px) {
+    width: 90px;
+    left: -45px;
+  }
 }
 
 // map's legend 
