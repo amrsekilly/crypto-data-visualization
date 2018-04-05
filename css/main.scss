@@ -254,6 +254,7 @@
   .ui.radio.checkbox input:checked~.box:after,
   .ui.radio.checkbox input:checked~label:after {
     background-color: {{ site.data.colors.markers-color }} !important;
+    z-index: 9999;
   }
   .ui.checkbox .box:before,
   .ui.checkbox label:before {
