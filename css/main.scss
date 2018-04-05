@@ -123,13 +123,13 @@
 }
 
 // to make that green tooltip
-.mapboxgl-popup-tip:after{
+ .mapboxgl-popup-tip:after {
   content: "";
   display: block;
   width: 7vw;
   height: 25px;
   position: relative;
-  z-index: -10;
+  z-index: -99999;
   left: -3.5vw;
   top: -4px;
   border: 2px solid {{ site.data.colors.markers-color }};
@@ -139,6 +139,16 @@
     width: 90px;
     left: -45px;
   }
+}
+
+.small-circle:after {
+  border-color: #77E2FC;
+}
+.medium-circle:after {
+  border-color: #007999;
+}
+.large-circle:after {
+  border-color: #00ffb3;
 }
 
 // map's legend 

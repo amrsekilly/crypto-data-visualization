@@ -565,6 +565,24 @@ if ($("#map").length != 0) {
       var regex = /\[\s*(.*?)\s*\]/g;
       m = regex.exec(description.currencies);
       var currencies = m[1].split(",");
+      var circleSize = description.iconSize;
+
+      // change the color of the tooltip depending on the selected circle
+      if (circleSize == 10) {
+        let tooltip = $(".mapboxgl-popup-tip");
+        tooltip.addClass('small-circle');
+        console.log("circle clicked: ", tooltip.attr('class'));
+      } else if (circleSize == 20) {
+        let tooltip = $(".mapboxgl-popup-tip");
+        tooltip.addClass('medium-circle');
+        console.log("circle clicked: ", tooltip.attr('class'));
+      } else {
+        let tooltip = $(".mapboxgl-popup-tip");
+        tooltip.addClass('large-circle');
+        console.log("circle clicked: ", tooltip.attr('class'));
+      }
+
+      
 
       // Ensure that if the map is zoomed out such that multiple
       // copies of the feature are visible, the popup appears
