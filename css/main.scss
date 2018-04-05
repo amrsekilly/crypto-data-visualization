@@ -443,21 +443,22 @@
       -webkit-filter: none;
       /* Safari 6.0 - 9.0 */
       filter: none;
-    } // arrows in slick
-    .slick-prev:after {
-      position: relative;
-      top: -120px;
-      // previous arrow
-      content: url('{{site.baseurl}}/images/prev.png');
-      font-size: 30px;
-    }
-    .slick-next:after {
-      position: relative;
-      top: -120px;
-      // next arrow
-      content: url('{{site.baseurl}}/images/next.png');
-      font-size: 30px;
-    }
+    } 
+  }
+
+  // arrows in slick
+  .slick-prev:after {
+    position: relative;
+    top: -120px; // previous arrow
+    content: url('{{site.baseurl}}/images/prev.png');
+    font-size: 30px;
+  }
+
+  .slick-next:after {
+    position: relative;
+    top: -120px; // next arrow
+    content: url('{{site.baseurl}}/images/next.png');
+    font-size: 30px;
   }
 
   .exchanges-head {
@@ -537,44 +538,6 @@
   }
 }
 
-// the partners section
-.floating-right {
-  position: absolute;
-  right: 2%;
-  top: 40px;
-  a {
-    color: {{ site.data.colors.nav-buttons-primary }};
-  }
-  .arrow {
-    color: {{ site.data.colors.active-button }};
-  }
-}
-.partner-div {
-  background-color: {{ site.data.colors.nav-buttons-primary }};
-  margin-bottom: 10px;
-  // margin-left: 5%;
-  // margin-bottom: 50px !important;
-  // width: 50%;
-  // the logo
-  // .image {
-  //   position: absolute;
-  //   width: 100%;
-  //   height: 100%;
-  //   top: 0%;
-  //   left: 0%;
-  // }
-}
-.slick-slide {
-  margin-right: 7.5px;
-  margin-left: 7.5px;
-}
-// .partner-div:after {
-//   content: "";
-//   display: block;
-//   padding-bottom: 120%;
-// }
-
-
 // the form styles 
 .contact-form {
   margin-top: 4vw;
@@ -593,4 +556,40 @@
     color: black !important;
     font-size: 1.5em;
   }
+}
+
+// the partners section
+.floating-right {
+  position: absolute;
+  right: 2%;
+  top: 40px;
+  a {
+    color: {{ site.data.colors.nav-buttons-primary }};
+  }
+  .arrow {
+    color: {{ site.data.colors.active-button }};
+  }
+}
+.partners-slider {
+  // the slider arrows 
+  .slick-prev:after {
+    top: -42px !important; // previous arrow
+  }
+  .slick-prev {
+    left: -57px;
+  }
+
+  .slick-next:after {
+    top: -42px !important;
+    margin-left: 20px;
+  }
+}
+
+.partner-div {
+  background-color: {{ site.data.colors.nav-buttons-primary }};
+  margin-bottom: 10px;
+}
+.slick-slide {
+  margin-right: 7.5px;
+  margin-left: 7.5px;
 }
