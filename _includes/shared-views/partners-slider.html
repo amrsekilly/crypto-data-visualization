@@ -13,12 +13,29 @@
 
 <script>
   $(document).ready(function () {
+    // to randomize the start of the slides
+    $.fn.randomize = function (selector) {
+      var $elems = selector ? $(this).find(selector) : $(this).children(),
+        $parents = $elems.parent();
+
+      $parents.each(function () {
+        $(this).children(selector).sort(function () {
+          return Math.round(Math.random()) - 0.5;
+        }).detach().appendTo(this);
+      });
+      return this;
+    };
+
+    // randomize the slides and then call slick
+    $('.partners-slider').randomize('.partner-div');
+
     // the slider 
     $('.partners-slider')
       .slick({
         slidesToShow: 4,
         rows: 2,
         infinite: true,
+        startSlide: 'random',
         speed: 200,
         centerMode: true,
         centerPadding: 0,
