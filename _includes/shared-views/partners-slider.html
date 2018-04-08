@@ -1,3 +1,4 @@
+<!-- displays the partners slider -->
 <div class="ui stackable grid">
   <div class="fourteen wide centered column slider partners-slider">
     <!-- the partners list -->
@@ -7,6 +8,16 @@
         <img src="{{ partner.logo }}" alt="{{ partner.name }}" class="ui large image">
       </div>
     {% endfor %}
+
+    <!-- to make sure that there's no empty slide in case of odd partners -->
+    {% assign value = site.partners.size | modulo:2 %}
+    {% if value != 0 %}
+ {% for partner in partners | limit:1 %}
+        <div class="column partner-div">
+          <img src="{{ partner.logo }}" alt="{{ partner.name }}" class="ui large image">
+        </div>
+      {% endfor %}
+    {% endif %}
   </div>
 </div>
 
