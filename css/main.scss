@@ -228,14 +228,21 @@
   position: relative;
   bottom: 60px;
  
+  // all the fields on the map (for the radio buttons)
+  .fields {
+    // make sure the mouse is pointer
+    cursor: pointer;
+    label {
+      cursor: pointer;
+    }
+  }
+  // each radio button container -- for the map
   .field {
     height: 50px;
-    
     // center the image and button 
     .checkbox {
       padding-left: 35%;
     }
-
     img {
       max-width: 30px;
     }
