@@ -646,6 +646,8 @@ if ($("#map").length != 0) {
   function updateMap(geojson) {
     // get the current layer you're showing the markers on and update its data
     map.getSource('markers').setData(geojson);
+    // gray out the inactive buttons
+    updateActiveButton();
   }
 
 
@@ -702,8 +704,30 @@ if ($("#map").length != 0) {
 
 } // end of map found
 
+function updateActiveButton() {
+  var filterVal = 'grayscale(100%)';
+  var nofilter = 'grayscale(0%)';
+  $('input[type="radio"]:not(:checked) + label')
+    .css('filter', filterVal)
+    .css('webkitFilter', filterVal)
+    .css('mozFilter', filterVal)
+    .css('oFilter', filterVal)
+    .css('msFilter', filterVal);
+
+  $('input[type="radio"]:checked + label')
+    .css('filter', nofilter)
+    .css('webkitFilter', nofilter)
+    .css('mozFilter', nofilter)
+    .css('oFilter', nofilter)
+    .css('msFilter', nofilter);
+}
+
 
 $(document).ready(function () {
+  
+  // show the active button 
+  updateActiveButton();
+
   // for the dropdown menu on phones and small devices
   $('.currency-dropdown').dropdown({
     onChange: function (value) {
