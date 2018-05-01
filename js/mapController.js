@@ -1,11 +1,16 @@
 
  // import the cryptocurrency icons
-const bitcoin = "/market-data-project/images/icons/btc@2x.png";
-const ethereum = "/market-data-project/images/icons/eth@2x.png";
-const bitcoinCash = "/market-data-project/images/icons/bch@2x.png";
-const litecoin = "/market-data-project/images/icons/ltc@2x.png";
-const ripple = "/market-data-project/images/icons/xrp@2x.png";
-const dash = "/market-data-project/images/icons/dash@2x.png";
+const bitcoin = "/market-data-project/images/icons/bitcoin-icon.png";
+const ethereum = "/market-data-project/images/icons/ethereum-icon.png";
+const bitcoinCash = "/market-data-project/images/icons/bitcoin-cash-icon.png";
+const litecoin = "/market-data-project/images/icons/litecoin-icon.png";
+const ripple = "/market-data-project/images/icons/ripple-icon.png";
+const dash = "/market-data-project/images/icons/dash-icon.png";
+const gbp = "/market-data-project/images/icons/gbp.png";
+const jpy = "/market-data-project/images/icons/jpy.png";
+const eur = "/market-data-project/images/icons/eur.png";
+const usdt = "/market-data-project/images/icons/usdt.png";
+const usd = "/market-data-project/images/icons/usd.png";
 
 // to map range of values to other range 
 function mapRange(num, in_min, in_max, out_min, out_max) {
@@ -20,7 +25,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "name": "BitBank",
-      "currencies": [bitcoin, litecoin, ripple],
+      "currencies": [bitcoin, litecoin, ripple, jpy],
       "country": "Japan",
       "iconSize": 10
     },
@@ -33,11 +38,28 @@ if ($("#map").length != 0) {
     }
   };
 
+  var Bitfinex = {
+    "type": "Feature",
+    "properties": {
+      "name": "Bitfinex",
+      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd],
+      "country": "Hong Kong",
+      "iconSize": 30
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        114.162979,
+        22.280641
+      ]
+    }
+  };
+
   var Bitmex = {
     "type": "Feature",
     "properties": {
       "name": "Bitmex",
-      "currencies": [bitcoin],
+      "currencies": [bitcoin, usd],
       "country": "Seychelles",
       "iconSize": 30
     },
@@ -71,7 +93,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "name": "Bitstamp",
-      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple],
+      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple, usd, eur],
       "country": "Luxembourg",
       "iconSize": 30
     },
@@ -89,7 +111,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "name": "BTCBox",
-      "currencies": [bitcoin],
+      "currencies": [bitcoin, jpy],
       "country": "Japan",
       "iconSize": 20
     },
@@ -106,7 +128,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "name": "BTCC",
-      "currencies": [bitcoin, ethereum],
+      "currencies": [bitcoin, ethereum, usd],
       "country": "Hong Kong",
       "iconSize": 20
     },
@@ -123,7 +145,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "name": "CEX.IO",
-      "currencies": [bitcoin, ethereum, bitcoinCash, ripple, dash],
+      "currencies": [bitcoin, ethereum, bitcoinCash, ripple, dash, usd, eur],
       "country": "UK",
       "iconSize": 10
     },
@@ -140,7 +162,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "name": "Coincheck",
-      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash],
+      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash, jpy],
       "country": "Japan",
       "iconSize": 10
     },
@@ -157,7 +179,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "name": "Coinfloor",
-      "currencies": [bitcoin, bitcoinCash],
+      "currencies": [bitcoin, bitcoinCash, usd, eur, gbp],
       "country": "UK",
       "iconSize": 10
     },
@@ -190,7 +212,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "name": "Huobi",
-      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash],
+      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash, usdt],
       "country": "China",
       "iconSize": 30
     },
@@ -206,7 +228,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "name": "ItBit",
-      "currencies": [bitcoin],
+      "currencies": [bitcoin, usdt],
       "country": "USA",
       "iconSize": 10
     },
@@ -222,7 +244,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "name": "Kraken",
-      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash],
+      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash, usd, eur, jpy],
       "country": "USA",
       "iconSize": 30
     },
@@ -238,14 +260,14 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "name": "OKCoin",
-      "currencies": [bitcoin, ethereum, litecoin],
+      "currencies": [bitcoin, ethereum, litecoin, usd],
       "country": "Hong Kong",
       "iconSize": 10
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [114.182376,
-      22.281485
+      "coordinates": [116.407396,
+      39.904200
       ]
     }
   };
@@ -254,7 +276,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "name": "OKEx",
-      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, dash],
+      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, dash, usdt],
       "country": "Belize",
       "iconSize": 30
     },
@@ -314,7 +336,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "name": "The Rock",
-      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, dash],
+      "currencies": [bitcoin, ethereum, litecoin, bitcoinCash, ripple, eur],
       "country": "Malta",
       "iconSize": 10
     },
@@ -357,7 +379,7 @@ if ($("#map").length != 0) {
     "type": "Feature",
     "properties": {
       "name": "Zaif",
-      "currencies": [bitcoin, ethereum, bitcoinCash],
+      "currencies": [bitcoin, ethereum, bitcoinCash, jpy],
       "country": "Japan",
       "iconSize": 20
     },
@@ -374,6 +396,7 @@ if ($("#map").length != 0) {
     "features": [
       Bitbank,
       Bitmex,
+      Bitfinex,
       Bitso,
       Bitstamp,
       BTCBox,
@@ -402,6 +425,7 @@ if ($("#map").length != 0) {
     "features": [
       Bitso,
       Bitstamp,
+      Bitfinex,
       
       BTCC,
       CEXIO,
@@ -427,6 +451,7 @@ if ($("#map").length != 0) {
     "features": [
       Bitso,
       Bitstamp,
+      Bitfinex,
       CEXIO,
       Coincheck,
       Coinfloor,
@@ -448,6 +473,7 @@ if ($("#map").length != 0) {
       Bitbank,
       Bitso,
       Bitstamp,
+      Bitfinex,
       Coincheck,
       GoPax,
       Huobi,
@@ -462,6 +488,7 @@ if ($("#map").length != 0) {
     "type": "FeatureCollection",
     "features": [
       Bitbank,
+      Bitfinex,
       Bitso,
       Bitstamp,
       CEXIO,
@@ -475,6 +502,7 @@ if ($("#map").length != 0) {
   var dashData = {
     "type": "FeatureCollection",
     "features": [
+      Bitfinex,
       CEXIO,
       Coincheck,
       Huobi,

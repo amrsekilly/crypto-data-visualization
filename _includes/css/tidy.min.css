@@ -24,7 +24,8 @@
 
 .masthead h2 {
   font-size: 1.7em;
-  font-weight: 400
+  font-weight: 400;
+  color:white;
 }
 
 .compact.inverted.inline.secondary.menu {
