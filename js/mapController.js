@@ -559,9 +559,17 @@ if ($("#map").length != 0) {
       "type": "circle",
       "paint": {
         "circle-radius": 8,
+        // for the outer border width of the circle in pixels.
         "circle-stroke-width": 2,
+        // the color of the outer border
         "circle-stroke-color": "#FFF",
+        // the circle opacity 
+        // from 0 to 1, 
+        // 1 means completely solid color 
+        // 0 means invisible 
         "circle-opacity": 0.9,
+        // to blur the circle color 
+        // (from 0 to 1), zero means no blur, and one means maximum blur
         "circle-blur": 0.4,
         "circle-color": {
           property: "iconSize",
