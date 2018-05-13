@@ -1,6 +1,6 @@
 
 
-<form class="ui equal width form contact-form"
+<form id="contact-form-main-id" class="ui equal width form contact-form"
  action="https://blockstream.us15.list-manage.com/subscribe/post" method="POST">
 
 <input type="hidden" name="u" value="0754bc253ff6f27aa96c5c48f">
@@ -52,5 +52,45 @@
     </div>
   </div>
 
-  <button type="submit" name="submit" class="fluid ui button">Contact Us</button>
+  <button type="submit" name="submit" id="submit-button" class="fluid ui button">Contact Us</button>
+  
 </form>
+
+<div id="form-message"></div>
+
+
+<script>
+ $('#contact-form-main-id').submit(function (e) {
+          var $this = $(this);
+          $.ajax({
+            type: "POST", // GET & url for json slightly different
+            url: "https://blockstream.us15.list-manage2.com/subscribe/post-json?c=?",
+            data: $this.serialize(),
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+            error: function (err) { alert("Could not connect to the registration server."); },
+            success: function (data) {
+              if (data.result != "success") {
+                // Something went wrong, parse data.msg string and display message
+                console.log("Something went wrong!!", data.msg);
+                $("#form-message").html(`
+                <div class="ui error message form-error">
+                  Error Submitting The Form: 
+                  ${data.msg}
+                </div>`);
+              } else {
+                // It worked, so hide form and display thank-you message.
+                console.log("Success!!");
+                // show the user a success message
+                $("#form-message").html(`
+                <div class="ui success message form-error">
+                  Message Successfully Submitted!
+                </div>`);
+                // reset the form 
+                document.getElementById("contact-form-main-id").reset();
+              }
+            }
+          });
+          return false;
+        });
+</script>

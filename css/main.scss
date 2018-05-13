@@ -653,3 +653,7 @@
   // remove the grey outline that appears when you click on a certain slide 
   outline: none;
 }
+
+.ui.message:first-child {
+  margin-top: 13px;
+}
