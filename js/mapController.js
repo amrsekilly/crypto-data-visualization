@@ -532,21 +532,21 @@ if ($("#map").length != 0) {
   var legend = document.getElementById('legend');
 
   [{
-    size: 16,
+    size: 18,
     color: "#00ffb3",
     text: "< $1.8B"
   },
     {
-      size: 16,
+      size: 18,
       text: "$1.8B to $9B",
       color: "#007999"
     },
     {
-      size: 16,
+      size: 18,
       text: "> $9B",
       color: "#77E2FC"
     }].forEach(function (radius) {
-    legend.insertAdjacentHTML('beforeend', '<span class="circle" style="width:' + radius.size + 'px; background: linear-gradient(to bottom right,' +  radius.color + ', white); top: 2px; height:' + radius.size + 'px;"></span><span>' + radius.text + '</span>');
+    legend.insertAdjacentHTML('beforeend', '<span class="circle" style="width:' + radius.size + 'px; opacity: 0.9; border: 2px solid white; background-color: ' + radius.color + '; top: 2px; height:' + radius.size + 'px;"></span><span>' + radius.text + '</span>');
   });
 
 
@@ -570,7 +570,7 @@ if ($("#map").length != 0) {
         "circle-opacity": 0.9,
         // to blur the circle color 
         // (from 0 to 1), zero means no blur, and one means maximum blur
-        "circle-blur": 0.4,
+        // "circle-blur": 0.4,
         "circle-color": {
           property: "iconSize",
           stops: [
