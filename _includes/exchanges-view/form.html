@@ -74,37 +74,27 @@
                 // Something went wrong, parse data.msg string and display message
                 // console.log("Something went wrong!!", data.msg);
                 // error message 
-                let error_msg = '';
+                let error_msg = "";
                 if(!$("#MERGE1").val().length) {
-                  $("#form-message").html(`
-                  <div class="ui error message form-error">
-                    Enter a Valid First Name, please!
-                  </div>`);
+                  error_msg = "Enter a Valid First Name, please!";
                 }
                 else if(!$("#MERGE2").val().length) {
-                  $("#form-message").html(`
-                  <div class="ui error message form-error">
-                    Enter a Valid Last Name, please!
-                  </div>`);
+                  error_msg = "Enter a Valid Last Name, please!";
                 }
                 else if (!$("#MERGE5").val().length) {
-                  $("#form-message").html(`
-                  <div class="ui error message form-error">
-                    Enter a Valid Exchange Name, please!
-                  </div>`);
+                  error_msg = "Enter a Valid Exchange Name, please!";
                 }
                 else if (!$("#MERGE0").val().length) {
-                  $("#form-message").html(`
-                  <div class="ui error message form-error">
-                    Enter a Valid Email, please!
-                  </div>`);
-                }
-                else {
-                  $("#form-message").html(`
+                  error_msg = "Enter a Valid Email, please!";
+                } else error_msg = "";
+                //  show the error message
+                $("#form-message").html(`
                 <div class="ui error message form-error">
-                  Error Submitting The Form: ${data.msg}
+                  Error Submitting The Form: ${error_msg || data.msg}
                 </div>`);
-                }
+                // clear the error variable
+                error_msg = "";
+               
               } else {
                 // It worked, so hide form and display thank-you message.
                 console.log("Success!!");
