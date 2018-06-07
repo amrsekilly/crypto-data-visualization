@@ -76,21 +76,21 @@
                 // error message 
                 let error_msg = "";
                 if(!$("#MERGE1").val().length) {
-                  error_msg = "Enter a Valid First Name, please!";
+                  error_msg = "Please enter a valid First Name.";
                 }
                 else if(!$("#MERGE2").val().length) {
-                  error_msg = "Enter a Valid Last Name, please!";
+                  error_msg = "Please enter a valid Last Name.";
                 }
                 else if (!$("#MERGE5").val().length) {
-                  error_msg = "Enter a Valid Exchange Name, please!";
+                  error_msg = "Please enter a valid Exchange Name.";
                 }
                 else if (!$("#MERGE0").val().length) {
-                  error_msg = "Enter a Valid Email, please!";
+                  error_msg = "Please enter a valid Email.";
                 } else error_msg = "";
                 //  show the error message
                 $("#form-message").html(`
                 <div class="ui error message form-error">
-                  Error Submitting The Form: ${error_msg || data.msg}
+                  ${error_msg || data.msg}
                 </div>`);
                 // clear the error variable
                 error_msg = "";
