@@ -64,6 +64,16 @@
    padding: 5em 0em;
  }
 
+.column, .column p {
+   font-size: 1.3rem;
+ }
+
+ .column {
+   line-height: 1.4;
+ }
+
+
+
 /* 
  Mapbox styles
 */
@@ -565,10 +575,10 @@
     // arrow style 
     .arrow {
       color: {{ site.data.colors.markers-color }};
-      font-size: 3.5em;
+      font-size: 3em;
       position: absolute;
       right: 4vw;
-      bottom: 1vw;
+      bottom: 3vw;
     }
   }
 
