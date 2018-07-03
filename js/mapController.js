@@ -63,75 +63,22 @@ if ($("#map").length != 0) {
     "type": "FeatureCollection",
     "features": [
       Bitbank,
-      Bitmex,
       Bitfinex,
-      Bitso,
-      Bitstamp,
-      BTCBox,
-      BTCC,
-      CEXIO,
-      Coincheck,
-      Coinfloor,
-      GoPax,
-      Huobi,
-      ItBit,
-      Kraken,
-      OKCoin,
-      OKEx,
-      SurBTC,
-      SurBTC2,
-      SurBTC3,
-      TheRock,
-      Unocoin,
-      Vaultoro,
-      Zaif
     ]
   };
 
   var ethereumData = {
     "type": "FeatureCollection",
     "features": [
-      Bitso,
-      Bitstamp,
       Bitfinex,
-      
-      BTCC,
-      CEXIO,
-      Coincheck,
-      
-      GoPax,
-      Huobi,
-      
-      Kraken,
-      OKCoin,
-      OKEx,
-      SurBTC,
-      SurBTC2,
-      SurBTC3,
-      TheRock,
-     
-      Zaif
+
     ]
   };
 
   var bitcoinCashData = {
     "type": "FeatureCollection",
     "features": [
-      Bitso,
-      Bitstamp,
       Bitfinex,
-      CEXIO,
-      Coincheck,
-      Coinfloor,
-      GoPax,
-      Huobi,
-      Kraken,
-      OKEx,
-      SurBTC,
-      SurBTC2,
-      SurBTC3,
-      TheRock,
-      Zaif
     ]
   };
 
@@ -139,16 +86,7 @@ if ($("#map").length != 0) {
     "type": "FeatureCollection",
     "features": [
       Bitbank,
-      Bitso,
-      Bitstamp,
-      Bitfinex,
-      Coincheck,
-      GoPax,
-      Huobi,
-      Kraken,
-      OKCoin,
-      OKEx,
-      TheRock,
+
     ]
   };
 
@@ -157,13 +95,7 @@ if ($("#map").length != 0) {
     "features": [
       Bitbank,
       Bitfinex,
-      Bitso,
-      Bitstamp,
-      CEXIO,
-      Coincheck,
-      Huobi,
-      Kraken,
-      TheRock
+
     ]
   };
 
@@ -171,11 +103,6 @@ if ($("#map").length != 0) {
     "type": "FeatureCollection",
     "features": [
       Bitfinex,
-      CEXIO,
-      Coincheck,
-      Huobi,
-      Kraken,
-      OKEx
     ]
   };
 
