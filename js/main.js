@@ -7,4 +7,9 @@ $(document).ready(function() {
   $(".ui.dropdown").dropdown();
   $('.ui.sidebar').sidebar();
 
+  // to manage the active tab 
+  $(".button").click(function () {
+    $(this).addClass("active");
+    $(".button").not(this).removeClass("active");
+  });
 });
