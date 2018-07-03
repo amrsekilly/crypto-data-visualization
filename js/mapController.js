@@ -162,8 +162,44 @@ if ($("#map").length != 0) {
         // from 0 to 1, 
         // 1 means completely solid color 
         // 0 means invisible 
-        "circle-opacity": 0.9,
+        "circle-opacity": 0.5,
         // to blur the circle color 
+        // (from 0 to 1), zero means no blur, and one means maximum blur
+        // "circle-blur": 0.4,
+        "circle-color": {
+          property: "iconSize",
+          stops: [
+            [10, "#77E2FC"],
+            [20, "#007999"],
+            [30, "#00ffb3"]
+          ]
+        },
+      },
+      "layout": {
+        "visibility": "visible",
+      },
+      "source": {
+        "type": "geojson",
+        "data": bitcoinData,
+      }
+    });
+
+
+    map.addLayer({
+      "id": "markers-hover",
+      "type": "circle",
+      "paint": {
+        "circle-radius": 8,
+        // for the outer border width of the circle in pixels.
+        "circle-stroke-width": 2,
+        // the color of the outer border
+        "circle-stroke-color": "#FFF",
+        // the circle opacity
+        // from 0 to 1,
+        // 1 means completely solid color
+        // 0 means invisible
+        "circle-opacity": 0.9,
+        // to blur the circle color
         // (from 0 to 1), zero means no blur, and one means maximum blur
         // "circle-blur": 0.4,
         "circle-color": {
@@ -274,6 +310,21 @@ if ($("#map").length != 0) {
           map.getCanvas().style.cursor = '';
           popup.remove();
       }
+    });
+
+    map.on('mousemove', function(e) {
+      var features = map.queryRenderedFeatures(e.point, { layers: ['markers'] });
+      map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
+      var geojson = {
+        type: 'FeatureCollection',
+        features: []
+      };
+      if (!features.length) {
+        map.getSource('markers-hover').setData(geojson);
+        return;
+      }
+      geojson.features.push(features[0]);
+      map.getSource('markers-hover').setData(geojson);
     });
   });
 
