@@ -24,9 +24,9 @@ if ($("#map").length != 0) {
   var Bitbank = {
     "type": "Feature",
     "properties": {
-      "name": "BitBank",
+      "name": "Japan",
       "currencies": [bitcoin, litecoin, ripple, jpy],
-      "country": "Japan",
+      "country": "Exchanges: 4",
       "iconSize": 10
     },
     "geometry": {
