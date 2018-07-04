@@ -1,5 +1,5 @@
 ---
 name: YEN
-logo: images/partners/yen.png
+logo: images/partners/jpy.png
 link: 
 ---

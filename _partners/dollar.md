@@ -1,5 +1,5 @@
 ---
 name: DOLLAR
-logo: images/partners/dollar.png
+logo: images/partners/usd.png
 link: 
 ---

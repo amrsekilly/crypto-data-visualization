@@ -1,5 +1,5 @@
 ---
 name: LITECOIN
-logo: images/partners/cexio.png
-link: https://cex.io/
+logo: images/partners/litecoin.png
+link: 
 ---

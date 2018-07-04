@@ -1,5 +1,5 @@
 ---
 name: EURO
-logo: images/partners/euro.png
+logo: images/partners/eur.png
 link: 
 ---
