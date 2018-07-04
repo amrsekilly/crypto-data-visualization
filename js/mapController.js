@@ -212,8 +212,10 @@ if ($("#map").length != 0) {
           popupIsOpened = false;
           markerClicked = false;
         } else {
-          showPopup(e);
-          popupIsOpened = false;
+          if (!popupIsOpened) {
+            showPopup(e);
+            popupIsOpened = false;
+          }
           markerClicked = true;
         }
       });
