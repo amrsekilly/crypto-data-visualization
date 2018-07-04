@@ -193,17 +193,13 @@ if ($("#map").length != 0) {
       }
 
       map.on("click", 'country-fills', function (e) {
-        if (!markerClicked) {
-          showPopup(e);
-          markerClicked = true;
-        }
-      });
-
-      map.on("mousedown", function (e) {
         if (markerClicked) {
           map.getCanvas().style.cursor = '';
           popup.remove();
           markerClicked = false;
+        } else {
+          showPopup(e);
+          markerClicked = true;
         }
       });
 
@@ -211,11 +207,6 @@ if ($("#map").length != 0) {
       // the state-fills-hover layer to only show the matching state, thus making a hover effect.
       map.on("mousemove", "country-fills", function(e) {
         map.setFilter("country-fills-hover", ["==", "name", e.features[0].properties.name]);
-
-        if (!markerClicked) {
-          markerClicked = true;
-          showPopup(e)
-        }
       });
 
       // Reset the state-fills-hover layer's filter when the mouse leaves the layer.
