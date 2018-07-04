@@ -20,6 +20,10 @@
    background-color: #002D3B !important;
  }
 
+ .ui.header {
+  font-family: 'Helvetica,Arial,sans-serif', sans-serif !important;
+ }
+
  .ui.inverted.blue.segment {
    background-color: #00789D !important;
    color: #FFFFFF !important;
@@ -27,6 +31,7 @@
 
  .ui.inverted.header {
    font-weight: 600;
+   padding-bottom: 5px;
  }
 
 
@@ -65,7 +70,7 @@
  }
 
 .column, .column p {
-   font-size: 1.3rem;
+   font-size: 1.5rem;
  }
 
  .column {
@@ -83,6 +88,10 @@
   width: 100%;
   height: 700px;
   top: 20px;
+}
+
+.masthead.segment {
+  padding: 0em;
 }
 
 // styling the markers for the map
@@ -173,8 +182,6 @@
    z-index: 1;
   //  for the legend's header
    .legend-header {
-    font-family: 'Noto Sans SC' !important;
-    font-weight: normal !important;
     font-size: 1.3em !important;
     text-transform: uppercase;
     margin-bottom: -0.1em;
@@ -183,6 +190,8 @@
   span {
     color: white;
     margin-right: 20px;
+    font-weight: 200;
+    font-size: 13px;
   }
   .circle {
     position: relative;
@@ -215,14 +224,42 @@
 // the call to action text 
 .callToAction {
   position: relative;
-  bottom: 60px;
-  a {
-    color: white;
-  }
+  bottom: 130px;
+ 
   @media only screen and (max-width: 991px) {
     bottom: 150px;
   }
 }
+
+.map-lower-title {
+  color: white;
+    font-size: 1.8rem;
+    width: 340px;
+    margin: 0 auto;
+    height: 77px;
+  }
+
+  .f-numbered {
+    float: left;
+    font-size: 8rem;
+    padding-top: 16px;
+  }
+
+  .m-title-right-col  {
+    width: 200px;
+    float: right;
+    text-transform: uppercase;
+    padding-top: 18px;
+  }
+
+  .m-title-bottom {
+    width: 168px;
+    padding-top: 5px;
+  }
+
+  .ui.header {
+    margin-top:0px;
+  }
 
 // the cryptocurrency lable 
 .crypto-lable {
