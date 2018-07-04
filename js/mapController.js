@@ -51,6 +51,7 @@ if ($("#map").length != 0) {
           feature.properties.iconSize = 30;
           feature.properties.coordinates = [139.707731, 35.659129];
           feature.properties.exchange_country = 4;
+          feature.properties.trading = 20;
           sourceFeatures.push(feature);
           break;
         case 'China':
@@ -58,6 +59,7 @@ if ($("#map").length != 0) {
           feature.properties.iconSize = 20;
           feature.properties.coordinates = [104.195397,35.861660];
           feature.properties.exchange_country = 11;
+          feature.properties.trading = 10;
           sourceFeatures.push(feature);
           break;
         default:
@@ -162,6 +164,9 @@ if ($("#map").length != 0) {
               <h2>${ description.name}</h2>
               <p class="exchange-country"> 
                 Exchanges: ${ description.exchange_country}
+              </p>
+              <p class="trading">
+              Trading: ${ description.trading }
               </p>
               <div style="text-align: left;">
                 <div style="display: inline-block;">
