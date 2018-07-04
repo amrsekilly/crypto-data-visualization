@@ -20,89 +20,6 @@ function mapRange(num, in_min, in_max, out_min, out_max) {
 // make sure that the map is loaded to the page
 if ($("#map").length != 0) {
 
-  // the exchange centers 
-  var Bitbank = {
-    "type": "Feature",
-    "properties": {
-      "name": "Japan",
-      "currencies": [bitcoin, litecoin, ripple, jpy],
-      "country": "Japan",
-      "iconSize": 30
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        139.707731,
-        35.659129
-      ]
-    }
-  };
-
-  var Bitfinex = {
-    "type": "Feature",
-    "properties": {
-      "name": "Hong Kong",
-      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd],
-      "country": "Hong Kong",
-      "iconSize": 30
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        114.162979,
-        22.280641
-      ]
-    }
-  };
-
-  // the places' geojson data for each cryptocurrency
-  var bitcoinData = {
-    "type": "FeatureCollection",
-    "features": [
-      Bitbank,
-      Bitfinex
-    ]
-  };
-
-  var ethereumData = {
-    "type": "FeatureCollection",
-    "features": [
-      Bitfinex,
-
-    ]
-  };
-
-  var bitcoinCashData = {
-    "type": "FeatureCollection",
-    "features": [
-      Bitfinex,
-    ]
-  };
-
-  var litecoinData = {
-    "type": "FeatureCollection",
-    "features": [
-      Bitbank,
-
-    ]
-  };
-
-  var rippleData = {
-    "type": "FeatureCollection",
-    "features": [
-      Bitbank,
-      Bitfinex,
-
-    ]
-  };
-
-  var dashData = {
-    "type": "FeatureCollection",
-    "features": [
-      Bitfinex,
-    ]
-  };
-
   // A flag to indicate whether the user clicked on the marker or not
   var markerClicked = false;
 
@@ -112,15 +29,206 @@ if ($("#map").length != 0) {
     container: 'map',
     style: 'mapbox://styles/amrsekilly/cjesn29l429772rphyzf63dbk'
   });
-  // add the map controls 
+  // add the map controls
   map.addControl(new mapboxgl.NavigationControl(), 'top-left');
   // disable map zoom when using scroll
   map.scrollZoom.disable();
   // disable the double click zoom
-  // disable the touch to zoom on phones 
+  // disable the touch to zoom on phones
   map.touchZoomRotate.disable();
-  
-  // add the legend to the map 
+
+  $.get( "/market-data-project/js/ne_50m_admin_0_countries.geojson", function( data ) {
+
+    var features = data.features;
+
+    var sourceFeatures = [];
+    for (var i = 0; i < features.length; i ++) {
+      var feature = features[i];
+
+      switch (feature.properties.name) {
+        case 'Japan':
+          feature.properties.currencies = [bitcoin, litecoin, ripple, jpy];
+          feature.properties.iconSize = 30;  
+          feature.properties.coordinates = [139.707731, 35.659129];
+          feature.properties.exchange_country = 4;
+          sourceFeatures.push(feature);
+          break;
+        case 'China':
+          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd];
+          feature.properties.iconSize = 20;
+          feature.properties.coordinates = [104.195397,35.861660];
+          feature.properties.exchange_country = 11;
+          sourceFeatures.push(feature);
+          break;
+        default:
+          break;
+      }
+    }
+
+    var sourceData = {
+      type: "FeatureCollection",
+      features: sourceFeatures
+    };
+
+    // wait until the map is displayed
+    map.on('load', function () {
+
+      map.addSource("countries", {
+        "type": "geojson",
+        "data": sourceData
+      });
+
+      map.addLayer({
+        "id": "country-fills",
+        "type": "fill",
+        "source": "countries",
+        "layout": {},
+        "paint": {
+          "fill-color": {
+            property: "iconSize",
+            stops: [
+              [10, "#77E2FC"],
+              [20, "#007999"],
+              [30, "#00ffb3"]
+            ]
+          },
+          "fill-opacity": 0.5
+        },
+        "filter": ["in", "name", "Belize", "Chile", "China", "Colombia", "Hong Kong", "India", "Japan", "Luxembourg", "Malta", "Mexico", "Peru", "Seychelles", "South Korea", "Taipei", "UK", "USA"]
+      }, 'country-label-lg');
+
+      map.addLayer({
+        "id": "country-borders",
+        "type": "line",
+        "source": "countries",
+        "layout": {},
+        "paint": {
+          "line-color": "#FFFFFF",
+          "line-width": 1
+        },
+        "filter": ["==", "name", ""]
+      });
+
+      map.addLayer({
+        "id": "country-fills-hover",
+        "type": "fill",
+        "source": "countries",
+        "layout": {},
+        "paint": {
+          "fill-color": {
+            property: "iconSize",
+            stops: [
+              [10, "#77E2FC"],
+              [20, "#007999"],
+              [30, "#00ffb3"]
+            ]
+          },
+          "fill-opacity": 1
+        },
+        "filter": ["==", "name", ""]
+      }, 'country-label-lg');
+
+      // show the popup
+      // Create a popup, but don't add it to the map yet.
+      var popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+      });
+
+      // to show the popup
+      function showPopup(e) {
+
+        // Change the cursor style as a UI indicator.
+        map.getCanvas().style.cursor = 'pointer';
+        var coordinates = JSON.parse(e.features[0].properties.coordinates);
+        var description = e.features[0].properties;
+        var regex = /\[\s*(.*?)\s*\]/g;
+        m = regex.exec(description.currencies);
+        var currencies = m[1].split(",");
+        var circleSize = description.iconSize;
+
+        // Ensure that if the map is zoomed out such that multiple
+        // copies of the feature are visible, the popup appears
+        // over the copy being pointed to.
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+          coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+
+        // Populate the popup and set its coordinates
+        // based on the feature found.
+        popup.setLngLat(coordinates)
+          .setHTML(`
+            <div >
+              <h2>${ description.name}</h2>
+              <p class="exchange-country"> 
+                Exchanges: ${ description.exchange_country}
+              </p>
+              <div style="text-align: left;">
+                <div style="display: inline-block;">
+                ${
+            currencies
+            // to make sure that each row contains at most 3 logos
+              .map((currency, i) => !(i % 3) && i ? `<span><img src=${currency} style="max-width:25px;" /></span><br>` : `<span><img src=${currency} style="max-width:25px; margin-right: 7px;" /></span>`)
+            .join('')
+            }
+                </div>
+              </div>
+              
+            </div>
+          `)
+          .addTo(map);
+
+
+        // change the color of the tooltip depending on the selected circle
+        if (circleSize == 10) {
+          let tooltip = $(".mapboxgl-popup-tip");
+          tooltip.addClass('small-circle');
+        } else if (circleSize == 20) {
+          let tooltip = $(".mapboxgl-popup-tip");
+          tooltip.addClass('medium-circle');
+        } else {
+          let tooltip = $(".mapboxgl-popup-tip");
+          tooltip.addClass('large-circle');
+        }
+      }
+
+      map.on("click", 'country-fills', function (e) {
+        showPopup(e);
+        markerClicked = true;
+      });
+
+      map.on("mousedown", function (e) {
+        if (markerClicked) {
+          map.getCanvas().style.cursor = '';
+          popup.remove();
+          markerClicked = false;
+        }
+      });
+
+      // When the user moves their mouse over the states-fill layer, we'll update the filter in
+      // the state-fills-hover layer to only show the matching state, thus making a hover effect.
+      map.on("mousemove", "country-fills", function(e) {
+        map.setFilter("country-fills-hover", ["==", "name", e.features[0].properties.name]);
+
+        if (!markerClicked) {
+          markerClicked = true;
+          showPopup(e)
+        }
+      });
+
+      // Reset the state-fills-hover layer's filter when the mouse leaves the layer.
+      map.on("mouseleave", "country-fills", function() {
+        map.setFilter("country-fills-hover", ["==", "name", ""]);
+        popup.remove();
+        markerClicked = false;
+      });
+    });
+
+
+  });
+
+
+  // add the legend to the map
   var legend = document.getElementById('legend');
 
   [{
@@ -139,245 +247,6 @@ if ($("#map").length != 0) {
       color: "#77E2FC"
     }].forEach(function (radius) {
     legend.insertAdjacentHTML('beforeend', '<span class="circle" style="width:' + radius.size + 'px; opacity: 0.9; border: 2px solid white; background-color: ' + radius.color + '; top: 2px; height:' + radius.size + 'px;"></span><span>' + radius.text + '</span>');
-  });
-
-
-
-  // wait until the map is displayed
-  map.on('load', function () {
-    // Add a layer showing the places.
-    // map.addLayer({
-    //   "id": "markers",
-    //   "type": "circle",
-    //   "paint": {
-    //     "circle-radius": 8,
-    //     // for the outer border width of the circle in pixels.
-    //     "circle-stroke-width": 2,
-    //     // the color of the outer border
-    //     "circle-stroke-color": "#FFF",
-    //     // the circle opacity
-    //     // from 0 to 1,
-    //     // 1 means completely solid color
-    //     // 0 means invisible
-    //     "circle-opacity": 0.5,
-    //     // to blur the circle color
-    //     // (from 0 to 1), zero means no blur, and one means maximum blur
-    //     // "circle-blur": 0.4,
-    //     "circle-color": {
-    //       property: "iconSize",
-    //       stops: [
-    //         [10, "#77E2FC"],
-    //         [20, "#007999"],
-    //         [30, "#00ffb3"]
-    //       ]
-    //     },
-    //   },
-    //   "layout": {
-    //     "visibility": "visible",
-    //   },
-    //   "source": {
-    //     "type": "geojson",
-    //     "data": bitcoinData,
-    //   }
-    // });
-    //
-    //
-    // map.addLayer({
-    //   "id": "markers-hover",
-    //   "type": "circle",
-    //   "paint": {
-    //     "circle-radius": 8,
-    //     // for the outer border width of the circle in pixels.
-    //     "circle-stroke-width": 2,
-    //     // the color of the outer border
-    //     "circle-stroke-color": "#FFF",
-    //     // the circle opacity
-    //     // from 0 to 1,
-    //     // 1 means completely solid color
-    //     // 0 means invisible
-    //     "circle-opacity": 0.9,
-    //     // to blur the circle color
-    //     // (from 0 to 1), zero means no blur, and one means maximum blur
-    //     // "circle-blur": 0.4,
-    //     "circle-color": {
-    //       property: "iconSize",
-    //       stops: [
-    //         [10, "#77E2FC"],
-    //         [20, "#007999"],
-    //         [30, "#00ffb3"]
-    //       ]
-    //     },
-    //   },
-    //   "layout": {
-    //     "visibility": "visible",
-    //   },
-    //   "source": {
-    //     "type": "geojson",
-    //     "data": bitcoinData,
-    //   }
-    // });
-
-
-    map.addSource("countries", {
-      "type": "geojson",
-      "data": "/market-data-project/js/ne_50m_admin_0_countries.geojson"
-    });
-
-    map.addLayer({
-      "id": "country-fills",
-      "type": "fill",
-      "source": "countries",
-      "layout": {},
-      "paint": {
-        "fill-color": "#627BC1",
-        "fill-opacity": 0.5
-      },
-      "filter": ["in", "name", "Belize", "Chile", "China", "Colombia", "Hong Kong", "India", "Japan", "Luxembourg", "Malta", "Mexico", "Peru", "Seychelles", "South Korea", "Taipei", "UK", "USA"]
-    }, 'country-label-lg');
-
-    map.addLayer({
-      "id": "country-borders",
-      "type": "line",
-      "source": "countries",
-      "layout": {},
-      "paint": {
-        "line-color": "#627BC1",
-        "line-width": 2
-      },
-      "filter": ["in", "name", "Belize", "Chile", "China", "Colombia", "Hong Kong", "India", "Japan", "Luxembourg", "Malta", "Mexico", "Peru", "Seychelles", "South Korea", "Taipei", "UK", "USA"]
-    });
-
-    map.addLayer({
-      "id": "country-fills-hover",
-      "type": "fill",
-      "source": "countries",
-      "layout": {},
-      "paint": {
-        "fill-color": "#627BC1",
-        "fill-opacity": 1
-      },
-      "filter": ["==", "name", ""]
-    }, 'country-label-lg');
-
-    // When the user moves their mouse over the states-fill layer, we'll update the filter in
-    // the state-fills-hover layer to only show the matching state, thus making a hover effect.
-    map.on("mousemove", "country-fills", function(e) {
-      map.setFilter("country-fills-hover", ["==", "name", e.features[0].properties.name]);
-    });
-
-    // Reset the state-fills-hover layer's filter when the mouse leaves the layer.
-    map.on("mouseleave", "country-fills", function() {
-      map.setFilter("country-fills-hover", ["==", "name", ""]);
-    });
-
-
-
-    // show the popup 
-    // Create a popup, but don't add it to the map yet.
-    var popup = new mapboxgl.Popup({
-      closeButton: false,
-      closeOnClick: false
-    });
-
-    // to show the popup 
-    function showPopup(e) {
-
-      // Change the cursor style as a UI indicator.
-      map.getCanvas().style.cursor = 'pointer';
-      var coordinates = e.features[0].geometry.coordinates.slice();
-      var description = e.features[0].properties;
-      var regex = /\[\s*(.*?)\s*\]/g;
-      m = regex.exec(description.currencies);
-      var currencies = m[1].split(",");
-      var circleSize = description.iconSize;
-
-      
-
-      // Ensure that if the map is zoomed out such that multiple
-      // copies of the feature are visible, the popup appears
-      // over the copy being pointed to.
-      while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-      }
-
-      // Populate the popup and set its coordinates
-      // based on the feature found.
-      popup.setLngLat(coordinates)
-        .setHTML(`
-            <div >
-              <h2>${ description.name}</h2>
-              <p class="exchange-country"> 
-                ${ description.country}
-              </p>
-              <div style="text-align: left;">
-                <div style="display: inline-block;">
-                ${
-                  currencies
-                    // to make sure that each row contains at most 3 logos
-          .map((currency, i) => !(i % 3) && i ? `<span><img src=${currency} style="max-width:25px;" /></span><br>` : `<span><img src=${currency} style="max-width:25px; margin-right: 7px;" /></span>`)
-                    .join('')
-                        }
-                </div>
-              </div>
-              
-            </div>
-          `)
-        .addTo(map);
-
-
-      // change the color of the tooltip depending on the selected circle
-      if (circleSize == 10) {
-        let tooltip = $(".mapboxgl-popup-tip");
-        tooltip.addClass('small-circle');
-      } else if (circleSize == 20) {
-        let tooltip = $(".mapboxgl-popup-tip");
-        tooltip.addClass('medium-circle');
-      } else {
-        let tooltip = $(".mapboxgl-popup-tip");
-        tooltip.addClass('large-circle');
-      }
-    }
-
-    map.on('mouseenter', 'markers', function (e) {
-      if (!markerClicked) {
-        showPopup(e);
-      }
-    });
-
-    map.on("click", 'markers', function (e) {
-      showPopup(e);
-      markerClicked = true;
-    });
-
-    map.on("mousedown", function (e) {
-      if (markerClicked) {
-        map.getCanvas().style.cursor = '';
-        popup.remove();
-        markerClicked = false;
-      }
-    });
-
-    // map.on('mouseleave', 'markers', function () {
-    //   if (!markerClicked) {
-    //       map.getCanvas().style.cursor = '';
-    //       popup.remove();
-    //   }
-    // });
-    //
-    // map.on('mousemove', function(e) {
-    //   var features = map.queryRenderedFeatures(e.point, { layers: ['markers'] });
-    //   map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
-    //   var geojson = {
-    //     type: 'FeatureCollection',
-    //     features: []
-    //   };
-    //   if (!features.length) {
-    //     map.getSource('markers-hover').setData(geojson);
-    //     return;
-    //   }
-    //   geojson.features.push(features[0]);
-    //   map.getSource('markers-hover').setData(geojson);
-    // });
   });
 
   // update the map with new data
