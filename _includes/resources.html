@@ -22,7 +22,7 @@
             <h2 class="post-title">{{post.title}}</h2>
         
             <p class="post-description">
-               {{ post.content | truncatewords:50 | strip_html }}
+               {{ post.summary }}
             </p>
         
             <i class="arrow right icon"></i>
@@ -38,7 +38,7 @@
           <h2 class="post-title">{{post.title}}</h2>
       
           <p class="post-description">
-           {{ post.content | truncatewords:50 | strip_html }}
+           {{ post.summary }}
           </p>
       
           <i class="arrow right icon"></i>
