@@ -22,6 +22,7 @@ if ($("#map").length != 0) {
 
   // A flag to indicate whether the user clicked on the marker or not
   var markerClicked = false;
+  var popupIsOpened = false;
 
   mapboxgl.accessToken = 'pk.eyJ1IjoiYW1yc2VraWxseSIsImEiOiJjamVzbWwxeTc3MWV6MzNvMTA4NnE1cGRqIn0.gduDJTnrg9nbXGLe0GSiIw';
   // create the Map with the custom styles I designed
@@ -208,9 +209,11 @@ if ($("#map").length != 0) {
         if (markerClicked) {
           map.getCanvas().style.cursor = '';
           popup.remove();
+          popupIsOpened = false;
           markerClicked = false;
         } else {
           showPopup(e);
+          popupIsOpened = false;
           markerClicked = true;
         }
       });
@@ -218,19 +221,25 @@ if ($("#map").length != 0) {
       // When the user moves their mouse over the states-fill layer, we'll update the filter in
       // the state-fills-hover layer to only show the matching state, thus making a hover effect.
       map.on("mousemove", "country-fills", function(e) {
-        map.setFilter("country-fills-hover", ["==", "name", e.features[0].properties.name]);
+        if (!popupIsOpened && !markerClicked) {
+          map.setFilter("country-fills-hover", ["==", "name", e.features[0].properties.name]);
 
-        if (!markerClicked) {
-          markerClicked = true;
           showPopup(e);
+          popupIsOpened = true;
         }
       });
 
       // Reset the state-fills-hover layer's filter when the mouse leaves the layer.
       map.on("mouseleave", "country-fills", function() {
-        map.setFilter("country-fills-hover", ["==", "name", ""]);
-        popup.remove();
-        markerClicked = false;
+
+        if(!markerClicked) {
+          map.setFilter("country-fills-hover", ["==", "name", ""]);
+        }
+
+        if (!markerClicked && popupIsOpened) {
+          popup.remove();
+          popupIsOpened = false;
+        }
       });
     });
 
