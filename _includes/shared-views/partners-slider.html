@@ -2,8 +2,7 @@
 <div class="ui stackable grid">
   <div class="fourteen wide centered column slider partners-slider">
     <!-- the partners list -->
-    {% random site.partners partners %}
-    {% for partner in partners %}
+    {% for partner in site.partners %}
       <div class="column partner-div">
         <img src="{{ partner.logo }}" alt="{{ partner.name }}" class="ui large image">
       </div>
@@ -24,21 +23,6 @@
 
 <script>
   $(document).ready(function () {
-    // to randomize the start of the slides
-    $.fn.randomize = function (selector) {
-      var $elems = selector ? $(this).find(selector) : $(this).children(),
-        $parents = $elems.parent();
-
-      $parents.each(function () {
-        $(this).children(selector).sort(function () {
-          return Math.round(Math.random()) - 0.5;
-        }).detach().appendTo(this);
-      });
-      return this;
-    };
-
-    // randomize the slides and then call slick
-    $('.partners-slider').randomize('.partner-div');
 
     // the slider 
     $('.partners-slider')
