@@ -55,283 +55,12 @@ if ($("#map").length != 0) {
     }
   };
 
-  // Data for countries to highlight.
-  var Japan = {
-    "type": "Feature",
-    "properties": {
-      "name": "Japan",
-      "currencies": [bitcoin, litecoin, ripple, jpy],
-      "country": "Japan",
-      "iconSize": 10
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        139.707731,
-        35.659129
-      ]
-    }
-  };
-
-  var HongKong = {
-    "type": "Feature",
-    "properties": {
-      "name": "Hong Kong",
-      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd],
-      "country": "Hong Kong",
-      "iconSize": 20
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        114.162979,
-        22.280641
-      ]
-    }
-  };
-
-
-  var Belize = {
-    "type": "Feature",
-    "properties": {
-      "name": "Belize",
-      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd],
-      "country": "Belize",
-      "iconSize": 30
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -88.497650,
-        17.189877
-      ]
-    }
-  };
-
-  var Chile = {
-    "type": "Feature",
-    "properties": {
-      "name": "Chile",
-      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd],
-      "country": "Chile",
-      "iconSize": 10
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -71.542969,
-        -35.675147
-      ]
-    }
-  };
-
-  var China = {
-    "type": "Feature",
-    "properties": {
-      "name": "China",
-      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd],
-      "country": "China",
-      "iconSize": 20
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        104.195397,
-        35.861660
-      ]
-    }
-  };
-
-  var Colombia = {
-    "type": "Feature",
-    "properties": {
-      "name": "Colombia",
-      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd],
-      "country": "Colombia",
-      "iconSize": 30
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -74.297333,
-        4.570868
-      ]
-    }
-  };
-
-  var India = {
-    "type": "Feature",
-    "properties": {
-      "name": "India",
-      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd],
-      "country": "India",
-      "iconSize": 10
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        78.962880,
-        20.593684
-      ]
-    }
-  };
-
-  var Luxembourg = {
-    "type": "Feature",
-    "properties": {
-      "name": "Luxembourg",
-      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd],
-      "country": "Luxembourg",
-      "iconSize": 20
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        6.129583,
-        49.815273
-      ]
-    }
-  };
-
-  var Malta = {
-    "type": "Feature",
-    "properties": {
-      "name": "Malta",
-      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd],
-      "country": "Malta",
-      "iconSize": 30
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        14.375416,
-        35.937496
-      ]
-    }
-  };
-
-  var Mexico = {
-    "type": "Feature",
-    "properties": {
-      "name": "Mexico",
-      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd],
-      "country": "Mexico",
-      "iconSize": 10
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -102.552784,
-        23.634501
-      ]
-    }
-  };
-
-  var Peru = {
-    "type": "Feature",
-    "properties": {
-      "name": "Peru",
-      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd],
-      "country": "Peru",
-      "iconSize": 20
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -75.015152,
-        -9.189967
-      ]
-    }
-  };
-
-  var Seychelles = {
-    "type": "Feature",
-    "properties": {
-      "name": "Seychelles",
-      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd],
-      "country": "Seychelles",
-      "iconSize": 30
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        78.962880,
-        20.593684
-      ]
-    }
-  };
-
-  var SouthKorea = {
-    "type": "Feature",
-    "properties": {
-      "name": "South Korea",
-      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd],
-      "country": "South Korea",
-      "iconSize": 30
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        127.766922,
-        35.907757
-      ]
-    }
-  };
-
-  var Taipei = {
-    "type": "Feature",
-    "properties": {
-      "name": "Taipei",
-      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd],
-      "country": "Taipei",
-      "iconSize": 20
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        121.565418,
-        25.032969
-      ]
-    }
-  };
-
-  var USA = {
-    "type": "Feature",
-    "properties": {
-      "name": "USA",
-      "currencies": [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd],
-      "country": "USA",
-      "iconSize": 30
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -95.712891,
-        37.090240
-      ]
-    }
-  };
-
-
   // the places' geojson data for each cryptocurrency
   var bitcoinData = {
     "type": "FeatureCollection",
     "features": [
-      Japan,
-      HongKong,
-      Belize,
-      Chile,
-      China,
-      Colombia,
-      India,
-      Luxembourg,
-      Malta,
-      Mexico,
-      Peru,
-      Seychelles,
-      SouthKorea,
-      Taipei,
-      USA
+      Bitbank,
+      Bitfinex
     ]
   };
 
@@ -417,76 +146,131 @@ if ($("#map").length != 0) {
   // wait until the map is displayed
   map.on('load', function () {
     // Add a layer showing the places.
+    // map.addLayer({
+    //   "id": "markers",
+    //   "type": "circle",
+    //   "paint": {
+    //     "circle-radius": 8,
+    //     // for the outer border width of the circle in pixels.
+    //     "circle-stroke-width": 2,
+    //     // the color of the outer border
+    //     "circle-stroke-color": "#FFF",
+    //     // the circle opacity
+    //     // from 0 to 1,
+    //     // 1 means completely solid color
+    //     // 0 means invisible
+    //     "circle-opacity": 0.5,
+    //     // to blur the circle color
+    //     // (from 0 to 1), zero means no blur, and one means maximum blur
+    //     // "circle-blur": 0.4,
+    //     "circle-color": {
+    //       property: "iconSize",
+    //       stops: [
+    //         [10, "#77E2FC"],
+    //         [20, "#007999"],
+    //         [30, "#00ffb3"]
+    //       ]
+    //     },
+    //   },
+    //   "layout": {
+    //     "visibility": "visible",
+    //   },
+    //   "source": {
+    //     "type": "geojson",
+    //     "data": bitcoinData,
+    //   }
+    // });
+    //
+    //
+    // map.addLayer({
+    //   "id": "markers-hover",
+    //   "type": "circle",
+    //   "paint": {
+    //     "circle-radius": 8,
+    //     // for the outer border width of the circle in pixels.
+    //     "circle-stroke-width": 2,
+    //     // the color of the outer border
+    //     "circle-stroke-color": "#FFF",
+    //     // the circle opacity
+    //     // from 0 to 1,
+    //     // 1 means completely solid color
+    //     // 0 means invisible
+    //     "circle-opacity": 0.9,
+    //     // to blur the circle color
+    //     // (from 0 to 1), zero means no blur, and one means maximum blur
+    //     // "circle-blur": 0.4,
+    //     "circle-color": {
+    //       property: "iconSize",
+    //       stops: [
+    //         [10, "#77E2FC"],
+    //         [20, "#007999"],
+    //         [30, "#00ffb3"]
+    //       ]
+    //     },
+    //   },
+    //   "layout": {
+    //     "visibility": "visible",
+    //   },
+    //   "source": {
+    //     "type": "geojson",
+    //     "data": bitcoinData,
+    //   }
+    // });
+
+
+    map.addSource("countries", {
+      "type": "geojson",
+      "data": "/market-data-project/js/ne_50m_admin_0_countries.geojson"
+    });
+
     map.addLayer({
-      "id": "markers",
-      "type": "circle",
+      "id": "country-fills",
+      "type": "fill",
+      "source": "countries",
+      "layout": {},
       "paint": {
-        "circle-radius": 8,
-        // for the outer border width of the circle in pixels.
-        "circle-stroke-width": 2,
-        // the color of the outer border
-        "circle-stroke-color": "#FFF",
-        // the circle opacity 
-        // from 0 to 1, 
-        // 1 means completely solid color 
-        // 0 means invisible 
-        "circle-opacity": 0.5,
-        // to blur the circle color 
-        // (from 0 to 1), zero means no blur, and one means maximum blur
-        // "circle-blur": 0.4,
-        "circle-color": {
-          property: "iconSize",
-          stops: [
-            [10, "#77E2FC"],
-            [20, "#007999"],
-            [30, "#00ffb3"]
-          ]
-        },
+        "fill-color": "#627BC1",
+        "fill-opacity": 0.5
       },
-      "layout": {
-        "visibility": "visible",
+      "filter": ["in", "name", "Belize", "Chile", "China", "Colombia", "Hong Kong", "India", "Japan", "Luxembourg", "Malta", "Mexico", "Peru", "Seychelles", "South Korea", "Taipei", "UK", "USA"]
+    }, 'country-label-lg');
+
+    map.addLayer({
+      "id": "country-borders",
+      "type": "line",
+      "source": "countries",
+      "layout": {},
+      "paint": {
+        "line-color": "#627BC1",
+        "line-width": 2
       },
-      "source": {
-        "type": "geojson",
-        "data": bitcoinData,
-      }
+      "filter": ["in", "name", "Belize", "Chile", "China", "Colombia", "Hong Kong", "India", "Japan", "Luxembourg", "Malta", "Mexico", "Peru", "Seychelles", "South Korea", "Taipei", "UK", "USA"]
+    });
+
+    map.addLayer({
+      "id": "country-fills-hover",
+      "type": "fill",
+      "source": "countries",
+      "layout": {},
+      "paint": {
+        "fill-color": "#627BC1",
+        "fill-opacity": 1
+      },
+      "filter": ["in", "name", "Belize", "Chile", "China", "Colombia", "Hong Kong", "India", "Japan", "Luxembourg", "Malta", "Mexico", "Peru", "Seychelles", "South Korea", "Taipei", "UK", "USA"]
+    }, 'country-label-lg');
+
+    // When the user moves their mouse over the states-fill layer, we'll update the filter in
+    // the state-fills-hover layer to only show the matching state, thus making a hover effect.
+    map.on("mousemove", "country-fills", function(e) {
+      map.setFilter("country-fills-hover", ["==", "name", e.features[0].properties.name]);
+    });
+
+    // Reset the state-fills-hover layer's filter when the mouse leaves the layer.
+    map.on("mouseleave", "country-fills", function() {
+      map.setFilter("country-fills-hover", ["==", "name", ""]);
     });
 
 
-    map.addLayer({
-      "id": "markers-hover",
-      "type": "circle",
-      "paint": {
-        "circle-radius": 8,
-        // for the outer border width of the circle in pixels.
-        "circle-stroke-width": 2,
-        // the color of the outer border
-        "circle-stroke-color": "#FFF",
-        // the circle opacity
-        // from 0 to 1,
-        // 1 means completely solid color
-        // 0 means invisible
-        "circle-opacity": 0.9,
-        // to blur the circle color
-        // (from 0 to 1), zero means no blur, and one means maximum blur
-        // "circle-blur": 0.4,
-        "circle-color": {
-          property: "iconSize",
-          stops: [
-            [10, "#77E2FC"],
-            [20, "#007999"],
-            [30, "#00ffb3"]
-          ]
-        },
-      },
-      "layout": {
-        "visibility": "visible",
-      },
-      "source": {
-        "type": "geojson",
-        "data": bitcoinData,
-      }
-    });
 
     // show the popup 
     // Create a popup, but don't add it to the map yet.
@@ -573,27 +357,27 @@ if ($("#map").length != 0) {
       }
     });
 
-    map.on('mouseleave', 'markers', function () {
-      if (!markerClicked) {
-          map.getCanvas().style.cursor = '';
-          popup.remove();
-      }
-    });
-
-    map.on('mousemove', function(e) {
-      var features = map.queryRenderedFeatures(e.point, { layers: ['markers'] });
-      map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
-      var geojson = {
-        type: 'FeatureCollection',
-        features: []
-      };
-      if (!features.length) {
-        map.getSource('markers-hover').setData(geojson);
-        return;
-      }
-      geojson.features.push(features[0]);
-      map.getSource('markers-hover').setData(geojson);
-    });
+    // map.on('mouseleave', 'markers', function () {
+    //   if (!markerClicked) {
+    //       map.getCanvas().style.cursor = '';
+    //       popup.remove();
+    //   }
+    // });
+    //
+    // map.on('mousemove', function(e) {
+    //   var features = map.queryRenderedFeatures(e.point, { layers: ['markers'] });
+    //   map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
+    //   var geojson = {
+    //     type: 'FeatureCollection',
+    //     features: []
+    //   };
+    //   if (!features.length) {
+    //     map.getSource('markers-hover').setData(geojson);
+    //     return;
+    //   }
+    //   geojson.features.push(features[0]);
+    //   map.getSource('markers-hover').setData(geojson);
+    // });
   });
 
   // update the map with new data
