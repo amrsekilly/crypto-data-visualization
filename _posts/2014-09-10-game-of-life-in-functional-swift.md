@@ -1,9 +1,10 @@
 ---
 author: ceberhardt
-title: "The Game of Life with Functional Swift"
+title: "Blockstream launches Cryptocurrency Data Feed"
 layout: default_post
-tags: BLOG
-image: /images/mining2.jpg
+tags: ANNOUNCEMENT
+image: /images/blog/ice-block.jpg
+summary: "We are excited to announce that the ICE Data Services Cryptocurrency Data Feed, distributed via the ICE Consolidated Feed, is now live! Blockstream works with cryptocurrency exchanges around the world and consolidates the data sets into a multi-asset and multi-venue data feed, capturing streaming real-time and historical data for the most actively traded digital currencies."
 ---
 
 This blog post shows an implementation of Conway's Game of Life using functional techniques in Swift. This results in code which is a clear and concise representation of the game's logic. I also take a closer look at ranges, intervals, the pattern match operator, `~=` and how local functions help organise your code.

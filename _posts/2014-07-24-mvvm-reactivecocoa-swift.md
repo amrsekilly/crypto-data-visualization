@@ -1,10 +1,10 @@
 ---
 author: ceberhardt
-title: "MVVM, Swift and ReactiveCocoa - It's all good!"
+title: "Lynn Martin presents"
 categories: 
-tags: BLOG
-image: /images/mining2.jpg
-summary: "This blog post looks out how Swift makes the combination of ReactiveCocoa and MVVM even better ..."
+tags: VIDEO
+image: /images/blog/ice-video.jpg
+summary: "Lynn Martin explains the benefits of the Cryptocurrency Data Feed."
 layout: default_post
 ---
 

@@ -1,10 +1,10 @@
 ---
-author: ceberhardt
-title: "Swift By Tutorials is Published"
+author: Blockstream
+title: "Blockstream announces ICE partnership"
 layout: default_post
 tags: PRESS RELEASE
-image: /images/mining1.jpg
-summary: "Apple released the first public beta of the Swift programming language just over three months ago. Within days of the release myself and Matt Galloway started working on our book Swift by Tutorials, which as of yesterday is finally finished and shipping!"
+image: /images/blog/ice-block.jpg
+summary: "We are excited to announce today a strategic agreement with the Intercontinental Exchange (ICE), a leading provider of data and listings services, and operator of clearing houses and global exchanges including the New York Stock Exchange. Together we are launching the Cryptocurrency Data Feed, to be distributed via ICE Data Services’ Consolidated Feed. "
 ---
 
 Apple released the first public beta of the Swift programming language just over three months ago. Within days of the release myself and Matt Galloway (author of [Effective Objective-C](http://www.effectiveobjectivec.com/)) started working on our book <a href="http://www.raywenderlich.com/store/swift-by-tutorials?source=ceberhardt">Swift by Tutorials</a>.

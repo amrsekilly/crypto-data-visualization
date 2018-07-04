@@ -31,6 +31,7 @@
 
  .ui.inverted.header {
    font-weight: 600;
+   padding-bottom: 5px;
  }
 
 
@@ -181,8 +182,6 @@
    z-index: 1;
   //  for the legend's header
    .legend-header {
-    font-family: 'Noto Sans SC' !important;
-    font-weight: normal !important;
     font-size: 1.3em !important;
     text-transform: uppercase;
     margin-bottom: -0.1em;
@@ -191,6 +190,8 @@
   span {
     color: white;
     margin-right: 20px;
+    font-weight: 200;
+    font-size: 13px;
   }
   .circle {
     position: relative;
