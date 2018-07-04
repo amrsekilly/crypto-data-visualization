@@ -256,7 +256,7 @@ if ($("#map").length != 0) {
         "fill-color": "#627BC1",
         "fill-opacity": 1
       },
-      "filter": ["in", "name", "Belize", "Chile", "China", "Colombia", "Hong Kong", "India", "Japan", "Luxembourg", "Malta", "Mexico", "Peru", "Seychelles", "South Korea", "Taipei", "UK", "USA"]
+      "filter": ["==", "name", ""]
     }, 'country-label-lg');
 
     // When the user moves their mouse over the states-fill layer, we'll update the filter in
