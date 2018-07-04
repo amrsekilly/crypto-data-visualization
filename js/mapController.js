@@ -48,7 +48,7 @@ if ($("#map").length != 0) {
       switch (feature.properties.name) {
         case 'Japan':
           feature.properties.currencies = [bitcoin, litecoin, ripple, jpy];
-          feature.properties.iconSize = 30;  
+          feature.properties.iconSize = 30;
           feature.properties.coordinates = [139.707731, 35.659129];
           feature.properties.exchange_country = 4;
           sourceFeatures.push(feature);
@@ -193,8 +193,10 @@ if ($("#map").length != 0) {
       }
 
       map.on("click", 'country-fills', function (e) {
-        showPopup(e);
-        markerClicked = true;
+        if (!markerClicked) {
+          showPopup(e);
+          markerClicked = true;
+        }
       });
 
       map.on("mousedown", function (e) {
