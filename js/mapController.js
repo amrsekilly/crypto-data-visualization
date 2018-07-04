@@ -62,6 +62,14 @@ if ($("#map").length != 0) {
           feature.properties.trading = 10;
           sourceFeatures.push(feature);
           break;
+        case "United States":
+          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd];
+          feature.properties.iconSize = 20;
+          feature.properties.coordinates = [-95.712891,37.090240];
+          feature.properties.exchange_country = 11;
+          feature.properties.trading = 10;
+          sourceFeatures.push(feature);
+          break;
         default:
           break;
       }
@@ -96,7 +104,6 @@ if ($("#map").length != 0) {
           },
           "fill-opacity": 0.5
         },
-        "filter": ["in", "name", "Belize", "Chile", "China", "Colombia", "Hong Kong", "India", "Japan", "Luxembourg", "Malta", "Mexico", "Peru", "Seychelles", "South Korea", "Taipei", "UK", "USA"]
       }, 'country-label-lg');
 
       map.addLayer({
