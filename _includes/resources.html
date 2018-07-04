@@ -16,7 +16,7 @@
        {% if thecycle == 'odd' %}
         <div style="background: url('{{site.baseurl}}{{post.image}}') 50% 50% no-repeat;" class="column img-rect"></div>
         <div class="column text-rect odd">
-          <a href="{{ site.siteurl }}{{site.baseurl}}{{ post.url }}" target="_blank">
+          <a href="{{ post.posturl }}" target="_blank">
             <p class="post-category">{{post.tags | join: " "}}</p>
         
             <h2 class="post-title">{{post.title}}</h2>
@@ -32,7 +32,7 @@
 
        {% if thecycle == 'even' %}
       <div class="column text-rect even">
-        <a href="{{ site.siteurl }}{{site.baseurl}}{{ post.url }}" target="_blank">
+        <a href="{{ post.posturl }}" target="_blank">
           <p class="post-category">{{post.tags | join: " "}}</p>
       
           <h2 class="post-title">{{post.title}}</h2>
