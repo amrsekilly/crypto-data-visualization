@@ -50,7 +50,7 @@ if ($("#map").length != 0) {
         case 'Japan':
           feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, jpy];
           feature.properties.iconSize = 20;
-          feature.properties.coordinates = [139.707731, 35.659129];
+          feature.properties.coordinates = [86.795722, 6.211737];
           feature.properties.exchange_country = 4;
           feature.properties.trading = "$1.5B";
           sourceFeatures.push(feature);
@@ -66,7 +66,7 @@ if ($("#map").length != 0) {
         case 'China':
           feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, usdt];
           feature.properties.iconSize = 30;
-          feature.properties.coordinates = [104.195397,35.861660];
+          feature.properties.coordinates = [31.600410,14.504007];
           feature.properties.exchange_country = 1;
           feature.properties.trading = "$1.5B";
           sourceFeatures.push(feature);
@@ -82,7 +82,7 @@ if ($("#map").length != 0) {
         case 'India':
           feature.properties.currencies = [bitcoin];
           feature.properties.iconSize = 10;
-          feature.properties.coordinates = [78.962880,20.593684];
+          feature.properties.coordinates = [145.506660,5.162256];
           feature.properties.exchange_country = 1;
           feature.properties.trading = "$1.5B";
           sourceFeatures.push(feature);
@@ -130,7 +130,7 @@ if ($("#map").length != 0) {
         case 'UK':
           feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, ripple, dash, eur, usd];
           feature.properties.iconSize = 10;
-          feature.properties.coordinates = [-3.435973,55.378051];
+          feature.properties.coordinates = [48.211738,35.559266];
           feature.properties.exchange_country = 4;
           feature.properties.trading = "$1.5B";
           sourceFeatures.push(feature);
@@ -146,7 +146,7 @@ if ($("#map").length != 0) {
         case "Chile":
           feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin];
           feature.properties.iconSize = 10;
-          feature.properties.coordinates = [-71.542969,-35.675147];
+          feature.properties.coordinates = [-24.895033,-45.768910];
           feature.properties.exchange_country = 1;
           feature.properties.trading = "$1.5B";
           sourceFeatures.push(feature);
