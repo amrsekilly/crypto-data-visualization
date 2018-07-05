@@ -355,7 +355,7 @@ if ($("#map").length != 0) {
       text: "More than $9B",
       color: "#77E2FC"
     }].forEach(function (radius) {
-    legend.insertAdjacentHTML('beforeend', '<div class="legend-row"><span class="circle" style="width:' + radius.size + 'px; opacity: 0.9; border: 2px solid white; background-color: ' + radius.color + '; top: 2px; height:' + radius.size + 'px;"></span><span>' + radius.text + '</span></div>');
+    legend.insertAdjacentHTML('beforeend', '<div class="legend-row"><span class="circle" style="width:' + radius.size + 'px; opacity: 0.9; border: 2px solid white; background-color: ' + radius.color + '; top: 4px; height:' + radius.size + 'px;"></span><span>' + radius.text + '</span></div>');
   });
 
   // update the map with new data
