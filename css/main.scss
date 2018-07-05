@@ -262,17 +262,20 @@
 
 // map's legend 
 .legend {
-   background-color: transparent;
-   position: absolute;
-   top: 50px;
-   right: 30px;
-   z-index: 1;
+  position: absolute;
+  top: 60px;
+  right: 30px;
+  z-index: 1;
+  width: 190px;
+  background-color: #00000052;
+  border-radius: 10px;
+  padding: 20px;
   //  for the legend's header
    .legend-header {
     font-size: 1.3em !important;
     text-transform: uppercase;
     margin-bottom: -0.1em;
-    padding-top: 0.8em;
+    margin-top:0px!important;
    }
   span {
     color: white;
@@ -286,6 +289,8 @@
     display: inline-block;
     margin-right: 5px;
   }
+
+
 
   @media only screen and (max-width: 991px) {
     // reset position  
