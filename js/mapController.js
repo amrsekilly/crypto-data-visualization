@@ -55,22 +55,110 @@ if ($("#map").length != 0) {
           feature.properties.trading = 20;
           sourceFeatures.push(feature);
           break;
+        case 'Belize':
+          feature.properties.currencies = [bitcoin, litecoin, ripple, jpy];
+          feature.properties.iconSize = 30;
+          feature.properties.coordinates = [-88.497650, 17.189877];
+          feature.properties.exchange_country = 1;
+          feature.properties.trading = 20;
+          sourceFeatures.push(feature);
+          break;
         case 'China':
           feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd];
           feature.properties.iconSize = 20;
           feature.properties.coordinates = [104.195397,35.861660];
-          feature.properties.exchange_country = 11;
+          feature.properties.exchange_country = 1;
           feature.properties.trading = 10;
           sourceFeatures.push(feature);
           break;
+        case 'Hong Kong':
+          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd];
+          feature.properties.iconSize = 20;
+          feature.properties.coordinates = [114.109497,22.396428];
+          feature.properties.exchange_country = 2;
+          feature.properties.trading = 10;
+          sourceFeatures.push(feature);
+          break;
+        case 'India':
+          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd];
+          feature.properties.iconSize = 20;
+          feature.properties.coordinates = [78.962880,20.593684];
+          feature.properties.exchange_country = 1;
+          feature.properties.trading = 10;
+          sourceFeatures.push(feature);
+          break;
+        case 'Luxembourg':
+          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd];
+          feature.properties.iconSize = 20;
+          feature.properties.coordinates = [6.129583,49.815273];
+          feature.properties.exchange_country = 1;
+          feature.properties.trading = 10;
+          sourceFeatures.push(feature);
+          break;
+        case 'Malta':
+          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd];
+          feature.properties.iconSize = 20;
+          feature.properties.coordinates = [14.375416,35.937496];
+          feature.properties.exchange_country = 1;
+          feature.properties.trading = 10;
+          sourceFeatures.push(feature);
+          break;
+        case 'Mexico':
+          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd];
+          feature.properties.iconSize = 20;
+          feature.properties.coordinates = [-102.552784,23.634501];
+          feature.properties.exchange_country = 1;
+          feature.properties.trading = 10;
+          sourceFeatures.push(feature);
+          break;
+        case 'Seychelles':
+          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd];
+          feature.properties.iconSize = 20;
+          feature.properties.coordinates = [55.491977,-4.679574];
+          feature.properties.exchange_country = 1;
+          feature.properties.trading = 10;
+          sourceFeatures.push(feature);
+          break; 
+        case 'Taiwan':
+          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd];
+          feature.properties.iconSize = 20;
+          feature.properties.coordinates = [121.565418,25.032969];
+          feature.properties.exchange_country = 1;
+          feature.properties.trading = 10;
+          sourceFeatures.push(feature);
+          break;  
+        case 'United Kingdom':
+          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd];
+          feature.properties.iconSize = 20;
+          feature.properties.coordinates = [-3.435973,55.378051];
+          feature.properties.exchange_country = 4;
+          feature.properties.trading = 10;
+          sourceFeatures.push(feature);
+          break;    
         case "United States":
           feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd];
           feature.properties.iconSize = 20;
           feature.properties.coordinates = [-95.712891,37.090240];
-          feature.properties.exchange_country = 11;
+          feature.properties.exchange_country = 2;
           feature.properties.trading = 10;
           sourceFeatures.push(feature);
           break;
+        case "Chile":
+          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd];
+          feature.properties.iconSize = 20;
+          feature.properties.coordinates = [-71.542969,-35.675147];
+          feature.properties.exchange_country = 1;
+          feature.properties.trading = 10;
+          sourceFeatures.push(feature);
+          break;
+        case 'Korea':
+          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, gbp, jpy, eur, usdt, usd];
+          feature.properties.iconSize = 20;
+          feature.properties.coordinates = [127.978458,37.663998];
+          feature.properties.exchange_country = 2;
+          feature.properties.trading = 10;
+          sourceFeatures.push(feature);
+          break;   
         default:
           break;
       }
