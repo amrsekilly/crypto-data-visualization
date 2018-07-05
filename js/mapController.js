@@ -264,7 +264,7 @@ if ($("#map").length != 0) {
               <div class="vol">
                <div class="num">${ description.trading }</div> <span class="vol-copy">avg 24hr vol</span>
               </div>
-              <div style="text-align: left;">
+              <div style="text-align: left;max-width:154px;margin:0 auto;">
                 <div style="display: inline-block;">
                 ${
             currencies
