@@ -70,7 +70,7 @@
  }
 
 .column, .column p {
-   font-size: 1.5rem;
+   font-size: 1rem;
  }
 
  .column {
@@ -99,6 +99,13 @@
 
 .masthead.segment {
   padding: 0em;
+}
+
+.masthead h2 {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: white;
+  margin-top:0px;
 }
 
 // styling the markers for the map
@@ -713,6 +720,7 @@
     @media only screen and (max-width: 600px) {
       width: 400px;
       height: 400px;
+      display:none;
     }
   }
   // the post description 
@@ -744,6 +752,19 @@
       position: absolute;
       right: 4vw;
       bottom: 3vw;
+    }
+  }
+
+
+  @media (max-width:740px){
+    .post-description {
+      display:none;
+    }
+  }
+
+  @media (max-width:600px){
+    .post-description {
+      display:block;
     }
   }
 

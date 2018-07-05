@@ -1,6 +1,6 @@
 ---
 author: DigFin
-title: "CAPITAL MARKETSHow ICE’s crypto feed with Blockstream works"
+title: "How ICE’s crypto feed with Blockstream works"
 categories: 
 tags: ARTICLE
 image: /images/blog/digfin.jpg
