@@ -259,7 +259,7 @@ if ($("#map").length != 0) {
             <div >
               <div class="pop-title">${ description.name}</div>
               <div class="exchange-container">
-              <div class="exchange-number">${ description.exchange_country}</div><div class="exch-right-col"><div class="part-one">Participating</div><div class="part-two"> Exchanges</div></div>
+              <div class="exchange-number">${ description.exchange_country}</div><div class="exch-right-col"><div class="part-one">Participating</div><div class="part-two"> Exchange(s)</div></div>
               </div>
               <div class="vol">
                <div class="num">${ description.trading }</div> <span class="vol-copy">avg 24hr vol</span>
