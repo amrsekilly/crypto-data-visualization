@@ -113,11 +113,13 @@
 // pop-up style
 // the content 
 .mapboxgl-popup-content {
-  border-radius: 0 !important;
+  border-radius: 10px !important;
   z-index: 10;
   min-width: 11vw;
   min-height: 11vw;
   font-size: 1em;
+  border: 2px solid white;
+  padding: 20px 20px 15px!important;
   background-color: #012e3b !important;
   .exchange-logo {
     max-width: 100px;
@@ -154,8 +156,83 @@
   margin-bottom: 20px;
 }
 
+.pop-title {
+  text-transform: uppercase;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 600;
+  color: #00ccff;
+}
+
+.exchange-container {
+  width: 150px;
+  padding-top: 10px;
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
+
+.exchange-number {
+  font-size: 3.5rem;
+  color: white;
+  font-weight: 500;
+  width: 50px;
+  text-align: center;
+  float: left;
+  padding-top: 8px;
+}
+
+.exch-right-col {
+  width: 110px;
+  float: right;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  line-height: 1.2;
+
+  .part-one {
+    font-weight: 200;
+  }
+  .part-two {
+    font-weight: 500;
+  }
+}
+
+.vol {
+  display: block;
+  height:30px;
+  margin-bottom: 5px;
+
+  .num {
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 500;
+    padding-right: 5px;
+    text-align: center;
+    float: left;
+    padding-top: 3.49px;
+  }
+}
+
+.vol-copy {
+  font-size: 1rem;
+  color: white;
+  font-weight: 200;
+  width: 107px;
+  text-align: center;
+  float: right;
+  padding-top: 4px;
+  text-transform: uppercase;
+  display: inline-flex;
+}
+
+.vol-bold {
+  width: 42px;
+  font-weight: 500;
+}
+
 // to make that green tooltip
- .mapboxgl-popup-tip:after {
+ /*.mapboxgl-popup-tip:after {
   content: "";
   display: block;
   width: 7vw;
@@ -171,7 +248,7 @@
     width: 90px;
     left: -45px;
   }
-}
+} */
 
 .small-circle:after {
   border-color: #77E2FC;

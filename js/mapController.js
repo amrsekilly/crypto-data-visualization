@@ -52,7 +52,7 @@ if ($("#map").length != 0) {
           feature.properties.iconSize = 20;
           feature.properties.coordinates = [139.707731, 35.659129];
           feature.properties.exchange_country = 4;
-          feature.properties.trading = 20;
+          feature.properties.trading = "$1.5B";
           sourceFeatures.push(feature);
           break;
         case 'Belize':
@@ -60,7 +60,7 @@ if ($("#map").length != 0) {
           feature.properties.iconSize = 30;
           feature.properties.coordinates = [-88.497650, 17.189877];
           feature.properties.exchange_country = 1;
-          feature.properties.trading = 30;
+          feature.properties.trading = "$1.5B";
           sourceFeatures.push(feature);
           break;
         case 'China':
@@ -68,7 +68,7 @@ if ($("#map").length != 0) {
           feature.properties.iconSize = 30;
           feature.properties.coordinates = [104.195397,35.861660];
           feature.properties.exchange_country = 1;
-          feature.properties.trading = 10;
+          feature.properties.trading = "$1.5B";
           sourceFeatures.push(feature);
           break;
         case 'Hong Kong':
@@ -76,7 +76,7 @@ if ($("#map").length != 0) {
           feature.properties.iconSize = 20;
           feature.properties.coordinates = [114.109497,22.396428];
           feature.properties.exchange_country = 2;
-          feature.properties.trading = 10;
+          feature.properties.trading = "$1.5B";
           sourceFeatures.push(feature);
           break;
         case 'India':
@@ -84,7 +84,7 @@ if ($("#map").length != 0) {
           feature.properties.iconSize = 10;
           feature.properties.coordinates = [78.962880,20.593684];
           feature.properties.exchange_country = 1;
-          feature.properties.trading = 10;
+          feature.properties.trading = "$1.5B";
           sourceFeatures.push(feature);
           break;
         case 'Luxembourg':
@@ -92,7 +92,7 @@ if ($("#map").length != 0) {
           feature.properties.iconSize = 30;
           feature.properties.coordinates = [6.129583,49.815273];
           feature.properties.exchange_country = 1;
-          feature.properties.trading = 10;
+          feature.properties.trading = "$1.5B";
           sourceFeatures.push(feature);
           break;
         case 'Malta':
@@ -100,7 +100,7 @@ if ($("#map").length != 0) {
           feature.properties.iconSize = 10;
           feature.properties.coordinates = [14.375416,35.937496];
           feature.properties.exchange_country = 1;
-          feature.properties.trading = 10;
+          feature.properties.trading = "$1.5B";
           sourceFeatures.push(feature);
           break;
         case 'Mexico':
@@ -108,7 +108,7 @@ if ($("#map").length != 0) {
           feature.properties.iconSize = 10;
           feature.properties.coordinates = [-102.552784,23.634501];
           feature.properties.exchange_country = 1;
-          feature.properties.trading = 10;
+          feature.properties.trading = "$1.5B";
           sourceFeatures.push(feature);
           break;
         case 'Seychelles':
@@ -116,7 +116,7 @@ if ($("#map").length != 0) {
           feature.properties.iconSize = 30;
           feature.properties.coordinates = [55.491977,-4.679574];
           feature.properties.exchange_country = 1;
-          feature.properties.trading = 10;
+          feature.properties.trading = "$1.5B";
           sourceFeatures.push(feature);
           break; 
         case 'Taiwan':
@@ -124,23 +124,23 @@ if ($("#map").length != 0) {
           feature.properties.iconSize = 30;
           feature.properties.coordinates = [121.565418,25.032969];
           feature.properties.exchange_country = 1;
-          feature.properties.trading = 10;
+          feature.properties.trading = "$1.5B";
           sourceFeatures.push(feature);
           break;  
-        case 'United Kingdom':
+        case 'UK':
           feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, ripple, dash, eur, usd];
           feature.properties.iconSize = 10;
           feature.properties.coordinates = [-3.435973,55.378051];
           feature.properties.exchange_country = 4;
-          feature.properties.trading = 10;
+          feature.properties.trading = "$1.5B";
           sourceFeatures.push(feature);
           break;    
-        case "United States":
+        case "USA":
           feature.properties.currencies = [bitcoin, usdt];
           feature.properties.iconSize = 10;
           feature.properties.coordinates = [-95.712891,37.090240];
           feature.properties.exchange_country = 2;
-          feature.properties.trading = 10;
+          feature.properties.trading = "$1.5B";
           sourceFeatures.push(feature);
           break;
         case "Chile":
@@ -148,7 +148,7 @@ if ($("#map").length != 0) {
           feature.properties.iconSize = 10;
           feature.properties.coordinates = [-71.542969,-35.675147];
           feature.properties.exchange_country = 1;
-          feature.properties.trading = 10;
+          feature.properties.trading = "$1.5B";
           sourceFeatures.push(feature);
           break;
         case 'Korea':
@@ -156,7 +156,7 @@ if ($("#map").length != 0) {
           feature.properties.iconSize = 20;
           feature.properties.coordinates = [127.978458,37.663998];
           feature.properties.exchange_country = 2;
-          feature.properties.trading = 10;
+          feature.properties.trading = "$1.5B";
           sourceFeatures.push(feature);
           break;   
         default:
@@ -191,7 +191,7 @@ if ($("#map").length != 0) {
               [30, "#00ffb3"]
             ]
           },
-          "fill-opacity": 0.5
+          "fill-opacity": 0.7
         },
       }, 'country-label-lg');
 
@@ -216,9 +216,9 @@ if ($("#map").length != 0) {
           "fill-color": {
             property: "iconSize",
             stops: [
-              [10, "#00ffb3"],
+              [10, "#77E2FC"],
               [20, "#007999"],
-              [30, "#77E2FC"]
+              [30, "#00ffb3"]
             ]
           },
           "fill-opacity": 1
@@ -257,19 +257,19 @@ if ($("#map").length != 0) {
         popup.setLngLat(coordinates)
           .setHTML(`
             <div >
-              <h2>${ description.name}</h2>
-              <p class="exchange-country"> 
-                Exchanges: ${ description.exchange_country}
-              </p>
-              <p class="trading">
-              Trading: ${ description.trading }
-              </p>
+              <div class="pop-title">${ description.name}</div>
+              <div class="exchange-container">
+              <div class="exchange-number">${ description.exchange_country}</div><div class="exch-right-col"><div class="part-one">Participating</div><div class="part-two"> Exchanges</div></div>
+              </div>
+              <div class="vol">
+               <div class="num">${ description.trading }</div> <span class="vol-copy">avg 24hr vol</span>
+              </div>
               <div style="text-align: left;">
                 <div style="display: inline-block;">
                 ${
             currencies
             // to make sure that each row contains at most 3 logos
-              .map((currency, i) => !(i % 3) && i ? `<span><img src=${currency} style="max-width:25px;" /></span><br>` : `<span><img src=${currency} style="max-width:25px; margin-right: 7px;" /></span>`)
+              .map((currency, i) => !(i % 4) && i ? `<span><img src=${currency} style="max-width:25px;" /></span><br>` : `<span><img src=${currency} style="max-width:25px; margin-right: 7px;" /></span>`)
             .join('')
             }
                 </div>
