@@ -128,7 +128,7 @@
 // the content 
 .mapboxgl-popup-content {
   border-radius: 10px !important;
-  z-index: 10;
+  z-index: 9999;
   min-width: 11vw;
   min-height: 11vw;
   font-size: 1em;
@@ -250,25 +250,6 @@
   width: 42px;
   font-weight: 500;
 }
-
-// to make that green tooltip
- /*.mapboxgl-popup-tip:after {
-  content: "";
-  display: block;
-  width: 7vw;
-  height: 25px;
-  position: relative;
-  z-index: -99999;
-  left: -3.5vw;
-  top: -4px;
-  border: 2px solid {{ site.data.colors.markers-color }};
-
-  // for larger screens
-  @media only screen and (min-width: 1500px) {
-    width: 90px;
-    left: -45px;
-  }
-} */
 
 .small-circle:after {
   border-color: #77E2FC;
@@ -408,103 +389,6 @@
      display: none;
    }
 }
-
-
-
-// style the buttons beneath the map 
-.cryptocurrencyButtons {
-
-  // make sure it shows only on computers 
-  @media only screen and (max-width: 991px) {
-    display: none;
-  }
-
-  position: relative;
-  bottom: 60px;
- 
-  // all the fields on the map (for the radio buttons)
-  .fields {
-    // make sure the mouse is pointer
-    cursor: pointer;
-    label {
-      cursor: pointer;
-    }
-  }
-  // each radio button container -- for the map
-  .field {
-    height: 50px;
-    // center the image and button 
-    .checkbox {
-      padding-left: 35%;
-    }
-    img {
-      max-width: 30px;
-    }
-  }
-
-  // to style the radio buttons' fields backgrounds 
-  .field:nth-child(odd) {
-    background-color: {{ site.data.colors.primary-grey }};
-  }
-
-  .field:nth-child(even) {
-    background-color: {{ site.data.colors.light-grey }};
-  }
-
-  // Style the radio buttons
-  .ui.radio.checkbox input:checked~.box:after,
-  .ui.radio.checkbox input:checked~label:after {
-    background-color: {{ site.data.colors.markers-color }} !important;
-    z-index: 9999;
-  }
-  .ui.checkbox .box:before,
-  .ui.checkbox label:before {
-    background: {{ site.data.colors.deselected-radio }};
-    border: none;
-    top: 8px !important;
-    width: 15px;
-    height: 15px;
-  }
-  .ui.checkbox input:checked~.box:before,
-  .ui.checkbox input:checked~label:before {
-    background: transparent;
-    border: none;
-  }
-  .ui.radio.checkbox input:checked~.box:before,
-  .ui.radio.checkbox input:checked~label:before {
-    background-color: transparent;
-  }
-  
-  // style the dimensions of the radio button 
-  .ui.radio.checkbox .box:after,
-  .ui.radio.checkbox label:after {
-    top: 0px;
-    width: 30px;
-    height: 30px;
-  }
- 
-  // position the label before the input 
-  .ui.radio.checkbox label {
-    padding-left: 0;
-    padding-right: 51px;
-  }
-  .ui.checkbox input,
-  .ui.radio.checkbox label:before {
-    left: auto;
-    top: 0;
-    right: -2px;
-  }
-  .ui.radio.checkbox label:after {
-    left: auto;
-    right: 20px;
-  }
-  .ui.radio.checkbox input:checked+label:after {
-    left: auto;
-    right: -10px;
-  }
-}
-
-
 
 
 
