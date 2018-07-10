@@ -343,16 +343,16 @@ if ($("#map").length != 0) {
   [{
     size: 18,
     color: "#00ffb3",
-    text: "Less than $1.8B"
+    text: "X < $3.5M"
   },
     {
       size: 18,
-      text: "$1.8B to $9B",
+      text: "$3.5M < X < $50M",
       color: "#007999"
     },
     {
       size: 18,
-      text: "More than $9B",
+      text: "$50M < X",
       color: "#77E2FC"
     }].forEach(function (radius) {
     legend.insertAdjacentHTML('beforeend', '<div class="legend-row"><span class="circle" style="width:' + radius.size + 'px; opacity: 0.9; border: 2px solid white; background-color: ' + radius.color + '; top: 4px; height:' + radius.size + 'px;"></span><span>' + radius.text + '</span></div>');
