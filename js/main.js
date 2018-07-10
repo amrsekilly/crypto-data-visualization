@@ -13,6 +13,18 @@ $(document).ready(function() {
     $(".button").not(this).removeClass("active");
   });
 
+
+  // add the map count-up 
+  var odometer = new Odometer({
+    el: $('.odometer')[0],
+    value: 0,
+    theme: 'minimal',
+    duration: 3000
+  });
+  odometer.render();
+
+  $('.odometer').text(22);
+
   // add smooth scrolling 
   // Select all links with hashes
   $('a[href*="#"]')
