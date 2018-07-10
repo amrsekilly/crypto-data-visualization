@@ -54,7 +54,7 @@ if ($("#map").length != 0) {
           feature.properties.exchange_country = 4;
           feature.properties.trading = "$191M";
           sourceFeatures.push(feature);
-          break;29<
+          break;
         case 'Belize':
           feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, dash, usdt];
           feature.properties.iconSize = 30;

@@ -39,6 +39,8 @@
   left: 0;
   right: 0;
   bottom: 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
   overflow: hidden;
 }
 .odometer.odometer-auto-theme .odometer-digit .odometer-ribbon, .odometer.odometer-theme-minimal .odometer-digit .odometer-ribbon {
