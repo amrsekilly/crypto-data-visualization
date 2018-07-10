@@ -52,15 +52,15 @@ if ($("#map").length != 0) {
           feature.properties.iconSize = 20;
           feature.properties.coordinates = [86.795722, 6.211737];
           feature.properties.exchange_country = 4;
-          feature.properties.trading = "$1.5B";
+          feature.properties.trading = "$191M";
           sourceFeatures.push(feature);
-          break;
+          break;29<
         case 'Belize':
           feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, dash, usdt];
           feature.properties.iconSize = 30;
           feature.properties.coordinates = [-88.497650, 17.189877];
           feature.properties.exchange_country = 1;
-          feature.properties.trading = "$1.5B";
+          feature.properties.trading = "$482M";
           sourceFeatures.push(feature);
           break;
         case 'China':
@@ -76,7 +76,7 @@ if ($("#map").length != 0) {
           feature.properties.iconSize = 20;
           feature.properties.coordinates = [114.109497,22.396428];
           feature.properties.exchange_country = 2;
-          feature.properties.trading = "$1.5B";
+          feature.properties.trading = "$30M";
           sourceFeatures.push(feature);
           break;
         case 'India':
