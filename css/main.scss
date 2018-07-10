@@ -70,7 +70,8 @@
  }
 
 .column, .column p {
-   font-size: 1rem;
+   font-size: 1.3rem;
+   margin:0px;
  }
 
  .column {
@@ -337,6 +338,11 @@
   color:#13a5cc
 }
 
+// about section
+.column li {
+  margin-left:40px;
+}
+
 // the call to action text 
 .callToAction {
   position: relative;
@@ -378,7 +384,7 @@
     margin-top:0px;
   }
 
-// the cryptocurrency lable 
+// the cryptocurrency label 
 .crypto-lable {
   color: white;
   opacity: 0.8;
