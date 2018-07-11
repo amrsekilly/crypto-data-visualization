@@ -472,6 +472,10 @@
     color: {{ site.data.colors.primary-white }};
   }
 
+  .even h2 {
+    color: black;
+}
+
   // to avoid having a white border-left for the first button in the nav buttons group 
   .first {
     border-left: 0px;
