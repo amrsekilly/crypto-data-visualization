@@ -2,7 +2,7 @@
 author: wsj
 title: "What’s Bitcoin Worth?"
 categories: 
-tags: ARTICLE
+tags: WALL STREET JOURNAL
 image: /images/blog/wsj.jpg
 summary: "A New Plan to Bring Discipline to Crypto Prices."
 layout: default_post
