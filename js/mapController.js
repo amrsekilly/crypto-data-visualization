@@ -2,11 +2,11 @@
  // import the cryptocurrency icons
 const bitcoin = "/market-data-project/images/icons/bitcoin.png";
 const ethereum = "/market-data-project/images/icons/ethereum.png";
-const bitcoinCash = "/market-data-project/images/icons/bitcoin-cash-icon.png";
-const litecoin = "/market-data-project/images/icons/litecoin-icon.png";
+const bitcoinCash = "/market-data-project/images/icons/bitcoin-cash.png";
+const litecoin = "/market-data-project/images/icons/litecoin.png";
 const etc = "/market-data-project/images/icons/etc.png";
-const ripple = "/market-data-project/images/icons/ripple-icon.png";
-const dash = "/market-data-project/images/icons/dash-icon.png";
+const ripple = "/market-data-project/images/icons/ripple.png";
+const dash = "/market-data-project/images/icons/dash.png";
 const eos = "/market-data-project/images/icons/eos.png";
 const neo = "/market-data-project/images/icons/neo.png";
 const omisego = "/market-data-project/images/icons/omisego.png";
@@ -241,7 +241,7 @@ if ($("#map").length != 0) {
                 ${
             currencies
             // to make sure that each row contains at most 3 logos
-              .map((currency, i) => !(i % 4) && i ? `<span><img src=${currency} style="max-width:25px;" /></span><br>` : `<span><img src=${currency} style="max-width:25px; margin-right: 7px;" /></span>`)
+              .map((currency, i) => !(i % 4) && i ? `<span><img src=${currency} style="max-width:25px;" /></span>` : `<span><img src=${currency} style="max-width:25px;" /></span>`)
             .join('')
             }
                 </div>
