@@ -1,16 +1,28 @@
 
  // import the cryptocurrency icons
-const bitcoin = "/market-data-project/images/icons/bitcoin-icon.png";
-const ethereum = "/market-data-project/images/icons/ethereum-icon.png";
+const bitcoin = "/market-data-project/images/icons/bitcoin.png";
+const ethereum = "/market-data-project/images/icons/ethereum.png";
 const bitcoinCash = "/market-data-project/images/icons/bitcoin-cash-icon.png";
 const litecoin = "/market-data-project/images/icons/litecoin-icon.png";
+const etc = "/market-data-project/images/icons/etc.png";
 const ripple = "/market-data-project/images/icons/ripple-icon.png";
 const dash = "/market-data-project/images/icons/dash-icon.png";
+const eos = "/market-data-project/images/icons/eos.png";
+const neo = "/market-data-project/images/icons/neo.png";
+const omisego = "/market-data-project/images/icons/omisego.png";
+const monero = "/market-data-project/images/icons/monero.png";
+const qtum = "/market-data-project/images/icons/qtum.png";
+const stellar = "/market-data-project/images/icons/stellar.png";
+const zcash = "/market-data-project/images/icons/zcash.png";
 const gbp = "/market-data-project/images/icons/gbp.png";
 const jpy = "/market-data-project/images/icons/jpy.png";
-const eur = "/market-data-project/images/icons/eur.png";
+const eur = "/market-data-project/images/icons/euro.png";
 const usdt = "/market-data-project/images/icons/usdt.png";
-const usd = "/market-data-project/images/icons/usd.png";
+const dollar = "/market-data-project/images/icons/dollar.png";
+const pln = "/market-data-project/images/icons/pln.png";
+const rub = "/market-data-project/images/icons/rub.png";
+const uah = "/market-data-project/images/icons/uah.png";
+const won = "/market-data-project/images/icons/won.png";
 
 // to map range of values to other range 
 function mapRange(num, in_min, in_max, out_min, out_max) {
@@ -56,7 +68,7 @@ if ($("#map").length != 0) {
           sourceFeatures.push(feature);
           break;
         case 'China':
-          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, usdt];
+          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, usdt, eos, neo, monero, etc, qtum, omisego, zcash, stellar, dollar, eur, jpy, gbp];
           feature.properties.iconSize = 30;
           feature.properties.coordinates = [31.600410,14.504007];
           feature.properties.exchange_country = 1;
@@ -72,7 +84,7 @@ if ($("#map").length != 0) {
           sourceFeatures.push(feature);
           break;
         case 'Italy':
-          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, eur];
+          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, zcash, eur];
           feature.properties.iconSize = 10;
           feature.properties.coordinates = [69.150057,36.959818];
           feature.properties.exchange_country = 1;
@@ -88,7 +100,7 @@ if ($("#map").length != 0) {
           sourceFeatures.push(feature);
           break;
         case 'UK':
-          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, ripple, dash, eur, usd];
+          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, ripple, dash, eur, dollar];
           feature.properties.iconSize = 30;
           feature.properties.coordinates = [48.211738,35.559266];
           feature.properties.exchange_country = 4;
