@@ -22,7 +22,9 @@ const dollar = "/market-data-project/images/icons/dollar.png";
 const pln = "/market-data-project/images/icons/pln.png";
 const rub = "/market-data-project/images/icons/rub.png";
 const uah = "/market-data-project/images/icons/uah.png";
-const won = "/market-data-project/images/icons/won.png";
+const krw = "/market-data-project/images/icons/krw.png";
+const gold = "/market-data-project/images/icons/gold.png";
+const pen = "/market-data-project/images/icons/pen.png";
 
 // to map range of values to other range 
 function mapRange(num, in_min, in_max, out_min, out_max) {
@@ -60,7 +62,7 @@ if ($("#map").length != 0) {
 
       switch (feature.properties.name) {
         case 'Japan':
-          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, jpy];
+          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, jpy];
           feature.properties.iconSize = 30;
           feature.properties.coordinates = [86.795722, 6.211737];
           feature.properties.exchange_country = 4;
@@ -80,7 +82,7 @@ if ($("#map").length != 0) {
           feature.properties.iconSize = 30;
           feature.properties.coordinates = [145.506660,5.162256];
           feature.properties.exchange_country = 1;
-          feature.properties.trading = "$1.5B";
+          feature.properties.trading = "$330K";
           sourceFeatures.push(feature);
           break;
         case 'Italy':
@@ -92,7 +94,7 @@ if ($("#map").length != 0) {
           sourceFeatures.push(feature);
           break;
         case 'Mexico':
-          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple];
+          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dollar];
           feature.properties.iconSize = 10;
           feature.properties.coordinates = [-45.189816,10.681159];
           feature.properties.exchange_country = 1;
@@ -100,7 +102,7 @@ if ($("#map").length != 0) {
           sourceFeatures.push(feature);
           break;
         case 'UK':
-          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, ripple, dash, eur, dollar];
+          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, usdt, eos, monero, etc, zcash, dollar, eur, rub, uah, pln, gold];
           feature.properties.iconSize = 30;
           feature.properties.coordinates = [48.211738,35.559266];
           feature.properties.exchange_country = 4;
@@ -108,7 +110,7 @@ if ($("#map").length != 0) {
           sourceFeatures.push(feature);
           break;    
         case "USA":
-          feature.properties.currencies = [bitcoin, usdt];
+          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, dollar, eur, jpy, gbp];
           feature.properties.iconSize = 30;
           feature.properties.coordinates = [-19.174191,18.666059];
           feature.properties.exchange_country = 2;
@@ -116,7 +118,7 @@ if ($("#map").length != 0) {
           sourceFeatures.push(feature);
           break;
         case "Chile":
-          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin];
+          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, pen, dollar];
           feature.properties.iconSize = 10;
           feature.properties.coordinates = [-24.895033,-45.768910];
           feature.properties.exchange_country = 1;
@@ -124,11 +126,11 @@ if ($("#map").length != 0) {
           sourceFeatures.push(feature);
           break;
         case 'Korea':
-          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin];
+          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, zcash, eur, krw];
           feature.properties.iconSize = 20;
           feature.properties.coordinates = [127.978458,37.663998];
           feature.properties.exchange_country = 2;
-          feature.properties.trading = "$22.8M";
+          feature.properties.trading = "$22M";
           sourceFeatures.push(feature);
           break;   
         default:
