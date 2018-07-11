@@ -73,7 +73,7 @@ if ($("#map").length != 0) {
           feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, usdt, eos, neo, monero, etc, qtum, omisego, zcash, stellar, dollar, eur, jpy, gbp];
           feature.properties.iconSize = 30;
           feature.properties.coordinates = [31.600410,14.504007];
-          feature.properties.exchange_country = 1;
+          feature.properties.exchange_country = 6;
           feature.properties.trading = "$1.7B";
           sourceFeatures.push(feature);
           break;
@@ -105,7 +105,7 @@ if ($("#map").length != 0) {
           feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, usdt, eos, monero, etc, zcash, dollar, eur, rub, uah, pln, gold];
           feature.properties.iconSize = 30;
           feature.properties.coordinates = [48.211738,35.559266];
-          feature.properties.exchange_country = 4;
+          feature.properties.exchange_country = 5;
           feature.properties.trading = "$124M";
           sourceFeatures.push(feature);
           break;    
@@ -113,7 +113,7 @@ if ($("#map").length != 0) {
           feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, dollar, eur, jpy, gbp];
           feature.properties.iconSize = 30;
           feature.properties.coordinates = [-19.174191,18.666059];
-          feature.properties.exchange_country = 2;
+          feature.properties.exchange_country = 3;
           feature.properties.trading = "$298M";
           sourceFeatures.push(feature);
           break;
