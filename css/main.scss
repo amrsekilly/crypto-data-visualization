@@ -365,6 +365,7 @@
     float: left;
     font-size: 8rem;
     padding-top: 0px;
+    top: -38px;
     // margin-bottom: 200px;
   }
 
@@ -514,6 +515,11 @@
       margin-bottom: 30px;
       max-height: 95px;
     }
+  }
+
+  //join us
+  .field.api {
+    display:none;
   }
 
   // the testimonials section 
