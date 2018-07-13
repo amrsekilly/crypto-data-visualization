@@ -15,13 +15,13 @@ $(document).ready(function() {
 
 
   // add the map count-up 
-  var odometer = new Odometer({
+  /*var odometer = new Odometer({
     el: $('.odometer')[0],
     value: 0,
     theme: 'minimal',
     duration: 3000
   });
-  odometer.render();
+  odometer.render();*/
 
   $('.odometer').text(22);
 
