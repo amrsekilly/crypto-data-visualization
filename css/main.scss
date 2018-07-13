@@ -769,3 +769,20 @@
 #nav-buttons {
   margin-top: 30px;
 }
+
+//loading screen
+#loading_screen {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    z-index: 10000000;
+    text-align: center;
+    display: table;
+}
+
+#loader {
+    display: table-cell;
+    vertical-align: middle;
+}

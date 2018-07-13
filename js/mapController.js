@@ -205,6 +205,7 @@ map.on('load', function () {
 
       sourceData.features= sourceFeatures;
       map.getSource('countries').setData(sourceData);
+      $("#loading_screen").hide();
       
     });
 
