@@ -52,263 +52,270 @@ if ($("#map").length != 0) {
   // disable the touch to zoom on phones
   map.touchZoomRotate.disable();
 
-  $.get( "/market-data-project/js/ne_50m_admin_0_countries.geojson", function( data ) {
+    
 
-    var features = data.features;
+map.on('load', function () {
 
-    var sourceFeatures = [];
-    for (var i = 0; i < features.length; i ++) {
-      var feature = features[i];
-
-      switch (feature.properties.name) {
-        case 'Japan':
-          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, jpy];
-          feature.properties.iconSize = 30;
-          feature.properties.coordinates = [86.795722, 6.211737];
-          feature.properties.exchange_country = 4;
-          feature.properties.trading = "$191M";
-          sourceFeatures.push(feature);
-          break;
-        case 'China':
-          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, usdt, eos, neo, monero, etc, qtum, omisego, zcash, stellar, dollar, eur, jpy, gbp];
-          feature.properties.iconSize = 30;
-          feature.properties.coordinates = [31.600410,14.504007];
-          feature.properties.exchange_country = 6;
-          feature.properties.trading = "$1.7B";
-          sourceFeatures.push(feature);
-          break;
-        case 'India':
-          feature.properties.currencies = [bitcoin];
-          feature.properties.iconSize = 30;
-          feature.properties.coordinates = [145.506660,5.162256];
-          feature.properties.exchange_country = 1;
-          feature.properties.trading = "$330K";
-          sourceFeatures.push(feature);
-          break;
-        case 'Italy':
-          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, zcash, eur];
-          feature.properties.iconSize = 10;
-          feature.properties.coordinates = [69.150057,36.959818];
-          feature.properties.exchange_country = 1;
-          feature.properties.trading = "$468K";
-          sourceFeatures.push(feature);
-          break;
-        case 'Mexico':
-          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dollar];
-          feature.properties.iconSize = 10;
-          feature.properties.coordinates = [-45.189816,10.681159];
-          feature.properties.exchange_country = 1;
-          feature.properties.trading = "$1.6M";
-          sourceFeatures.push(feature);
-          break;
-        case 'UK':
-          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, usdt, eos, monero, etc, zcash, dollar, eur, rub, uah, pln, gold];
-          feature.properties.iconSize = 30;
-          feature.properties.coordinates = [48.211738,35.559266];
-          feature.properties.exchange_country = 5;
-          feature.properties.trading = "$124M";
-          sourceFeatures.push(feature);
-          break;    
-        case "USA":
-          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, dollar, eur, jpy, gbp];
-          feature.properties.iconSize = 30;
-          feature.properties.coordinates = [-19.174191,18.666059];
-          feature.properties.exchange_country = 3;
-          feature.properties.trading = "$298M";
-          sourceFeatures.push(feature);
-          break;
-        case "Chile":
-          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, pen, dollar];
-          feature.properties.iconSize = 10;
-          feature.properties.coordinates = [-24.895033,-45.768910];
-          feature.properties.exchange_country = 1;
-          feature.properties.trading = "$248K";
-          sourceFeatures.push(feature);
-          break;
-        case 'Korea':
-          feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, zcash, eur, krw];
-          feature.properties.iconSize = 20;
-          feature.properties.coordinates = [127.978458,37.663998];
-          feature.properties.exchange_country = 2;
-          feature.properties.trading = "$22M";
-          sourceFeatures.push(feature);
-          break;   
-        default:
-          break;
-      }
-    }
-
-    var sourceData = {
-      type: "FeatureCollection",
-      features: sourceFeatures
-    };
-
-    // wait until the map is displayed
-    map.on('load', function () {
-
-      map.addSource("countries", {
-        "type": "geojson",
-        "data": sourceData
-      });
-
-      map.addLayer({
-        "id": "country-fills",
-        "type": "fill",
-        "source": "countries",
-        "layout": {},
-        "paint": {
-          "fill-color": {
-            property: "iconSize",
-            stops: [
-              [10, "#77E2FC"],
-              [20, "#007999"],
-              [30, "#00ffb3"]
-            ]
-          },
-          "fill-opacity": 0.7
-        },
-      }, 'country-label-lg');
-
-      map.addLayer({
-        "id": "country-borders",
-        "type": "line",
-        "source": "countries",
-        "layout": {},
-        "paint": {
-          "line-color": "#FFFFFF",
-          "line-width": 1
-        },
-        "filter": ["==", "name", ""]
-      });
-
-      map.addLayer({
-        "id": "country-fills-hover",
-        "type": "fill",
-        "source": "countries",
-        "layout": {},
-        "paint": {
-          "fill-color": {
-            property: "iconSize",
-            stops: [
-              [10, "#77E2FC"],
-              [20, "#007999"],
-              [30, "#00ffb3"]
-            ]
-          },
-          "fill-opacity": 1
-        },
-        "filter": ["==", "name", ""]
-      }, 'country-label-lg');
-
-      // show the popup
-      // Create a popup, but don't add it to the map yet.
-      var popup = new mapboxgl.Popup({
-        closeButton: false,
-        closeOnClick: false
-      });
-
-      // to show the popup
-      function showPopup(e) {
-
-        // Change the cursor style as a UI indicator.
-        map.getCanvas().style.cursor = 'pointer';
-        var coordinates = JSON.parse(e.features[0].properties.coordinates);
-        var description = e.features[0].properties;
-        var regex = /\[\s*(.*?)\s*\]/g;
-        m = regex.exec(description.currencies);
-        var currencies = m[1].split(",");
-        var circleSize = description.iconSize;
-
-        // Ensure that if the map is zoomed out such that multiple
-        // copies of the feature are visible, the popup appears
-        // over the copy being pointed to.
-        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-          coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-        }
-
-        // Populate the popup and set its coordinates
-        // based on the feature found.
-        popup.setLngLat(coordinates)
-          .setHTML(`
-            <div >
-              <div class="pop-title">${ description.name}</div>
-              <div class="exchange-container">
-              <div class="exchange-number">${ description.exchange_country}</div><div class="exch-right-col"><div class="part-one">Participating</div><div class="part-two"> ${description.exchange_country > 1 ? 'Exchanges' : 'Exchange'}</div></div>
-              </div>
-              <div class="vol">
-               <div class="num">${ description.trading }</div> <span class="vol-copy">avg 24hr vol</span>
-              </div>
-              <div style="text-align: left;max-width:154px;margin:0 auto;">
-                <div style="display: inline-block;">
-                ${
-            currencies
-            // to make sure that each row contains at most 3 logos
-              .map((currency, i) => !(i % 4) && i ? `<span><img src=${currency} style="max-width:25px;" /></span>` : `<span><img src=${currency} style="max-width:25px;" /></span>`)
-            .join('')
-            }
-                </div>
-              </div>
-              
-            </div>
-          `)
-          .addTo(map);
+  var sourceData = {
+        type: "FeatureCollection",
+        features: []
+      };
 
 
-        // change the color of the tooltip depending on the selected circle
-        if (circleSize == 10) {
-          let tooltip = $(".mapboxgl-popup-tip");
-          tooltip.addClass('small-circle');
-        } else if (circleSize == 20) {
-          let tooltip = $(".mapboxgl-popup-tip");
-          tooltip.addClass('medium-circle');
-        } else {
-          let tooltip = $(".mapboxgl-popup-tip");
-          tooltip.addClass('large-circle');
+  map.addSource("countries", {
+    "type": "geojson",
+    "data": sourceData
+  });
+
+  map.addLayer({
+    "id": "country-fills",
+    "type": "fill",
+    "source": "countries",
+    "layout": {},
+    "paint": {
+      "fill-color": {
+        property: "iconSize",
+        stops: [
+          [10, "#77E2FC"],
+          [20, "#007999"],
+          [30, "#00ffb3"]
+        ]
+      },
+      "fill-opacity": 0.7
+    },
+  }, 'country-label-lg');
+
+  map.addLayer({
+    "id": "country-borders",
+    "type": "line",
+    "source": "countries",
+    "layout": {},
+    "paint": {
+      "line-color": "#FFFFFF",
+      "line-width": 1
+    },
+    "filter": ["==", "name", ""]
+  });
+
+  map.addLayer({
+    "id": "country-fills-hover",
+    "type": "fill",
+    "source": "countries",
+    "layout": {},
+    "paint": {
+      "fill-color": {
+        property: "iconSize",
+        stops: [
+          [10, "#77E2FC"],
+          [20, "#007999"],
+          [30, "#00ffb3"]
+        ]
+      },
+      "fill-opacity": 1
+    },
+    "filter": ["==", "name", ""]
+  }, 'country-label-lg');
+
+  $.get( "/market-data-project/js/ne_50m_admin_0_countries.geojson", function( data ) 
+    {
+
+      var features = data.features;
+
+      var sourceFeatures = [];
+      for (var i = 0; i < features.length; i ++) {
+        var feature = features[i];
+
+        switch (feature.properties.name) {
+          case 'Japan':
+            feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, jpy];
+            feature.properties.iconSize = 30;
+            feature.properties.coordinates = [86.795722, 6.211737];
+            feature.properties.exchange_country = 4;
+            feature.properties.trading = "$191M";
+            sourceFeatures.push(feature);
+            break;
+          case 'China':
+            feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, usdt, eos, neo, monero, etc, qtum, omisego, zcash, stellar, dollar, eur, jpy, gbp];
+            feature.properties.iconSize = 30;
+            feature.properties.coordinates = [31.600410,14.504007];
+            feature.properties.exchange_country = 6;
+            feature.properties.trading = "$1.7B";
+            sourceFeatures.push(feature);
+            break;
+          case 'India':
+            feature.properties.currencies = [bitcoin];
+            feature.properties.iconSize = 30;
+            feature.properties.coordinates = [145.506660,5.162256];
+            feature.properties.exchange_country = 1;
+            feature.properties.trading = "$330K";
+            sourceFeatures.push(feature);
+            break;
+          case 'Italy':
+            feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, zcash, eur];
+            feature.properties.iconSize = 10;
+            feature.properties.coordinates = [69.150057,36.959818];
+            feature.properties.exchange_country = 1;
+            feature.properties.trading = "$468K";
+            sourceFeatures.push(feature);
+            break;
+          case 'Mexico':
+            feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dollar];
+            feature.properties.iconSize = 10;
+            feature.properties.coordinates = [-45.189816,10.681159];
+            feature.properties.exchange_country = 1;
+            feature.properties.trading = "$1.6M";
+            sourceFeatures.push(feature);
+            break;
+          case 'UK':
+            feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, usdt, eos, monero, etc, zcash, dollar, eur, rub, uah, pln, gold];
+            feature.properties.iconSize = 30;
+            feature.properties.coordinates = [48.211738,35.559266];
+            feature.properties.exchange_country = 5;
+            feature.properties.trading = "$124M";
+            sourceFeatures.push(feature);
+            break;    
+          case "USA":
+            feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, dash, dollar, eur, jpy, gbp];
+            feature.properties.iconSize = 30;
+            feature.properties.coordinates = [-19.174191,18.666059];
+            feature.properties.exchange_country = 3;
+            feature.properties.trading = "$298M";
+            sourceFeatures.push(feature);
+            break;
+          case "Chile":
+            feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, pen, dollar];
+            feature.properties.iconSize = 10;
+            feature.properties.coordinates = [-24.895033,-45.768910];
+            feature.properties.exchange_country = 1;
+            feature.properties.trading = "$248K";
+            sourceFeatures.push(feature);
+            break;
+          case 'Korea':
+            feature.properties.currencies = [bitcoin, ethereum, bitcoinCash, litecoin, ripple, zcash, eur, krw];
+            feature.properties.iconSize = 20;
+            feature.properties.coordinates = [127.978458,37.663998];
+            feature.properties.exchange_country = 2;
+            feature.properties.trading = "$22M";
+            sourceFeatures.push(feature);
+            break;   
+          default:
+            break;
         }
       }
 
-      map.on("click", 'country-fills', function (e) {
-        if (markerClicked) {
-          map.getCanvas().style.cursor = '';
-          popup.remove();
-          popupIsOpened = false;
-          markerClicked = false;
-        } else {
-          if (!popupIsOpened) {
-            showPopup(e);
-            popupIsOpened = false;
-          }
-          markerClicked = true;
-        }
-      });
-
-      // When the user moves their mouse over the states-fill layer, we'll update the filter in
-      // the state-fills-hover layer to only show the matching state, thus making a hover effect.
-      map.on("mousemove", "country-fills", function(e) {
-        if (!popupIsOpened && !markerClicked) {
-          map.setFilter("country-fills-hover", ["==", "name", e.features[0].properties.name]);
-
-          showPopup(e);
-          popupIsOpened = true;
-        }
-      });
-
-      // Reset the state-fills-hover layer's filter when the mouse leaves the layer.
-      map.on("mouseleave", "country-fills", function() {
-
-        if(!markerClicked) {
-          map.setFilter("country-fills-hover", ["==", "name", ""]);
-        }
-
-        if (!markerClicked && popupIsOpened) {
-          popup.remove();
-          popupIsOpened = false;
-        }
-      });
+      sourceData.features= sourceFeatures;
+      map.getSource('countries').setData(sourceData);
+      
     });
 
+  
 
+  // show the popup
+  // Create a popup, but don't add it to the map yet.
+  var popup = new mapboxgl.Popup({
+    closeButton: false,
+    closeOnClick: false
   });
+
+  // to show the popup
+  function showPopup(e) {
+
+    // Change the cursor style as a UI indicator.
+    map.getCanvas().style.cursor = 'pointer';
+    var coordinates = JSON.parse(e.features[0].properties.coordinates);
+    var description = e.features[0].properties;
+    var regex = /\[\s*(.*?)\s*\]/g;
+    m = regex.exec(description.currencies);
+    var currencies = m[1].split(",");
+    var circleSize = description.iconSize;
+
+    // Ensure that if the map is zoomed out such that multiple
+    // copies of the feature are visible, the popup appears
+    // over the copy being pointed to.
+    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+      coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+    }
+
+    // Populate the popup and set its coordinates
+    // based on the feature found.
+    popup.setLngLat(coordinates)
+      .setHTML(`
+        <div >
+          <div class="pop-title">${ description.name}</div>
+          <div class="exchange-container">
+          <div class="exchange-number">${ description.exchange_country}</div><div class="exch-right-col"><div class="part-one">Participating</div><div class="part-two"> ${description.exchange_country > 1 ? 'Exchanges' : 'Exchange'}</div></div>
+          </div>
+          <div class="vol">
+           <div class="num">${ description.trading }</div> <span class="vol-copy">avg 24hr vol</span>
+          </div>
+          <div style="text-align: left;max-width:154px;margin:0 auto;">
+            <div style="display: inline-block;">
+            ${
+        currencies
+        // to make sure that each row contains at most 3 logos
+          .map((currency, i) => !(i % 4) && i ? `<span><img src=${currency} style="max-width:25px;" /></span>` : `<span><img src=${currency} style="max-width:25px;" /></span>`)
+        .join('')
+        }
+            </div>
+          </div>
+          
+        </div>
+      `)
+      .addTo(map);
+
+
+    // change the color of the tooltip depending on the selected circle
+    if (circleSize == 10) {
+      let tooltip = $(".mapboxgl-popup-tip");
+      tooltip.addClass('small-circle');
+    } else if (circleSize == 20) {
+      let tooltip = $(".mapboxgl-popup-tip");
+      tooltip.addClass('medium-circle');
+    } else {
+      let tooltip = $(".mapboxgl-popup-tip");
+      tooltip.addClass('large-circle');
+    }
+  }
+
+  map.on("click", 'country-fills', function (e) {
+    if (markerClicked) {
+      map.getCanvas().style.cursor = '';
+      popup.remove();
+      popupIsOpened = false;
+      markerClicked = false;
+    } else {
+      if (!popupIsOpened) {
+        showPopup(e);
+        popupIsOpened = false;
+      }
+      markerClicked = true;
+    }
+  });
+
+  // When the user moves their mouse over the states-fill layer, we'll update the filter in
+  // the state-fills-hover layer to only show the matching state, thus making a hover effect.
+  map.on("mousemove", "country-fills", function(e) {
+    if (!popupIsOpened && !markerClicked) {
+      map.setFilter("country-fills-hover", ["==", "name", e.features[0].properties.name]);
+
+      showPopup(e);
+      popupIsOpened = true;
+    }
+  });
+
+  // Reset the state-fills-hover layer's filter when the mouse leaves the layer.
+  map.on("mouseleave", "country-fills", function() {
+
+    if(!markerClicked) {
+      map.setFilter("country-fills-hover", ["==", "name", ""]);
+    }
+
+    if (!markerClicked && popupIsOpened) {
+      popup.remove();
+      popupIsOpened = false;
+    }
+  });
+});
 
 
   // add the legend to the map
