@@ -119,8 +119,8 @@ map.on('load', function () {
   $.get( "/market-data-project/js/ne_50m_admin_0_countries.geojson", function( data ) 
     {
 
-      //var features = data.features;
-      var features = JSON.parse(data).features;
+      var features = data.features;
+      //var features = JSON.parse(data).features;
 
       var sourceFeatures = [];
       for (var i = 0; i < features.length; i ++) {
