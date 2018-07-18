@@ -119,8 +119,7 @@ map.on('load', function () {
   $.get( "/market-data-project/js/ne_50m_admin_0_countries.geojson", function( data ) 
     {
 
-      //var features = data.features;
-      var features = JSON.parse(data).features;
+      var features = data.features;
 
       var sourceFeatures = [];
       for (var i = 0; i < features.length; i ++) {
@@ -294,26 +293,28 @@ map.on('load', function () {
     }
   });
 
+  // When the user moves their mouse over the states-fill layer, we'll update the filter in
+  // the state-fills-hover layer to only show the matching state, thus making a hover effect.
+  map.on("mousemove", "country-fills", function(e) {
+    if (!popupIsOpened && !markerClicked) {
+      map.setFilter("country-fills-hover", ["==", "name", e.features[0].properties.name]);
 
-  var timeout;//timeout to capture end of mousemove
-  map.on('mousemove',"country-fills", function (e) {
-      if (timeout !== undefined) {
-          window.clearTimeout(timeout);
-      }
-      timeout = window.setTimeout(function () {
-          map.setFilter("country-fills-hover", ["==", "name", e.features[0].properties.name]);
-          showPopup(e);
-      }, 50);
+      showPopup(e);
+      popupIsOpened = true;
+    }
   });
-
 
   // Reset the state-fills-hover layer's filter when the mouse leaves the layer.
   map.on("mouseleave", "country-fills", function() {
+
     if(!markerClicked) {
       map.setFilter("country-fills-hover", ["==", "name", ""]);
     }
-    popup.remove();
-    popupIsOpened = false;
+
+    if (!markerClicked && popupIsOpened) {
+      popup.remove();
+      popupIsOpened = false;
+    }
   });
 });
 
