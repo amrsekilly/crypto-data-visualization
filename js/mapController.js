@@ -280,7 +280,6 @@ map.on('load', function () {
   }
 
   map.on("click", 'country-fills', function (e) {
-    console.log("markerClicked:", markerClicked);
     if (markerClicked) {
       map.getCanvas().style.cursor = '';
       popup.remove();
@@ -289,33 +288,22 @@ map.on('load', function () {
     } else {
       if (!popupIsOpened) {
         showPopup(e);
-        popupIsOpened = true;//set to false previously?
+        popupIsOpened = false;
       }
       markerClicked = true;
     }
   });
 
 
+  var timeout;//timeout to capture end of mousemove
   map.on('mousemove',"country-fills", function (e) {
-
-    if (!markerClicked) 
-    {      
-        if(!popupIsOpened)
-        {
-            map.setFilter("country-fills-hover", ["==", "name", e.features[0].properties.name]);
-            showPopup(e);
-            popupIsOpened = true;
-        }else
-        {
-            if(e.features[0].properties.name != map.getFilter("country-fills-hover")[2])
-            {
-                map.setFilter("country-fills-hover", ["==", "name", e.features[0].properties.name]);
-                showPopup(e);
-                popupIsOpened = true;
-            }
-        }
-    }
-
+      if (timeout !== undefined) {
+          window.clearTimeout(timeout);
+      }
+      timeout = window.setTimeout(function () {
+          map.setFilter("country-fills-hover", ["==", "name", e.features[0].properties.name]);
+          showPopup(e);
+      }, 50);
   });
 
 
@@ -323,10 +311,9 @@ map.on('load', function () {
   map.on("mouseleave", "country-fills", function() {
     if(!markerClicked) {
       map.setFilter("country-fills-hover", ["==", "name", ""]);
-      popup.remove();
-      popupIsOpened = false;
     }
-    
+    popup.remove();
+    popupIsOpened = false;
   });
 });
 
