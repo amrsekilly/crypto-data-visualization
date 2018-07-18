@@ -295,26 +295,37 @@ map.on('load', function () {
 
   // When the user moves their mouse over the states-fill layer, we'll update the filter in
   // the state-fills-hover layer to only show the matching state, thus making a hover effect.
-  map.on("mousemove", "country-fills", function(e) {
-    if (!popupIsOpened && !markerClicked) {
-      map.setFilter("country-fills-hover", ["==", "name", e.features[0].properties.name]);
+  map.on('mousemove',"country-fills", function (e) {
 
-      showPopup(e);
-      popupIsOpened = true;
+    if (!markerClicked) 
+    {      
+        if(!popupIsOpened)
+        {
+            map.setFilter("country-fills-hover", ["==", "name", e.features[0].properties.name]);
+            showPopup(e);
+            popupIsOpened = true;
+        }else
+        {
+            if(e.features[0].properties.name != map.getFilter("country-fills-hover")[2])
+            {
+                map.setFilter("country-fills-hover", ["==", "name", e.features[0].properties.name]);
+                showPopup(e);
+                popupIsOpened = true;
+            }
+        }
     }
+
   });
+
 
   // Reset the state-fills-hover layer's filter when the mouse leaves the layer.
   map.on("mouseleave", "country-fills", function() {
-
     if(!markerClicked) {
       map.setFilter("country-fills-hover", ["==", "name", ""]);
-    }
-
-    if (!markerClicked && popupIsOpened) {
       popup.remove();
       popupIsOpened = false;
     }
+    
   });
 });
 
